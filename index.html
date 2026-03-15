@@ -1,57 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Shahad Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shahad Al-Anazi | Portfolio</title>
 
 <style>
 
-/* Smooth scroll */
-html{
-scroll-behavior:smooth;
-}
+/* smooth scroll */
+html{ scroll-behavior:smooth; }
 
 body{
 margin:0;
-font-family:Arial;
-background:#020617;
+font-family:Arial, Helvetica, sans-serif;
+background:linear-gradient(180deg,#020617,#0f172a);
 color:white;
-overflow-x:hidden;
-}
-
-/* STAR BACKGROUND */
-
-.stars{
-position:fixed;
-width:100%;
-height:100%;
-background:transparent;
-z-index:-1;
-}
-
-.stars::after{
-content:"";
-position:absolute;
-width:2px;
-height:2px;
-background:white;
-box-shadow:
-200px 300px white,
-400px 500px white,
-800px 200px white,
-100px 700px white,
-600px 600px white,
-900px 400px white,
-300px 900px white,
-700px 800px white,
-1200px 200px white,
-1400px 500px white;
-animation:moveStars 50s linear infinite;
-}
-
-@keyframes moveStars{
-from{transform:translateY(0);}
-to{transform:translateY(-1000px);}
 }
 
 /* NAVBAR */
@@ -60,20 +23,20 @@ nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 60px;
-background:rgba(2,6,23,0.8);
-backdrop-filter:blur(10px);
+padding:20px 50px;
+background:#020617;
 position:sticky;
 top:0;
 }
 
 nav h2{
 color:#a855f7;
+margin:0;
 }
 
 nav a{
 color:white;
-margin-left:25px;
+margin-left:20px;
 text-decoration:none;
 font-size:15px;
 }
@@ -86,45 +49,49 @@ color:#a855f7;
 
 .hero{
 text-align:center;
-padding:160px 20px;
+padding:150px 20px;
 background:radial-gradient(circle,#1e1b4b,#020617);
 }
 
 .hero h1{
-font-size:60px;
+font-size:55px;
 margin-bottom:10px;
 }
 
 .hero p{
 color:#cbd5f5;
+margin-bottom:30px;
 font-size:18px;
-margin-bottom:35px;
 }
 
 .hero button{
 background:linear-gradient(90deg,#9333ea,#6366f1);
 border:none;
 padding:14px 30px;
-border-radius:10px;
 color:white;
+border-radius:10px;
 font-size:16px;
 cursor:pointer;
-box-shadow:0 0 25px rgba(147,51,234,0.6);
-transition:0.3s;
+box-shadow:0 0 20px rgba(147,51,234,0.6);
 }
 
-.hero button:hover{
-transform:scale(1.05);
-}
-
-/* SECTION */
+/* SECTION GENERAL */
 
 section{
 padding:80px 60px;
+max-width:1100px;
+margin:auto;
 }
 
 h2{
-margin-bottom:30px;
+margin-bottom:25px;
+}
+
+/* ABOUT */
+
+#about p{
+color:#cbd5f5;
+line-height:1.7;
 }
 
 /* PROJECTS */
@@ -136,16 +103,15 @@ gap:25px;
 }
 
 .card{
-background:rgba(30,41,59,0.6);
-padding:30px;
+background:#111827;
+padding:25px;
 border-radius:15px;
-border:1px solid rgba(255,255,255,0.05);
 transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-8px);
-box-shadow:0 0 30px rgba(168,85,247,0.5);
+transform:translateY(-6px);
+box-shadow:0 0 20px rgba(168,85,247,0.4);
 }
 
 .card h3{
@@ -177,11 +143,6 @@ border-radius:8px;
 background:#9333ea;
 color:white;
 text-decoration:none;
-transition:0.2s;
-}
-
-.contact a:hover{
-background:#7e22ce;
 }
 
 /* FOOTER */
@@ -191,29 +152,30 @@ text-align:center;
 padding:30px;
 background:#020617;
 color:#94a3b8;
+margin-top:40px;
 }
 
 </style>
-
 </head>
 
 <body>
 
-<div class="stars"></div>
+<!-- NAVBAR -->
 
 <nav>
-
 <h2>Shahad</h2>
 
 <div>
 <a href="#home">Home</a>
+<a href="#about">About</a>
 <a href="#projects">Projects</a>
 <a href="#skills">Skills</a>
 <a href="#contact">Contact</a>
 </div>
-
 </nav>
 
+
+<!-- HERO -->
 
 <section class="hero" id="home">
 
@@ -228,6 +190,27 @@ View My Work
 </section>
 
 
+<!-- ABOUT -->
+
+<section id="about">
+
+<h2>About Me</h2>
+
+<p>
+Hi, I'm Shahad Al-Anazi, an Artificial Intelligence student interested in 
+machine learning, NLP, and building smart systems that solve real problems.
+</p>
+
+<p>
+I enjoy working on technical projects, experimenting with new ideas, and 
+developing creative technology solutions.
+</p>
+
+</section>
+
+
+<!-- PROJECTS -->
+
 <section id="projects">
 
 <h2>Projects</h2>
@@ -235,29 +218,31 @@ View My Work
 <div class="grid">
 
 <div class="card">
-<h3>AI Criminal Pattern Analyzer</h3>
-<p>AI system that analyzes crime patterns using data.</p>
+<h3>Tower of Hanoi Solver</h3>
+<p>Algorithm visualization and solution for the Tower of Hanoi problem.</p>
 </div>
 
 <div class="card">
-<h3>Smart Data Visualization</h3>
-<p>Interactive visualization for complex datasets.</p>
+<h3>Unity Train Game</h3>
+<p>A Unity game project involving train mechanics and gameplay design.</p>
 </div>
 
 <div class="card">
-<h3>Viking Project</h3>
-<p>Unity game with AI elements.</p>
+<h3>NLP Text Analyzer</h3>
+<p>Natural language processing system for analyzing text data.</p>
 </div>
 
 <div class="card">
-<h3>NLP Project</h3>
-<p>Natural language processing model.</p>
+<h3>Data Structures Project</h3>
+<p>Implementation of queue and other structures for solving algorithm problems.</p>
 </div>
 
 </div>
 
 </section>
 
+
+<!-- SKILLS -->
 
 <section id="skills">
 
@@ -270,21 +255,23 @@ View My Work
 </section>
 
 
+<!-- CONTACT -->
+
 <section id="contact" class="contact">
 
 <h2>Connect With Me</h2>
 
 <a href="https://x.com/shahadal3anazi" target="_blank">𝕏 </a>
-<a href="https://www.linkedin.com/in/shahad-alanazi-ma" target="_blank">in </a>
-<a href="mailto:shahadmaalanazi@email.com">✉ </a>
+
+<a href="https://www.linkedin.com/in/shahad-alanazi-ma" target="_blank">in</a>
+
+<a href="mailto:shahadmaalanazi@example.com">✉ </a>
 
 </section>
 
 
 <footer>
-
 <p>© 2026 Shahad Al-Anazi</p>
-
 </footer>
 
 </body>
