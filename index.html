@@ -1,20 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shahad Al-Anazi | Portfolio</title>
+<title>Shahad Portfolio</title>
 
 <style>
 
-/* smooth scroll */
-html{scroll-behavior:smooth;}
+html{
+scroll-behavior:smooth;
+}
 
 body{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
+font-family:Arial;
 background:#020617;
 color:white;
+overflow-x:hidden;
+}
+
+/* STARS */
+
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+background:transparent;
+z-index:-1;
+}
+
+.stars::after{
+content:"";
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+box-shadow:
+200px 300px white,
+400px 500px white,
+800px 200px white,
+100px 700px white,
+600px 600px white,
+900px 400px white,
+300px 900px white,
+700px 800px white,
+1200px 200px white,
+1400px 500px white;
+animation:moveStars 50s linear infinite;
+}
+
+@keyframes moveStars{
+from{transform:translateY(0);}
+to{transform:translateY(-1000px);}
 }
 
 /* NAVBAR */
@@ -29,7 +66,9 @@ position:sticky;
 top:0;
 }
 
-nav h2{color:#a855f7;margin:0;}
+nav h2{
+color:#a855f7;
+}
 
 nav a{
 color:white;
@@ -37,8 +76,9 @@ margin-left:20px;
 text-decoration:none;
 }
 
-nav a:hover{color:#a855f7;}
-
+nav a:hover{
+color:#a855f7;
+}
 
 /* HERO */
 
@@ -58,17 +98,7 @@ color:#cbd5f5;
 margin-bottom:30px;
 }
 
-.hero button{
-background:#9333ea;
-border:none;
-padding:14px 30px;
-color:white;
-border-radius:10px;
-cursor:pointer;
-}
-
-
-/* SECTIONS */
+/* SECTION */
 
 section{
 padding:80px 60px;
@@ -76,14 +106,15 @@ max-width:1100px;
 margin:auto;
 }
 
-h2{margin-bottom:25px;}
-
+h2{
+margin-bottom:25px;
+}
 
 /* PROJECTS */
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:25px;
 }
 
@@ -103,10 +134,11 @@ box-shadow:0 0 20px rgba(168,85,247,0.4);
 
 .card img{
 width:100%;
+height:200px;
+object-fit:cover;
 border-radius:10px;
 margin-bottom:10px;
 }
-
 
 /* SKILLS */
 
@@ -118,8 +150,7 @@ border-radius:20px;
 background:#1e293b;
 }
 
-
-/* CONTACT ICONS */
+/* CONTACT */
 
 .contact{
 text-align:center;
@@ -131,14 +162,14 @@ margin:15px;
 }
 
 .contact img{
-width:35px;
+width:40px;
+filter:brightness(2);
 transition:0.3s;
 }
 
 .contact img:hover{
 transform:scale(1.2);
 }
-
 
 /* MODAL */
 
@@ -173,7 +204,6 @@ font-size:28px;
 cursor:pointer;
 }
 
-
 /* FOOTER */
 
 footer{
@@ -184,13 +214,15 @@ color:#94a3b8;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<div class="stars"></div>
 
 <nav>
+
 <h2>Shahad</h2>
 
 <div>
@@ -200,10 +232,8 @@ color:#94a3b8;
 <a href="#skills">Skills</a>
 <a href="#contact">Contact</a>
 </div>
+
 </nav>
-
-
-<!-- HERO -->
 
 <section class="hero" id="home">
 
@@ -211,28 +241,17 @@ color:#94a3b8;
 
 <p>Artificial Intelligence Student • Machine Learning • Smart Systems</p>
 
-<button onclick="document.getElementById('projects').scrollIntoView()">
-View My Work
-</button>
-
 </section>
-
-
-<!-- ABOUT -->
 
 <section id="about">
 
 <h2>About Me</h2>
 
 <p>
-Hi, I'm Shahad Al-Anazi, an Artificial Intelligence student interested in
-machine learning, NLP, and building smart systems that solve real problems.
+AI student passionate about machine learning, NLP and building smart systems.
 </p>
 
 </section>
-
-
-<!-- PROJECTS -->
 
 <section id="projects">
 
@@ -240,38 +259,33 @@ machine learning, NLP, and building smart systems that solve real problems.
 
 <div class="grid">
 
-<div class="card"
-onclick="openProject('Tower of Hanoi','hanoi.png','Interactive visualization of the Tower of Hanoi algorithm.')">
+<div class="card" onclick="openProject('Project One','project1.png','Description of the project.')">
 
-<img src="hanoi.png">
-<h3>Tower of Hanoi</h3>
+<img src="project1.png">
 
-</div>
-
-
-<div class="card"
-onclick="openProject('Unity Train Game','train.png','Unity game project involving train mechanics.')">
-
-<img src="train.png">
-<h3>Unity Train Game</h3>
+<h3>Project One</h3>
 
 </div>
 
+<div class="card" onclick="openProject('Project Two','project2.png','Description of the project.')">
 
-<div class="card"
-onclick="openProject('NLP Text Analyzer','nlp.png','Natural language processing model for analyzing text.')">
+<img src="project2.png">
 
-<img src="nlp.png">
-<h3>NLP Analyzer</h3>
+<h3>Project Two</h3>
+
+</div>
+
+<div class="card" onclick="openProject('Project Three','project3.png','Description of the project.')">
+
+<img src="project3.png">
+
+<h3>Project Three</h3>
 
 </div>
 
 </div>
 
 </section>
-
-
-<!-- SKILLS -->
 
 <section id="skills">
 
@@ -280,15 +294,10 @@ onclick="openProject('NLP Text Analyzer','nlp.png','Natural language processing 
 <span class="skill">Python</span>
 <span class="skill">Machine Learning</span>
 <span class="skill">NLP</span>
-<span class="skill">Data Structures</span>
-<span class="skill">C#</span>
-<span class="skill">HTML</span>
 <span class="skill">Unity</span>
+<span class="skill">Java</span>
 
 </section>
-
-
-<!-- CONTACT ICONS -->
 
 <section id="contact" class="contact">
 
@@ -308,13 +317,9 @@ onclick="openProject('NLP Text Analyzer','nlp.png','Natural language processing 
 
 </section>
 
-
 <footer>
 <p>© 2026 Shahad Al-Anazi</p>
 </footer>
-
-
-<!-- PROJECT POPUP -->
 
 <div id="projectModal" class="modal">
 
@@ -331,7 +336,6 @@ onclick="openProject('NLP Text Analyzer','nlp.png','Natural language processing 
 </div>
 
 </div>
-
 
 <script>
 
