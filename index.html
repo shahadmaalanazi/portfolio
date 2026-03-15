@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta charset="UTF-8">
 <title>Shahad Portfolio</title>
 
 <style>
 
+/* Smooth scroll */
 html{
 scroll-behavior:smooth;
 }
@@ -14,8 +14,44 @@ scroll-behavior:smooth;
 body{
 margin:0;
 font-family:Arial;
-background:linear-gradient(180deg,#020617,#0f172a);
+background:#020617;
 color:white;
+overflow-x:hidden;
+}
+
+/* STAR BACKGROUND */
+
+.stars{
+position:fixed;
+width:100%;
+height:100%;
+background:transparent;
+z-index:-1;
+}
+
+.stars::after{
+content:"";
+position:absolute;
+width:2px;
+height:2px;
+background:white;
+box-shadow:
+200px 300px white,
+400px 500px white,
+800px 200px white,
+100px 700px white,
+600px 600px white,
+900px 400px white,
+300px 900px white,
+700px 800px white,
+1200px 200px white,
+1400px 500px white;
+animation:moveStars 50s linear infinite;
+}
+
+@keyframes moveStars{
+from{transform:translateY(0);}
+to{transform:translateY(-1000px);}
 }
 
 /* NAVBAR */
@@ -24,8 +60,9 @@ nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 50px;
-background:#020617;
+padding:20px 60px;
+background:rgba(2,6,23,0.8);
+backdrop-filter:blur(10px);
 position:sticky;
 top:0;
 }
@@ -36,7 +73,7 @@ color:#a855f7;
 
 nav a{
 color:white;
-margin-left:20px;
+margin-left:25px;
 text-decoration:none;
 font-size:15px;
 }
@@ -49,41 +86,48 @@ color:#a855f7;
 
 .hero{
 text-align:center;
-padding:140px 20px;
+padding:160px 20px;
 background:radial-gradient(circle,#1e1b4b,#020617);
 }
 
 .hero h1{
-font-size:55px;
+font-size:60px;
 margin-bottom:10px;
 }
 
 .hero p{
 color:#cbd5f5;
-margin-bottom:30px;
+font-size:18px;
+margin-bottom:35px;
 }
 
 .hero button{
 background:linear-gradient(90deg,#9333ea,#6366f1);
 border:none;
-padding:14px 28px;
-color:white;
+padding:14px 30px;
 border-radius:10px;
-cursor:pointer;
+color:white;
 font-size:16px;
-box-shadow:0 0 20px rgba(147,51,234,0.6);
+cursor:pointer;
+box-shadow:0 0 25px rgba(147,51,234,0.6);
+transition:0.3s;
 }
 
-/* PROJECTS */
+.hero button:hover{
+transform:scale(1.05);
+}
 
-.projects{
+/* SECTION */
+
+section{
 padding:80px 60px;
 }
 
-.projects h2{
-font-size:30px;
-margin-bottom:40px;
+h2{
+margin-bottom:30px;
 }
+
+/* PROJECTS */
 
 .grid{
 display:grid;
@@ -92,15 +136,16 @@ gap:25px;
 }
 
 .card{
-background:#111827;
-padding:25px;
+background:rgba(30,41,59,0.6);
+padding:30px;
 border-radius:15px;
+border:1px solid rgba(255,255,255,0.05);
 transition:0.3s;
 }
 
 .card:hover{
-transform:translateY(-6px);
-box-shadow:0 0 20px rgba(168,85,247,0.4);
+transform:translateY(-8px);
+box-shadow:0 0 30px rgba(168,85,247,0.5);
 }
 
 .card h3{
@@ -109,10 +154,6 @@ margin-bottom:10px;
 }
 
 /* SKILLS */
-
-.skills{
-padding:80px 60px;
-}
 
 .skill{
 display:inline-block;
@@ -125,7 +166,6 @@ background:#1e293b;
 /* CONTACT */
 
 .contact{
-padding:80px 60px;
 text-align:center;
 }
 
@@ -137,6 +177,11 @@ border-radius:8px;
 background:#9333ea;
 color:white;
 text-decoration:none;
+transition:0.2s;
+}
+
+.contact a:hover{
+background:#7e22ce;
 }
 
 /* FOOTER */
@@ -153,6 +198,8 @@ color:#94a3b8;
 </head>
 
 <body>
+
+<div class="stars"></div>
 
 <nav>
 
@@ -174,12 +221,14 @@ color:#94a3b8;
 
 <p>Artificial Intelligence Student • Machine Learning • Smart Systems</p>
 
-<button onclick="document.getElementById('projects').scrollIntoView()">View Projects</button>
+<button onclick="document.getElementById('projects').scrollIntoView()">
+View My Work
+</button>
 
 </section>
 
 
-<section class="projects" id="projects">
+<section id="projects">
 
 <h2>Projects</h2>
 
@@ -191,13 +240,13 @@ color:#94a3b8;
 </div>
 
 <div class="card">
-<h3>Smart Data Visualization Tool</h3>
+<h3>Smart Data Visualization</h3>
 <p>Interactive visualization for complex datasets.</p>
 </div>
 
 <div class="card">
 <h3>Viking Project</h3>
-<p>Unity strategy game with AI elements.</p>
+<p>Unity game with AI elements.</p>
 </div>
 
 <div class="card">
@@ -210,7 +259,7 @@ color:#94a3b8;
 </section>
 
 
-<section class="skills" id="skills">
+<section id="skills">
 
 <h2>Skills</h2>
 
@@ -225,7 +274,7 @@ color:#94a3b8;
 </section>
 
 
-<section class="contact" id="contact">
+<section id="contact" class="contact">
 
 <h2>Connect With Me</h2>
 
