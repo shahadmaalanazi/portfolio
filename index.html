@@ -134,7 +134,7 @@ box-shadow:0 0 20px rgba(168,85,247,0.4);
 
 .card img{
 width:100%;
-height:200px;
+height:230px;
 object-fit:cover;
 border-radius:10px;
 margin-bottom:10px;
@@ -181,19 +181,23 @@ left:0;
 width:100%;
 height:100%;
 background:rgba(0,0,0,0.8);
+overflow-y:auto;
 }
 
 .modal-content{
 background:#111827;
 padding:30px;
-max-width:600px;
-margin:100px auto;
+max-width:700px;
+max-height:85vh;
+margin:60px auto;
 border-radius:15px;
 text-align:center;
+overflow-y:auto;
 }
 
 .modal img{
 width:100%;
+height:auto;
 border-radius:10px;
 margin-top:15px;
 }
@@ -239,7 +243,7 @@ color:#94a3b8;
 
 <h1>Shahad AlAnazi</h1>
 
-<p>Artificial Intelligence Student • Machine Learning </p>
+<p>Artificial Intelligence Student • Machine Learning</p>
 
 </section>
 
@@ -259,15 +263,23 @@ AI student passionate about machine learning, NLP and building smart systems.
 
 <div class="grid">
 
-<div class="card" onclick="openProject('Smart Cane','smart cane.jpeg','A smart cane designed to assist visually impaired individuals in navigating their surroundings safely. The cane uses sensors connected to a microcontroller to detect nearby obstacles and provide instant alerts through vibration or sound. This system helps users avoid collisions and move more confidently by increasing environmental awareness.')">
+<div class="card" onclick="openProject(
+'Smart Cane',
+'smart-cane.jpeg',
+'A smart cane designed to assist visually impaired individuals in navigating their surroundings safely. The cane uses sensors connected to Arduino to detect obstacles and alert the user.'
+)">
 
-<img src="smart cane.jpeg">
+<img src="smart-cane.jpeg">
 
 <h3>Smart Cane</h3>
 
 </div>
 
-<div class="card" onclick="openProject('Project Two','project2.png','Description of the project.')">
+<div class="card" onclick="openProject(
+'Project Two',
+'project2.png',
+'Description of the project.'
+)">
 
 <img src="project2.png">
 
@@ -275,7 +287,11 @@ AI student passionate about machine learning, NLP and building smart systems.
 
 </div>
 
-<div class="card" onclick="openProject('Project Three','project3.png','Description of the project.')">
+<div class="card" onclick="openProject(
+'Project Three',
+'project3.png',
+'Description of the project.'
+)">
 
 <img src="project3.png">
 
@@ -297,7 +313,6 @@ AI student passionate about machine learning, NLP and building smart systems.
 <span class="skill">Unity</span>
 <span class="skill">Java</span>
 <span class="skill">Arduino</span>
-
 
 </section>
 
