@@ -1,356 +1,422 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shahad Portfolio</title>
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shahad Portfolio</title>
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #020617;
-            color: white;
-            overflow-x: hidden;
-            text-align: right;
-        }
+<style>
 
-        /* STARS ANIMATION */
-        .stars-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 200%;
-            z-index: -1;
-        }
+html{
+scroll-behavior:smooth;
+}
 
-        .stars {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            background-image: 
-                radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 90px 160px, #ddd, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 150px 40px, #fff, rgba(0,0,0,0));
-            background-repeat: repeat;
-            background-size: 300px 300px;
-            animation: moveStars 60s linear infinite;
-        }
+body{
+margin:0;
+font-family:Arial;
+background:#020617;
+color:white;
+overflow-x:hidden;
+text-align:right;
+}
 
-        @keyframes moveStars {
-            from { transform: translateY(0); }
-            to { transform: translateY(-50%); }
-        }
+/* STARS */
 
-        /* NAVBAR */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background: rgba(2, 6, 23, 0.9);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+.stars-container{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:200%;
+z-index:-1;
+}
 
-        nav h2 {
-            color: #a855f7;
-            margin: 0;
-        }
+.stars{
+width:100%;
+height:100%;
+position:absolute;
+background-image:
+radial-gradient(2px 2px at 20px 30px,#eee,rgba(0,0,0,0)),
+radial-gradient(2px 2px at 40px 70px,#fff,rgba(0,0,0,0)),
+radial-gradient(2px 2px at 90px 160px,#ddd,rgba(0,0,0,0)),
+radial-gradient(2px 2px at 150px 40px,#fff,rgba(0,0,0,0));
+background-repeat:repeat;
+background-size:300px 300px;
+animation:moveStars 60s linear infinite;
+}
 
-        nav div a {
-            color: white;
-            margin-right: 20px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+@keyframes moveStars{
+from{transform:translateY(0);}
+to{transform:translateY(-50%);}
+}
 
-        nav div a:hover {
-            color: #a855f7;
-        }
+/* NAVBAR */
 
-        /* HERO SECTION */
-        .hero {
-            text-align: center;
-            padding: 150px 20px;
-            background: radial-gradient(circle, #1e1b4b, #020617);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 50px;
+background:rgba(2,6,23,0.9);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:100;
+}
 
-        /* حاوية العنوان والصورة */
-        .hero-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px; /* المسافة بين الصورة والعنوان */
-            margin-bottom: 20px;
-        }
+nav h2{
+color:#a855f7;
+margin:0;
+}
 
-        .hero h1 {
-            font-size: 55px;
-            margin: 0;
-        }
+nav div a{
+color:white;
+margin-right:20px;
+text-decoration:none;
+transition:0.3s;
+}
 
-        /* الصورة الشخصية */
-        .hero img {
-            width: 150px; /* حجم الصورة */
-            height: 150px;
-            border-radius: 50%; /* لجعلها دائرية */
-            object-fit: cover; /* لضمان ملائمة الصورة */
-            border: 4px solid #a855f7; /* إطار بنفسجي */
-            box-shadow: 0 0 15px rgba(168,85,247,0.5); /* تأثير توهج */
-        }
+nav div a:hover{
+color:#a855f7;
+}
 
-        .hero p {
-            color: #cbd5f5;
-            font-size: 1.2rem;
-            margin-top: 10px;
-        }
+/* HERO */
 
-        /* SECTION STYLE */
-        section {
-            padding: 80px 60px;
-            max-width: 1100px;
-            margin: auto;
-        }
+.hero{
+padding:120px 20px;
+background:radial-gradient(circle,#1e1b4b,#020617);
+}
 
-        h2 {
-            margin-bottom: 30px;
-            color: #a855f7;
-        }
+.hero-container{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:80px;
+flex-wrap:wrap;
+}
 
-        /* ABOUT SECTION */
-        .about-text {
-            line-height: 1.8;
-            font-size: 1.1rem;
-            color: #cbd5f5;
-        }
+.hero-text h1{
+font-size:55px;
+margin-bottom:10px;
+}
 
-        /* PROJECTS GRID */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
+.hero-text p{
+color:#cbd5f5;
+font-size:1.2rem;
+}
 
-        .card {
-            background: #111827;
-            padding: 20px;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: 0.3s;
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
+.hero-photo img{
+width:220px;
+border-radius:12px;
+box-shadow:
+0 0 25px rgba(168,85,247,0.7),
+0 0 60px rgba(168,85,247,0.4);
+transition:0.4s;
+}
 
-        .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 0 20px rgba(168,85,247,0.3);
-            border-color: #a855f7;
-        }
+.hero-photo img:hover{
+transform:scale(1.05);
+box-shadow:
+0 0 40px rgba(168,85,247,1),
+0 0 80px rgba(168,85,247,0.6);
+}
 
-        .card img {
-            width: 100%;
-            height: 230px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
+/* SECTIONS */
 
-        /* SKILLS */
-        .skill {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 8px;
-            border-radius: 20px;
-            background: #1e293b;
-            transition: 0.3s;
-        }
+section{
+padding:80px 60px;
+max-width:1100px;
+margin:auto;
+}
 
-        .skill:hover {
-            background: #a855f7;
-        }
+h2{
+margin-bottom:30px;
+color:#a855f7;
+}
 
-        /* CONTACT */
-        .contact {
-            text-align: center;
-        }
+/* ABOUT */
 
-        .contact a {
-            display: inline-block;
-            margin: 15px;
-        }
+.about-text{
+line-height:1.8;
+font-size:1.1rem;
+color:#cbd5f5;
+}
 
-        .contact img {
-            width: 40px;
-            filter: brightness(2);
-            transition: 0.3s;
-        }
+/* PROJECTS */
 
-        .contact img:hover {
-            transform: scale(1.2);
-        }
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
 
-        /* MODAL */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.85);
-            z-index: 1000;
-        }
+.card{
+background:#111827;
+padding:20px;
+border-radius:15px;
+cursor:pointer;
+transition:0.3s;
+text-align:center;
+border:1px solid rgba(255,255,255,0.05);
+}
 
-        .modal-content {
-            background: #111827;
-            padding: 30px;
-            max-width: 700px;
-            margin: 50px auto;
-            border-radius: 15px;
-            text-align: center;
-            position: relative;
-        }
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 0 20px rgba(168,85,247,0.3);
+border-color:#a855f7;
+}
 
-        .modal img {
-            width: 100%;
-            border-radius: 10px;
-            margin: 20px 0;
-        }
+.card img{
+width:100%;
+height:230px;
+object-fit:cover;
+border-radius:10px;
+margin-bottom:15px;
+}
 
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 30px;
-            cursor: pointer;
-        }
+/* SKILLS */
 
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: #94a3b8;
-        }
-    </style>
+.skill{
+display:inline-block;
+padding:10px 20px;
+margin:8px;
+border-radius:20px;
+background:#1e293b;
+transition:0.3s;
+}
+
+.skill:hover{
+background:#a855f7;
+}
+
+/* CONTACT */
+
+.contact{
+text-align:center;
+}
+
+.contact a{
+display:inline-block;
+margin:15px;
+}
+
+.contact img{
+width:40px;
+filter:brightness(2);
+transition:0.3s;
+}
+
+.contact img:hover{
+transform:scale(1.2);
+}
+
+/* MODAL */
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.85);
+z-index:1000;
+}
+
+.modal-content{
+background:#111827;
+padding:30px;
+max-width:700px;
+margin:50px auto;
+border-radius:15px;
+text-align:center;
+position:relative;
+}
+
+.modal img{
+width:100%;
+border-radius:10px;
+margin:20px 0;
+}
+
+.close{
+position:absolute;
+top:15px;
+right:20px;
+font-size:30px;
+cursor:pointer;
+}
+
+footer{
+text-align:center;
+padding:30px;
+color:#94a3b8;
+}
+
+</style>
 </head>
+
 <body>
 
 <div class="stars-container">
-    <div class="stars"></div>
+<div class="stars"></div>
 </div>
 
 <nav>
-    <h2>Shahad</h2>
-    <div>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-    </div>
+
+<h2>Shahad</h2>
+
+<div>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+</div>
+
 </nav>
 
 <section class="hero" id="home">
-    <div class="hero-header">
-        <img src="your_photo.jpeg" alt="Shahad AlAnazi">
-        <h1>Shahad AlAnazi</h1>
-    </div>
-    <p>Artificial Intelligence Student<br>Machine Learning • NLP • Smart Systems</p>
+
+<div class="hero-container">
+
+<div class="hero-text">
+<h1>Shahad AlAnazi</h1>
+<p>Artificial Intelligence Student<br>Machine Learning • NLP • Smart Systems</p>
+</div>
+
+<div class="hero-photo">
+<img src="profile.jpg">
+</div>
+
+</div>
+
 </section>
 
 <section id="about">
-    <h2>About Me</h2>
-    <div class="about-text">
-        <p>أهلاً بك، أنا شهد العنزي، طالبة متخصصة في مجال الذكاء الاصطناعي. شغفي يكمن في بناء أنظمة ذكية تحل مشاكل واقعية، من معالجة اللغات الطبيعية (NLP) إلى تطوير الأنظمة المدمجة الذكية مثل Arduino.</p>
-    </div>
+
+<h2>About Me</h2>
+
+<div class="about-text">
+<p>
+
+Artificial Intelligence student passionate about technology and exploring innovative ideas. I’m interested in building projects that combine AI with real-world problem solving, and I constantly work on improving my skills through learning and hands-on experimentation. I enjoy research, developing technical projects, and turning ideas into practical prototypes with future potential.</p>
+</div>
+
 </section>
 
 <section id="projects">
-    <h2>Projects</h2>
-    <div class="grid">
-        <div class="card" onclick="openProject('Smart Cane', 'Smart Cane 1.jpeg', 'A smart cane designed to assist visually impaired individuals in navigating their surroundings safely. The cane uses sensors connected to Arduino to detect obstacles.')">
-            <img src="Smart Cane 1.jpeg" alt="Smart Cane">
-            <h3>Smart Cane</h3>
-        </div>
 
-        <div class="card" onclick="openProject('Project Two', 'project2.png', 'Description of the project.')">
-            <img src="project2.png" alt="Project 2">
-            <h3>Project Two</h3>
-        </div>
+<h2>Projects</h2>
 
-        <div class="card" onclick="openProject('Project Three', 'project3.png', 'Description of the project.')">
-            <img src="project3.png" alt="Project 3">
-            <h3>Project Three</h3>
-        </div>
-    </div>
+<div class="grid">
+
+<div class="card" onclick="openProject('Smart Cane','Smart Cane 1.jpeg','A smart cane designed to assist visually impaired individuals using Arduino sensors.')">
+
+<img src="Smart Cane 1.jpeg">
+
+<h3>Smart Cane</h3>
+
+</div>
+
+<div class="card" onclick="openProject('Project Two','project2.png','Description of the project.')">
+
+<img src="project2.png">
+
+<h3>Project Two</h3>
+
+</div>
+
+<div class="card" onclick="openProject('Project Three','project3.png','Description of the project.')">
+
+<img src="project3.png">
+
+<h3>Project Three</h3>
+
+</div>
+
+</div>
+
 </section>
 
 <section id="skills">
-    <h2>Skills</h2>
-    <span class="skill">Python</span>
-    <span class="skill">Machine Learning</span>
-    <span class="skill">NLP</span>
-    <span class="skill">Unity</span>
-    <span class="skill">Java</span>
-    <span class="skill">Arduino</span>
+
+<h2>Skills</h2>
+
+<span class="skill">Python</span>
+<span class="skill">Machine Learning</span>
+<span class="skill">NLP</span>
+<span class="skill">Unity</span>
+<span class="skill">Java</span>
+<span class="skill">Arduino</span>
+
 </section>
 
 <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <a href="https://x.com/shahadal3anazi" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png" alt="X">
-    </a>
-    <a href="https://www.linkedin.com/in/shahad-alanazi-ma" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
-    </a>
-    <a href="mailto:shahadmaalanazi@example.com">
-        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
-    </a>
+
+<h2>Contact</h2>
+
+<a href="https://x.com/shahadal3anazi" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png">
+</a>
+
+<a href="https://www.linkedin.com/in/shahad-alanazi-ma" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/174/174857.png">
+</a>
+
+<a href="mailto:shahadmaalanazi@example.com">
+<img src="https://cdn-icons-png.flaticon.com/512/732/732200.png">
+</a>
+
 </section>
 
 <footer>
-    <p>© 2026 Shahad AlAnazi</p>
+<p>© 2026 Shahad AlAnazi</p>
 </footer>
 
 <div id="projectModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeProject()">×</span>
-        <h2 id="projectTitle"></h2>
-        <img id="projectImage">
-        <p id="projectDesc"></p>
-    </div>
+
+<div class="modal-content">
+
+<span class="close" onclick="closeProject()">×</span>
+
+<h2 id="projectTitle"></h2>
+
+<img id="projectImage">
+
+<p id="projectDesc"></p>
+
+</div>
+
 </div>
 
 <script>
-    function openProject(title, image, desc) {
-        document.getElementById("projectModal").style.display = "block";
-        document.getElementById("projectTitle").innerText = title;
-        document.getElementById("projectImage").src = image;
-        document.getElementById("projectDesc").innerText = desc;
-    }
 
-    function closeProject() {
-        document.getElementById("projectModal").style.display = "none";
-    }
+function openProject(title,image,desc){
 
-    // إغلاق عند الضغط خارج المودال
-    window.onclick = function(event) {
-        let modal = document.getElementById("projectModal");
-        if (event.target == modal) {
-            closeProject();
-        }
-    }
+document.getElementById("projectModal").style.display="block";
+document.getElementById("projectTitle").innerText=title;
+document.getElementById("projectImage").src=image;
+document.getElementById("projectDesc").innerText=desc;
+
+}
+
+function closeProject(){
+
+document.getElementById("projectModal").style.display="none";
+
+}
+
+window.onclick=function(event){
+
+let modal=document.getElementById("projectModal");
+
+if(event.target==modal){
+closeProject();
+}
+
+}
+
 </script>
 
 </body>
