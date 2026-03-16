@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,10 +11,11 @@
 
         body {
             margin: 0;
-            font-family: 'Segoe UI', Arial, sans-serif;
+            font-family: Arial, sans-serif;
             background: #020617;
             color: white;
             overflow-x: hidden;
+            text-align: right;
         }
 
         /* STARS ANIMATION */
@@ -23,9 +24,8 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 200%; /* أطول من الشاشة للتكرار */
+            height: 200%;
             z-index: -1;
-            background: transparent;
         }
 
         .stars {
@@ -35,13 +35,11 @@
             background-image: 
                 radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
                 radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0,0,0,0));
+                radial-gradient(2px 2px at 90px 160px, #ddd, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 150px 40px, #fff, rgba(0,0,0,0));
             background-repeat: repeat;
-            background-size: 200px 200px;
-            animation: moveStars 100s linear infinite;
+            background-size: 300px 300px;
+            animation: moveStars 60s linear infinite;
         }
 
         @keyframes moveStars {
@@ -60,128 +58,127 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid rgba(168, 85, 247, 0.2);
         }
 
         nav h2 {
             color: #a855f7;
             margin: 0;
-            letter-spacing: 1px;
         }
 
-        nav a {
-            color: #cbd5f5;
-            margin-left: 20px;
+        nav div a {
+            color: white;
+            margin-right: 20px;
             text-decoration: none;
-            font-size: 0.9rem;
             transition: 0.3s;
         }
 
-        nav a:hover {
+        nav div a:hover {
             color: #a855f7;
         }
 
         /* HERO SECTION */
         .hero {
             text-align: center;
-            padding: 180px 20px;
-            background: radial-gradient(circle at center, #1e1b4b 0%, #020617 70%);
+            padding: 150px 20px;
+            background: radial-gradient(circle, #1e1b4b, #020617);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* حاوية العنوان والصورة */
+        .hero-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px; /* المسافة بين الصورة والعنوان */
+            margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size: clamp(40px, 8vw, 65px);
-            margin-bottom: 10px;
-            background: linear-gradient(to right, #fff, #a855f7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 55px;
+            margin: 0;
+        }
+
+        /* الصورة الشخصية */
+        .hero img {
+            width: 150px; /* حجم الصورة */
+            height: 150px;
+            border-radius: 50%; /* لجعلها دائرية */
+            object-fit: cover; /* لضمان ملائمة الصورة */
+            border: 4px solid #a855f7; /* إطار بنفسجي */
+            box-shadow: 0 0 15px rgba(168,85,247,0.5); /* تأثير توهج */
         }
 
         .hero p {
-            color: #94a3b8;
+            color: #cbd5f5;
             font-size: 1.2rem;
-            line-height: 1.6;
+            margin-top: 10px;
         }
 
-        /* SECTIONS */
+        /* SECTION STYLE */
         section {
-            padding: 100px 20px;
+            padding: 80px 60px;
             max-width: 1100px;
             margin: auto;
         }
 
         h2 {
-            font-size: 2rem;
-            margin-bottom: 40px;
-            position: relative;
-            display: inline-block;
+            margin-bottom: 30px;
+            color: #a855f7;
         }
 
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: #a855f7;
+        /* ABOUT SECTION */
+        .about-text {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #cbd5f5;
         }
 
         /* PROJECTS GRID */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 25px;
         }
 
         .card {
-            background: #0f172a;
+            background: #111827;
             padding: 20px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
             cursor: pointer;
-            transition: all 0.4s ease;
-            text-align: left;
+            transition: 0.3s;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(168, 85, 247, 0.4);
-            box-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.3);
+            transform: translateY(-6px);
+            box-shadow: 0 0 20px rgba(168,85,247,0.3);
+            border-color: #a855f7;
         }
 
         .card img {
             width: 100%;
-            height: 200px;
+            height: 230px;
             object-fit: cover;
-            border-radius: 12px;
+            border-radius: 10px;
             margin-bottom: 15px;
         }
 
-        .card h3 {
-            margin: 10px 0;
-            color: #f1f5f9;
-        }
-
         /* SKILLS */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
         .skill {
-            padding: 12px 24px;
-            border-radius: 12px;
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 8px;
+            border-radius: 20px;
             background: #1e293b;
-            border: 1px solid rgba(168, 85, 247, 0.1);
-            font-weight: 500;
             transition: 0.3s;
         }
 
         .skill:hover {
             background: #a855f7;
-            color: white;
-            transform: scale(1.05);
         }
 
         /* CONTACT */
@@ -189,22 +186,19 @@
             text-align: center;
         }
 
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
+        .contact a {
+            display: inline-block;
+            margin: 15px;
         }
 
         .contact img {
-            width: 35px;
-            filter: invert(0.8);
+            width: 40px;
+            filter: brightness(2);
             transition: 0.3s;
         }
 
         .contact img:hover {
-            filter: invert(1) drop-shadow(0 0 8px #a855f7);
-            transform: translateY(-5px);
+            transform: scale(1.2);
         }
 
         /* MODAL */
@@ -215,49 +209,38 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(2, 6, 23, 0.95);
+            background: rgba(0,0,0,0.85);
             z-index: 1000;
-            backdrop-filter: blur(5px);
         }
 
         .modal-content {
             background: #111827;
-            padding: 40px;
-            max-width: 600px;
-            width: 90%;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 24px;
-            border: 1px solid rgba(168, 85, 247, 0.3);
+            padding: 30px;
+            max-width: 700px;
+            margin: 50px auto;
+            border-radius: 15px;
             text-align: center;
+            position: relative;
         }
 
         .modal img {
             width: 100%;
-            max-height: 300px;
-            object-fit: cover;
-            border-radius: 15px;
+            border-radius: 10px;
             margin: 20px 0;
         }
 
         .close {
             position: absolute;
-            right: 25px;
-            top: 20px;
+            top: 15px;
+            right: 20px;
             font-size: 30px;
             cursor: pointer;
-            color: #94a3b8;
         }
 
-        /* FOOTER */
         footer {
             text-align: center;
-            padding: 40px;
-            color: #64748b;
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 30px;
+            color: #94a3b8;
         }
     </style>
 </head>
@@ -268,9 +251,10 @@
 </div>
 
 <nav>
-    <h2>SHAHAD</h2>
+    <h2>Shahad</h2>
     <div>
         <a href="#home">Home</a>
+        <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
@@ -278,66 +262,73 @@
 </nav>
 
 <section class="hero" id="home">
-    <h1>Shahad AlAnazi</h1>
-    <p>Artificial Intelligence Student<br>
-    Machine Learning • NLP • Smart Systems</p>
+    <div class="hero-header">
+        <img src="your_photo.jpeg" alt="Shahad AlAnazi">
+        <h1>Shahad AlAnazi</h1>
+    </div>
+    <p>Artificial Intelligence Student<br>Machine Learning • NLP • Smart Systems</p>
+</section>
+
+<section id="about">
+    <h2>About Me</h2>
+    <div class="about-text">
+        <p>أهلاً بك، أنا شهد العنزي، طالبة متخصصة في مجال الذكاء الاصطناعي. شغفي يكمن في بناء أنظمة ذكية تحل مشاكل واقعية، من معالجة اللغات الطبيعية (NLP) إلى تطوير الأنظمة المدمجة الذكية مثل Arduino.</p>
+    </div>
 </section>
 
 <section id="projects">
-    <h2>Featured Projects</h2>
+    <h2>Projects</h2>
     <div class="grid">
-        <div class="card" onclick="openProject('Smart Cane', 'https://images.unsplash.com/photo-1516110833967-0b5716ca1387?auto=format&fit=crop&w=800&q=80', 'A smart cane designed to assist visually impaired individuals in navigating their surroundings safely. The cane uses sensors connected to Arduino to detect obstacles and alert the user via haptic feedback.')">
-            <img src="https://images.unsplash.com/photo-1516110833967-0b5716ca1387?auto=format&fit=crop&w=800&q=80" alt="Smart Cane">
+        <div class="card" onclick="openProject('Smart Cane', 'Smart Cane 1.jpeg', 'A smart cane designed to assist visually impaired individuals in navigating their surroundings safely. The cane uses sensors connected to Arduino to detect obstacles.')">
+            <img src="Smart Cane 1.jpeg" alt="Smart Cane">
             <h3>Smart Cane</h3>
-            <p style="color:#94a3b8; font-size:0.9rem">IoT & Arduino</p>
         </div>
 
-        <div class="card" onclick="openProject('NLP Sentiment Analysis', 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&q=80', 'Developed a machine learning model to analyze and categorize sentiments in Arabic social media posts using Python and Scikit-learn.')">
-            <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&q=80" alt="NLP Project">
-            <h3>Sentiment Analysis</h3>
-            <p style="color:#94a3b8; font-size:0.9rem">Machine Learning</p>
+        <div class="card" onclick="openProject('Project Two', 'project2.png', 'Description of the project.')">
+            <img src="project2.png" alt="Project 2">
+            <h3>Project Two</h3>
         </div>
 
-        <div class="card" onclick="openProject('Computer Vision App', 'https://images.unsplash.com/photo-1527430253228-e926ae8fe513?auto=format&fit=crop&w=800&q=80', 'A system that detects objects in real-time using YOLOv8, tailored for industrial safety monitoring.')">
-            <img src="https://images.unsplash.com/photo-1527430253228-e926ae8fe513?auto=format&fit=crop&w=800&q=80" alt="CV Project">
-            <h3>Object Detection</h3>
-            <p style="color:#94a3b8; font-size:0.9rem">Computer Vision</p>
+        <div class="card" onclick="openProject('Project Three', 'project3.png', 'Description of the project.')">
+            <img src="project3.png" alt="Project 3">
+            <h3>Project Three</h3>
         </div>
     </div>
 </section>
 
 <section id="skills">
-    <h2>Technical Skills</h2>
-    <div class="skills-container">
-        <span class="skill">Python</span>
-        <span class="skill">Machine Learning</span>
-        <span class="skill">NLP</span>
-        <span class="skill">Deep Learning</span>
-        <span class="skill">Java</span>
-        <span class="skill">Arduino</span>
-        <span class="skill">SQL</span>
-    </div>
+    <h2>Skills</h2>
+    <span class="skill">Python</span>
+    <span class="skill">Machine Learning</span>
+    <span class="skill">NLP</span>
+    <span class="skill">Unity</span>
+    <span class="skill">Java</span>
+    <span class="skill">Arduino</span>
 </section>
 
 <section id="contact" class="contact">
-    <h2>Get In Touch</h2>
-    <div class="contact-links">
-        <a href="https://x.com/shahadal3anazi" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png" alt="X"></a>
-        <a href="https://www.linkedin.com/in/shahad-alanazi-ma" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn"></a>
-        <a href="mailto:shahadmaalanazi@example.com"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"></a>
-    </div>
+    <h2>Contact</h2>
+    <a href="https://x.com/shahadal3anazi" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.png" alt="X">
+    </a>
+    <a href="https://www.linkedin.com/in/shahad-alanazi-ma" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+    </a>
+    <a href="mailto:shahadmaalanazi@example.com">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+    </a>
 </section>
 
 <footer>
-    <p>© 2026 Shahad AlAnazi • Built with Passion for AI</p>
+    <p>© 2026 Shahad AlAnazi</p>
 </footer>
 
 <div id="projectModal" class="modal">
     <div class="modal-content">
-        <span class="close" onclick="closeProject()">&times;</span>
-        <h2 id="projectTitle" style="margin-top:0"></h2>
+        <span class="close" onclick="closeProject()">×</span>
+        <h2 id="projectTitle"></h2>
         <img id="projectImage">
-        <p id="projectDesc" style="color:#cbd5f5; line-height:1.6; text-align: justify;"></p>
+        <p id="projectDesc"></p>
     </div>
 </div>
 
@@ -347,15 +338,13 @@
         document.getElementById("projectTitle").innerText = title;
         document.getElementById("projectImage").src = image;
         document.getElementById("projectDesc").innerText = desc;
-        document.body.style.overflow = "hidden"; 
     }
 
     function closeProject() {
         document.getElementById("projectModal").style.display = "none";
-        document.body.style.overflow = "auto";
     }
 
-  
+    // إغلاق عند الضغط خارج المودال
     window.onclick = function(event) {
         let modal = document.getElementById("projectModal");
         if (event.target == modal) {
