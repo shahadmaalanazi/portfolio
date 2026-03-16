@@ -380,7 +380,29 @@ I enjoy building projects that apply AI to real-world problems and turning ideas
 
 function openProject(title,image,desc){
 
-alert(title + "\n\n" + desc);
+document.getElementById("projectModal").style.display = "block";
+
+document.getElementById("projectTitle").innerText = title;
+
+document.getElementById("projectImage").src = image;
+
+document.getElementById("projectDesc").innerText = desc;
+
+}
+
+function closeProject(){
+
+document.getElementById("projectModal").style.display = "none";
+
+}
+
+window.onclick = function(event){
+
+let modal = document.getElementById("projectModal");
+
+if(event.target == modal){
+closeProject();
+}
 
 }
 
