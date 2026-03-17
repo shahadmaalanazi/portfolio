@@ -230,9 +230,32 @@ h2::after {
 }
 
 .modal img {
-    width: 100%;
-    margin: 15px 0;
+    width: 70%;       
+    max-width: 350px;  
+    display: block;
+    margin: 15px auto;
     border-radius: 10px;
+}
+
+/* العنوان */
+.modal-content h3 {
+    color: white;
+}
+
+/* زر الإغلاق */
+.close {
+    font-size: 32px;
+    color: white;
+    cursor: pointer;
+}
+
+/* الصورة */
+#projectImage {
+    width: 70%;
+    max-width: 350px;
+    display: block;
+    margin: 15px auto;
+    border-radius: 12px;
 }
 
 /* FOOTER */
@@ -267,7 +290,7 @@ footer {
                 <h1>Shahad AlAnazi</h1>
                 <p>
                     Artificial Intelligence Student<br>
-                    <span style="color: #a855f7;">Machine Learning • NLP • Deep Learning</span>
+                    <span style="color: #a855f7;">• Machine Learning • NLP • Deep Learning</span>
                 </p>
             </div>
         </div>
@@ -302,7 +325,6 @@ footer {
     <section id="skills">
         <h2>Technical Skills</h2>
         <span class="skill">Python</span>
-        <span class="skill">TensorFlow</span>
         <span class="skill">Machine Learning</span>
         <span class="skill">NLP</span>
         <span class="skill">Arduino</span>
@@ -336,7 +358,7 @@ footer {
     <div id="projectModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeProject()">&times;</span>
-            <h3 id="projectTitle" style="margin:0; color: #a855f7;"></h3>
+            <h3 id="projectTitle" style="margin:0;"></h3>
             <img id="projectImage" src="">
             <p id="projectDesc" style="color: var(--text-dim);"></p>
         </div>
