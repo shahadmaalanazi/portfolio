@@ -127,10 +127,24 @@ max-width:1100px;
 margin:auto;
 }
 
+/* 🔥 HEADINGS FIX */
+
 h2{
-margin-bottom:30px;
-color:#a855f7;
+margin-bottom:20px;
+color:white;
 text-align:left;
+display:inline-block;
+position:relative;
+}
+
+h2::after{
+content:"";
+display:block;
+width:80px;
+height:4px;
+background:linear-gradient(90deg,#a855f7,#9333ea);
+margin-top:8px;
+border-radius:2px;
 }
 
 /* ABOUT */
@@ -260,13 +274,11 @@ color:#94a3b8;
 </div>
 
 <nav>
-
 <a href="#home">Home</a>
 <a href="#about">About</a>
 <a href="#projects">Projects</a>
 <a href="#skills">Skills</a>
 <a href="#contact">Contact</a>
-
 </nav>
 
 <section class="hero" id="home">
@@ -283,7 +295,7 @@ color:#94a3b8;
 
 <p>
 Artificial Intelligence Student<br>
-Machine Learning • Natural Language Processing •Deep Learning 
+Machine Learning • Natural Language Processing • Deep Learning
 </p>
 
 </div>
@@ -312,27 +324,18 @@ I enjoy building projects that apply AI to real-world problems and turning ideas
 <div class="grid">
 
 <div class="card" onclick="openProject('Smart Cane','Smart Cane 1.jpeg','A smart cane designed to assist visually impaired individuals using Arduino sensors.')">
-
 <img src="Smart Cane 1.jpeg">
-
 <h3>Smart Cane</h3>
-
 </div>
 
 <div class="card">
-
 <img src="project2.png">
-
 <h3>Project Two</h3>
-
 </div>
 
 <div class="card">
-
 <img src="project3.png">
-
 <h3>Project Three</h3>
-
 </div>
 
 </div>
@@ -371,13 +374,10 @@ I enjoy building projects that apply AI to real-world problems and turning ideas
 </section>
 
 <footer>
-
 © 2026 Shahad AlAnazi
-
 </footer>
 
 <script>
-
 function openProject(title,image,desc){
 
 document.getElementById("projectModal").style.display = "block";
