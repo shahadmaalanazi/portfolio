@@ -407,22 +407,29 @@ margin:0;
         </p>
     </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="grid">
-            <div class="card" onclick="openProject('Smart Cane for the Visually Impaired','smart cane.jpeg','A smart cane designed to assist visually impaired individuals in navigating their surroundings safely. The cane uses sensors connected to a microcontroller to detect nearby obstacles and provide instant alerts through vibration or sound. This system helps users avoid collisions and move more confidently by increasing environmental awareness.')">
-                <img src="Smart Cane 1.jpeg">
-                <h3>Smart Cane</h3>
-                <p style="color: #94a3b8; font-size: 0.9rem;">IoT & Arduino</p>
-            </div>
+<section id="projects">
+    <h2>Projects</h2>
 
-            <div class="card" onclick="openProject('Sentiment Analysis','project2.png','Developed a Python-based NLP model to analyze social media sentiment with 90% accuracy.')">
-                <img src="project2.png">
-                <h3>Sentiment AI</h3>
-                <p style="color: #94a3b8; font-size: 0.9rem;">Natural Language Processing</p>
-            </div>
+    <div class="grid">
+
+        
+        <div class="card" onclick="openProject('Smart Cane for the Visually Impaired',['smart1.jpeg','smart2.jpeg','smart3.jpeg'],'A smart cane designed to assist visually impaired individuals in navigating their surroundings safely. The cane uses sensors connected to a microcontroller to detect nearby obstacles and provide alerts.')">
+
+            <img src="Smart Cane 1.jpeg">
+            <h3>Smart Cane</h3>
+            <p style="color:#94a3b8; font-size:0.9rem;">IoT & Arduino</p>
+
         </div>
-    </section>
+        
+        <div class="card" onclick="openProject('Sentiment Analysis', ['project2.png','project2-2.png'],'Developed a Python-based NLP model to analyze social media sentiment with high accuracy.')">
+            <img src="project2.png">
+            <h3>Sentiment AI</h3>
+            <p style="color:#94a3b8; font-size:0.9rem;">Natural Language Processing</p>
+
+        </div>
+
+    </div>
+</section>
 
     <section id="skills">
         <h2>Technical Skills</h2>
@@ -467,23 +474,44 @@ margin:0;
     </div>
 
     <script>
-        function openProject(title, image, desc) {
-            document.getElementById("projectModal").style.display = "flex";
-            document.getElementById("projectTitle").innerText = title;
-            document.getElementById("projectImage").src = image;
-            document.getElementById("projectDesc").innerText = desc;
-            document.body.style.overflow = 'hidden'; // Stop scrolling when open
-        }
+let images = [];
+let currentIndex = 0;
 
-        function closeProject() {
-            document.getElementById("projectModal").style.display = "none";
-            document.body.style.overflow = 'auto'; // Enable scrolling again
-        }
+function openProject(title, imgs, desc) {
 
-        window.onclick = function(event) {
-            let modal = document.getElementById("projectModal");
-            if (event.target == modal) closeProject();
-        }
+    document.getElementById("projectModal").style.display = "flex";
+
+    document.getElementById("projectTitle").innerText = title;
+
+    images = imgs;
+    currentIndex = 0;
+
+    document.getElementById("projectImage").src = images[currentIndex];
+
+    document.getElementById("projectDesc").innerText = desc;
+
+    document.body.style.overflow = 'hidden';
+}
+
+function nextImage(){
+    currentIndex = (currentIndex + 1) % images.length;
+    document.getElementById("projectImage").src = images[currentIndex];
+}
+
+function prevImage(){
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    document.getElementById("projectImage").src = images[currentIndex];
+}
+
+function closeProject() {
+    document.getElementById("projectModal").style.display = "none";
+    document.body.style.overflow = 'auto';
+}
+
+window.onclick = function(event) {
+    let modal = document.getElementById("projectModal");
+    if (event.target == modal) closeProject();
+}
     </script>
 </body>
 </html>
