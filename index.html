@@ -56,15 +56,22 @@ body {
 
 /* NAVBAR */
 
-nav {
-    display: flex;
-    justify-content: flex-end;
-    padding: 20px 8%;
-    background: rgba(2, 6, 23, 0.7);
-    backdrop-filter: blur(12px);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+@media (max-width: 600px) {
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav a {
+        margin: 0;
+        padding: 6px 10px;
+        background: rgba(255,255,255,0.05);
+        border-radius: 8px;
+    }
+
 }
 
 nav a {
@@ -143,8 +150,20 @@ h2::after {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr); /* جوال */
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr; /* شاشة صغيرة */
+    }
 }
 
 .card {
