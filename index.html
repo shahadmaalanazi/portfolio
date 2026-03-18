@@ -55,6 +55,11 @@ body {
 }
 
 /* NAVBAR */
+nav a {
+    color: var(--text-main);
+    margin-left: 30px;
+    text-decoration: none;
+}
 
 @media (max-width: 600px) {
 
@@ -66,22 +71,13 @@ body {
     }
 
     nav a {
-        margin: 0;
+        margin-left: 0; /* هذا المهم */
         padding: 6px 10px;
         background: rgba(255,255,255,0.05);
         border-radius: 8px;
+        font-size: 14px;
     }
 
-}
-
-nav a {
-    color: var(--text-main);
-    margin-left: 30px;
-    text-decoration: none;
-}
-
-nav a:hover {
-    color: var(--primary-purple);
 }
 
 /* HERO */
