@@ -55,27 +55,37 @@ body {
 }
 
 /* NAVBAR */
+nav {
+    display: flex;
+    justify-content: flex-end; /* يرجعها يمين */
+    padding: 20px 8%;
+}
+
 nav a {
     color: var(--text-main);
     margin-left: 30px;
     text-decoration: none;
+    font-size: 16px; /* يرجع الحجم الطبيعي */
 }
-
 @media (max-width: 600px) {
 
     nav {
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
+        align-items: center;
+        overflow-x: auto;
+        gap: 8px;
+        padding: 10px;
     }
 
     nav a {
-        margin-left: 0; /* هذا المهم */
-        padding: 6px 10px;
+        flex: 0 0 auto;
+        margin: 0;
+        padding: 6px 12px;
+        font-size: 13px;
         background: rgba(255,255,255,0.05);
         border-radius: 8px;
-        font-size: 14px;
+        white-space: nowrap;
     }
 
 }
