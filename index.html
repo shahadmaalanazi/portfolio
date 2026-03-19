@@ -464,14 +464,18 @@ margin:0;
         © 2026 Shahad AlAnazi
     </footer>
 
-    <div id="projectModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeProject()">&times;</span>
-            <h3 id="projectTitle" style="margin:0;"></h3>
-            <img id="projectImage" src="">
-            <p id="projectDesc" style="color: var(--text-dim);"></p>
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeProject()">&times;</span>
+        <h3 id="projectTitle" style="margin:0;"></h3>
+        <img id="projectImage" src="">
+        <div style="text-align:center; margin-top:10px;">
+            <button onclick="prevImage()" style="margin:5px;">‹</button>
+            <button onclick="nextImage()" style="margin:5px;">›</button>
         </div>
+        <p id="projectDesc" style="color: var(--text-dim);"></p>
     </div>
+</div>
 
     <script>
 let images = [];
