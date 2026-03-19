@@ -250,17 +250,20 @@ h2::after {
 
     box-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
 }
-
+        
 @media (max-width: 768px) {
-
     #skills {
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
-
     .skill {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 14px;
         font-size: 14px;
     }
-
 }
 
 /* CONTACT */
