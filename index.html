@@ -353,6 +353,36 @@ h2::after {
     background: #a855f7;
     border-radius: 10px;
 }
+
+#suggestions {
+    margin-top: 60px;
+}
+
+#suggestions form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 500px;
+}
+
+#suggestions input,
+#suggestions textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255,255,255,0.05);
+    color: white;
+}
+
+#suggestions button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #a855f7;
+    color: white;
+    cursor: pointer;
+}
+        
 /* FOOTER */
 
 footer {
@@ -506,6 +536,24 @@ margin:0;
 
 </div>
     </section>
+
+<section id="suggestions">
+
+<h2>Suggestions</h2>
+
+<form action="https://formspree.io/f/xxxxxxx" method="POST">
+
+<input type="text" name="name" placeholder="Your name" required>
+
+<input type="email" name="email" placeholder="Your email" required>
+
+<textarea name="message" placeholder="Write your message..." required></textarea>
+
+<button type="submit">Send</button>
+
+</form>
+
+</section>
 
     <footer>
         © 2026 Shahad AlAnazi
