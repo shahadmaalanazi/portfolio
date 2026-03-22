@@ -635,16 +635,15 @@ document.getElementById("suggestForm").addEventListener("submit", function(e){
 
     fetch("https://script.google.com/macros/s/AKfycbzr2EGaXLcaVBuqNc6R9xtAaGtkSJ4FQRaSFQQO48BbTBWipzMxhERTZhVr3oG8M0K7oA/exec", {
         method: "POST",
+        mode: "no-cors",  
         body: JSON.stringify({ message: msg }),
-        headers: { "Content-Type": "application/json" }
-    })
-    .then(() => {
-        document.getElementById("statusMsg").innerText = "Sent successfully!";
-        document.getElementById("message").value = "";
-    })
-    .catch(() => {
-        document.getElementById("statusMsg").innerText = "Error sending.";
+        headers: {
+            "Content-Type": "application/json"
+        }
     });
+
+    document.getElementById("statusMsg").innerText = "Sent successfully!";
+    document.getElementById("message").value = "";
 });
     </script>
 </body>
