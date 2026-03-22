@@ -628,13 +628,12 @@ window.onclick = function(event) {
 }
 
 
-<script>
 document.getElementById("suggestForm").addEventListener("submit", function(e){
     e.preventDefault();
 
     let msg = document.getElementById("message").value;
 
-    fetch("PUT_YOUR_SCRIPT_URL_HERE", {
+    fetch("https://script.google.com/macros/s/AKfycbzr2EGaXLcaVBuqNc6R9xtAaGtkSJ4FQRaSFQQO48BbTBWipzMxhERTZhVr3oG8M0K7oA/exec", {
         method: "POST",
         body: JSON.stringify({ message: msg }),
         headers: { "Content-Type": "application/json" }
@@ -647,7 +646,6 @@ document.getElementById("suggestForm").addEventListener("submit", function(e){
         document.getElementById("statusMsg").innerText = "Error sending.";
     });
 });
-</script>
     </script>
 </body>
 </html>
