@@ -1,1 +1,96 @@
-# portfolio
+# Shahad AlAnazi — Portfolio Website
+
+A personal portfolio website for Shahad AlAnazi, an Artificial Intelligence student, showcasing projects in Machine Learning, Deep Learning, NLP, and IoT.
+
+🔗 **Live Preview:** Open `index.html` in any browser.
+
+---
+
+## ✨ Features
+
+- **Animated starfield background** — subtle moving stars for a space-themed dark UI.
+- **Responsive navbar** — adapts to a scrollable pill-style menu on mobile.
+- **Hero section** — name, title, and profile photo.
+- **About section** — short bio.
+- **Projects section** — card grid with click-to-open modal showing:
+  - Project title & description
+  - Image gallery with next/previous navigation
+- **Skills section** — tag-style list of technical skills.
+- **Suggestions form** — visitors can submit feedback, sent to a Google Apps Script endpoint.
+- **Contact section** — links to X (Twitter), LinkedIn, and Email.
+- **Fully responsive** — optimized layouts for desktop, tablet, and mobile.
+
+---
+
+## 🗂️ Project Structure
+
+```
+.
+├── index.html          # Main file (HTML + CSS + JS all-in-one)
+├── logo.png             # Favicon
+├── profile.png           # Hero profile photo
+├── Smart Cane 1.jpeg     # Project images (Smart Cane)
+├── Smart Cane 3-7.jpeg
+├── DL1.png, DL2.png, DL3.png      # Project images (Hair Type Detection)
+├── ML.png, ML2.png, ML3.png, ML4.png  # Project images (Happiness ML project)
+```
+---
+
+## 🛠️ Built With
+
+- **HTML5**
+- **CSS3** (custom properties, Flexbox, Grid, animations, media queries)
+- **Vanilla JavaScript** (no frameworks/libraries)
+- **Google Fonts** — Inter
+- **Google Apps Script** — backend for the suggestions form
+
+---
+
+## 🚀 How to Run Locally
+
+1. Download/clone all project files into one folder.
+2. Make sure all images listed above are present.
+3. Open `index.html` directly in your browser — no build step or server required.
+
+---
+
+## 📋 Sections Overview
+
+| Section | ID | Description |
+|---|---|---|
+| Home | `#home` | Hero intro with photo and title |
+| About | `#about` | Short personal/professional summary |
+| Projects | `#projects` | Clickable project cards with image gallery modal |
+| Skills | `#skills-section` | Technical skill tags |
+| Suggestions | `#suggestions` | Feedback form (POSTs to Google Apps Script) |
+| Contact | `#contact` | Social and email links |
+
+---
+
+## ✉️ Suggestions Form Setup
+
+The form submits messages via `fetch()` to a Google Apps Script Web App URL using `mode: "no-cors"`. To use your own backend:
+
+1. Replace the URL in the `fetch()` call inside the `<script>` tag with your own Apps Script (or other) endpoint.
+2. Ensure your script accepts POST requests with a JSON body: `{ "message": "..." }`.
+
+---
+
+## 📌 Notes / Possible Improvements
+
+- Add form validation feedback (e.g., error states) beyond the success message.
+- Add `alt` text to all `<img>` tags for accessibility.
+- Consider lazy-loading project images for performance.
+- Replace inline image arrays in `onclick` with a JS data array/object for easier maintenance.
+
+---
+
+## 👤 Author
+
+**Shahad AlAnazi**
+- LinkedIn: [shahad-alanazi-ma](https://www.linkedin.com/in/shahad-alanazi-ma)
+- Email: shahadmaalanazi@gmail.com
+
+---
+
+© 2026 Shahad AlAnazi
