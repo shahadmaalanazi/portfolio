@@ -2,8 +2,8 @@
 
 A personal portfolio website for Shahad AlAnazi, an Artificial Intelligence student, showcasing projects in Machine Learning, Deep Learning, NLP, and IoT.
 
-🔗 **Live Preview:** Open `index.html` in any browser.
-
+🔗 **Live Preview:** [Open `index.html` in any browser.
+](https://shahadmaalanazi.github.io/portfolio/)
 ---
 
 ## ✨ Features
