@@ -4,696 +4,1753 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="logo.png" type="image/png">
-    <title>Shahad Alanazi Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
+    <title>Shahad AlAnazi — AI Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-     :root {
-    --primary-purple: #a855f7;
-    --dark-bg: #020617;
-    --card-bg: rgba(255, 255, 255, 0.03);
-    --text-main: #f8fafc;
-    --text-dim: #cbd5e1;
+/* ============================================================
+   VARIABLES
+============================================================ */
+:root {
+    --purple:   #a855f7;
+    --purple2:  #7c3aed;
+    --bg:       #020617;
+    --card:     rgba(255,255,255,0.03);
+    --border:   rgba(168,85,247,0.15);
+    --text:     #f8fafc;
+    --dim:      #94a3b8;
+    --accent:   #c084fc;
 }
 
+/* ============================================================
+   LIGHT MODE
+============================================================ */
+body.light {
+    --bg:    #f5f3ff;
+    --card:  rgba(255,255,255,0.9);
+    --border:rgba(168,85,247,0.2);
+    --text:  #1e1b4b;
+    --dim:   #5b21b6;
+    --accent:#7c3aed;
+}
+body.light .gradient-bg   { opacity: 0.3; }
+body.light .stars-wrap    { opacity: 1; }
+body.light .stars         { background-image:
+    radial-gradient(2px 2px at 20px 30px,rgba(109,40,217,.5),transparent),
+    radial-gradient(2px 2px at 40px 70px,rgba(139,92,246,.4),transparent),
+    radial-gradient(2px 2px at 90px 160px,rgba(109,40,217,.3),transparent),
+    radial-gradient(2px 2px at 150px 40px,rgba(168,85,247,.5),transparent),
+    radial-gradient(1px 1px at 200px 80px,rgba(109,40,217,.3),transparent),
+    radial-gradient(1px 1px at 60px 200px,rgba(139,92,246,.4),transparent); }
+body.light .orb           { opacity: 0.06; }
+body.light nav            { background: rgba(245,243,255,0.92); border-bottom-color: rgba(168,85,247,0.2); }
+body.light .hero          { background: radial-gradient(circle at center, #ede9fe 0%, #f5f3ff 70%); }
+body.light .hero-text h1  { background: linear-gradient(to right,#4c1d95,#a855f7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+body.light .section-label { color: #7c3aed; }
+body.light .tag-iot    { background:rgba(99,211,190,.12); color:#047857; border-color:rgba(99,211,190,.3); }
+body.light .tag-ai     { background:rgba(251,146,60,.12); color:#c2410c; border-color:rgba(251,146,60,.3); }
+body.light .tag-dl     { background:rgba(168,85,247,.12); color:#6d28d9; border-color:rgba(168,85,247,.3); }
+body.light .tag-ml     { background:rgba(96,165,250,.12); color:#1d4ed8; border-color:rgba(96,165,250,.3); }
+body.light .tag-nlp    { background:rgba(251,191,36,.12); color:#b45309; border-color:rgba(251,191,36,.3); }
+body.light .tag-llm    { background:rgba(244,114,182,.12);color:#be185d; border-color:rgba(244,114,182,.3); }
+body.light .tag-cv     { background:rgba(52,211,153,.12); color:#065f46; border-color:rgba(52,211,153,.3); }
+body.light footer      { color:#6d28d9; background:rgba(237,233,254,.7); }
+body.light .suggest-form textarea { background:white; border:1px solid rgba(168,85,247,.3); color:var(--text); }
+body.light .contact-btn { background:white; color:var(--text); }
+
+/* ============================================================
+   RESET & BASE
+============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-
 body {
-    margin: 0;
     font-family: 'Inter', sans-serif;
-    background: var(--dark-bg);
-    color: var(--text-main);
+    background: var(--bg);
+    color: var(--text);
     overflow-x: hidden;
+    transition: background .35s, color .35s;
 }
 
-/* STARS */
-
-.stars-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 200%;
-    z-index: -1;
+/* ============================================================
+   BACKGROUNDS
+============================================================ */
+.gradient-bg {
+    position: fixed; inset: 0; z-index: -3;
+    background: linear-gradient(125deg,#020617 0%,#0d0428 25%,#1a0533 50%,#0d0428 75%,#020617 100%);
+    background-size: 400% 400%;
+    animation: gradPulse 14s ease infinite;
+    transition: opacity .35s;
 }
-
+@keyframes gradPulse {
+    0%  { background-position: 0% 50%; }
+    25% { background-position: 100% 0%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
+    100%{ background-position: 0% 50%; }
+}
+.orb {
+    position: fixed; border-radius: 50%;
+    filter: blur(90px); opacity: .16; z-index: -2;
+    animation: orbDrift 20s ease-in-out infinite;
+    pointer-events: none; transition: opacity .35s;
+}
+.orb1 { width:550px;height:550px;background:#7c3aed;top:-120px;left:-120px;animation-delay:0s; }
+.orb2 { width:420px;height:420px;background:#4f46e5;bottom:5%;right:-80px;animation-delay:-7s; }
+.orb3 { width:320px;height:320px;background:#a855f7;top:55%;left:45%;animation-delay:-14s; }
+@keyframes orbDrift {
+    0%,100%{ transform:translate(0,0) scale(1); }
+    33%    { transform:translate(50px,-70px) scale(1.1); }
+    66%    { transform:translate(-40px,50px) scale(.93); }
+}
+.stars-wrap {
+    position: fixed; inset: 0; height: 200%; z-index: -1;
+    transition: opacity .35s; pointer-events: none;
+}
 .stars {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-image: 
-        radial-gradient(2px 2px at 20px 30px, #eee, transparent),
-        radial-gradient(2px 2px at 40px 70px, #fff, transparent),
-        radial-gradient(2px 2px at 90px 160px, #ddd, transparent),
-        radial-gradient(2px 2px at 150px 40px, #fff, transparent);
+    width:100%;height:100%;position:absolute;
+    background-image:
+        radial-gradient(2px 2px at 20px 30px,#eee,transparent),
+        radial-gradient(2px 2px at 40px 70px,#fff,transparent),
+        radial-gradient(2px 2px at 90px 160px,#ddd,transparent),
+        radial-gradient(2px 2px at 150px 40px,#fff,transparent),
+        radial-gradient(1px 1px at 200px 80px,#ccc,transparent),
+        radial-gradient(1px 1px at 60px 200px,#eee,transparent);
     background-size: 300px 300px;
-    animation: moveStars 100s linear infinite;
+    animation: starsMove 120s linear infinite;
 }
+@keyframes starsMove { from{transform:translateY(0)} to{transform:translateY(-50%)} }
 
-@keyframes moveStars {
-    from { transform: translateY(0); }
-    to { transform: translateY(-50%); }
-}
-
-/* NAVBAR - DESKTOP */
-
+/* ============================================================
+   NAVBAR
+============================================================ */
 nav {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 20px 8%;
+    position: sticky; top: 0; z-index: 200;
+    display: flex; align-items: center; justify-content: flex-end;
+    gap: 4px; padding: 14px 6%;
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    background: rgba(2,6,23,.78);
+    border-bottom: 1px solid rgba(168,85,247,.1);
+    transition: background .35s, border-color .35s;
 }
-
 nav a {
-    color: var(--text-main);
-    margin-left: 30px;
-    text-decoration: none;
-    font-size: 18px;
-    transition: all 0.3s ease; 
+    color: var(--text); text-decoration: none;
+    font-size: 14px; padding: 7px 13px; border-radius: 8px;
+    transition: .25s; white-space: nowrap;
+}
+nav a:hover { color: var(--purple); background: rgba(168,85,247,.08); }
+.theme-btn {
+    margin-left: 10px; background: none;
+    border: 1px solid var(--border); border-radius: 50px;
+    padding: 7px 15px; cursor: pointer; color: var(--text);
+    font-size: 13px; font-family: inherit;
+    display: flex; align-items: center; gap: 7px;
+    transition: .25s; white-space: nowrap;
+}
+.theme-btn:hover { background: rgba(168,85,247,.12); border-color: var(--purple); }
+@media(max-width:700px){
+    nav { justify-content: flex-start; overflow-x: auto; scrollbar-width: none; padding: 10px; }
+    nav::-webkit-scrollbar { display: none; }
+    nav a { font-size: 12px; padding: 6px 10px; background: rgba(255,255,255,.05); flex-shrink: 0; }
+    .theme-btn { flex-shrink: 0; font-size: 12px; padding: 6px 10px; }
 }
 
-nav a:hover {
-    color: var(--primary-purple);
-    text-shadow: 0 0 8px #a855f7;
-    transform: translateY(-2px);
+/* ============================================================
+   SCROLL FADE-IN
+============================================================ */
+.reveal { opacity: 0; transform: translateY(44px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ============================================================
+   SECTION BASE
+============================================================ */
+section { padding: 90px 8%; max-width: 1200px; margin: auto; }
+.section-label {
+    font-size: .7rem; font-weight: 700; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--purple);
+    margin-bottom: 8px; display: block;
+}
+.section-num { color: var(--dim); margin-right: 10px; }
+h2.section-title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 800; margin-bottom: 36px; line-height: 1.3;
+}
+h2.section-title span { color: var(--purple); }
+
+/* LANG BADGES */
+.lang-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+.lang-badge {
+    display: flex; align-items: center; gap: 7px;
+    font-size: .8rem; padding: 7px 13px; border-radius: 10px;
+    background: rgba(255,255,255,.04); border: 1px solid var(--border);
+    color: var(--dim); transition: .25s; cursor: default;
+}
+.lang-badge svg { width: 18px; height: 18px; flex-shrink: 0; }
+.lang-badge:hover { border-color: var(--purple); background: rgba(168,85,247,.08); color: var(--text); transform: translateY(-2px); }
+body.light .lang-badge { background: white; }
+
+/* BACK TO TOP */
+#backTop {
+    position: fixed; bottom: 28px; right: 24px; z-index: 999;
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--purple); color: white; border: none;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 20px rgba(168,85,247,.4);
+    opacity: 0; transform: translateY(14px);
+    transition: opacity .3s, transform .3s, background .25s;
+    pointer-events: none;
+}
+#backTop.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+#backTop:hover { background: var(--purple2); transform: translateY(-3px); }
+#backTop svg { width: 20px; height: 20px; }
+
+/* SPARKLES */
+.sparkle {
+    position: absolute; pointer-events: none;
+    animation: sparklePop 3s ease-in-out infinite;
+}
+.sparkle:nth-child(1) { animation-delay: 0s; }
+.sparkle:nth-child(2) { animation-delay: .9s; }
+.sparkle:nth-child(3) { animation-delay: 1.6s; }
+.sparkle:nth-child(4) { animation-delay: 2.3s; }
+.sparkle:nth-child(5) { animation-delay: 1.1s; }
+.sparkle:nth-child(6) { animation-delay: 2.7s; }
+@keyframes sparklePop {
+    0%,100% { transform: scale(1) rotate(0deg);    opacity: .2; }
+    50%      { transform: scale(1.6) rotate(25deg); opacity: .9; }
 }
 
-/* NAVBAR - MOBILE */
-
-@media (max-width: 600px) {
-
-    nav {
-        justify-content: center;
-        align-items: center;
-        overflow-x: auto;
-        gap: 8px;
-        padding: 10px;
-    }
-
-    nav a {
-        flex: 0 0 auto;
-        margin: 0;
-        padding: 6px 12px;
-        font-size: 13px;
-        background: rgba(255,255,255,0.05);
-        border-radius: 8px;
-        white-space: nowrap;
-    }
-
+/* PROFILE PHOTO IN HERO */
+.hero-photo-wrap {
+    position: relative; width: 120px; height: 120px;
+    margin-bottom: 18px;
 }
+.hero-photo-halo {
+    position: absolute; inset: -14px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(168,85,247,.5) 0%, transparent 70%);
+    animation: haloPulse 3s ease-in-out infinite;
+}
+@keyframes haloPulse {
+    0%,100% { transform: scale(1);    opacity: .7; }
+    50%      { transform: scale(1.18); opacity: 1; }
+}
+.hero-photo-img {
+    width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+    border: 3px solid rgba(168,85,247,.6);
+    box-shadow: 0 0 30px rgba(168,85,247,.35);
+    position: relative; z-index: 1; display: block;
+}
+.hero-photo-placeholder {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 6px; width: 120px; height: 120px; border-radius: 50%;
+    background: rgba(168,85,247,.1); border: 2px dashed rgba(168,85,247,.4);
+    position: relative; z-index: 1; color: var(--dim); font-size: .65rem;
+}
+.hero-typing-static { color: var(--dim); }
 
-/* HERO */
-
+/* ============================================================
+   HERO
+============================================================ */
 .hero {
-    padding: 120px 20px;
-    background: radial-gradient(circle at center, #1e1b4b 0%, #020617 70%);
+    min-height: 100svh;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 100px 8% 80px;
+    background: radial-gradient(ellipse at 60% 40%, rgba(124,58,237,.18) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(168,85,247,.12) 0%, transparent 55%);
+    transition: background .35s;
+    position: relative;
 }
-
-.hero-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 60px;
-    flex-wrap: wrap;
-    max-width: 1100px;
-    margin: auto;
+.hero-inner {
+    display: flex; flex-direction: column;
+    align-items: center; gap: 0; max-width: 860px; margin: auto;
 }
-
-.hero-text h1 {
-    font-size: 2.8rem;
-    margin: 0;
-    background: linear-gradient(to right, #fff, var(--primary-purple));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.hero-greeting {
+    font-size: clamp(.85rem,2vw,1rem); color: var(--purple);
+    letter-spacing: .15em; text-transform: uppercase; font-weight: 600;
+    margin-bottom: 18px; opacity: 0;
+    animation: fadeUp .7s .2s forwards;
 }
-
-.hero-text p {
-    color: var(--text-dim);
-    font-size: 1.1rem;
-    margin-top: 10px;
+.hero h1 {
+    font-size: clamp(2.6rem, 7vw, 5rem); font-weight: 800; line-height: 1.1;
+    background: linear-gradient(135deg, #fff 30%, var(--purple) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    margin-bottom: 18px; opacity: 0;
+    animation: fadeUp .7s .4s forwards;
 }
-
-.hero-photo img {
-    width: 220px;
-    border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(168, 85, 247, 0.2);
+.hero-roles {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+    margin-bottom: 20px; opacity: 0; animation: fadeUp .7s .6s forwards;
 }
-
-@media (max-width:768px){
-
-.hero-text h1{
-font-size:2rem;
+.hero-role {
+    font-size: .8rem; padding: 6px 16px; border-radius: 20px;
+    border: 1px solid var(--border); color: var(--dim);
+    background: rgba(255,255,255,.04);
 }
-
-.hero-text p{
-font-size:0.9rem;
+.hero-typing {
+    font-size: clamp(.95rem,2.5vw,1.1rem); margin: 4px 0 24px;
+    display: flex; align-items: center; justify-content: center; gap: 5px;
+    min-height: 1.8em; flex-wrap: wrap; opacity: 0; animation: fadeUp .7s .8s forwards;
 }
-
-.hero-photo img{
-width:150px;
+.hero-badges {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+    opacity: 0; animation: fadeUp .7s 1s forwards;
 }
-
+.hero-badge {
+    font-size: .78rem; padding: 7px 15px; border-radius: 20px;
+    background: rgba(255,255,255,.05); border: 1px solid var(--border);
+    color: var(--dim); transition: .25s;
 }
-/* SECTIONS */
-
-section {
-    padding: 90px 8%;
-    max-width: 1200px;
-    margin: auto;
+.hero-badge:hover { border-color: var(--purple); color: var(--accent); }
+.hero-cta {
+    margin-top: 34px; display: flex; gap: 14px; flex-wrap: wrap;
+    justify-content: center; opacity: 0; animation: fadeUp .7s 1.2s forwards;
 }
-
-/* HEADINGS */
-
-h2 {
-    font-size: 1.6rem;
-    margin-bottom: 20px;
+.btn-primary {
+    padding: 13px 28px; border-radius: 12px; font-size: .9rem; font-weight: 600;
+    background: var(--purple); color: white; text-decoration: none;
+    border: none; cursor: pointer; transition: .25s; font-family: inherit;
 }
-
-h2::after {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 3px;
-    background: var(--primary-purple);
-    margin-top: 8px;
-    border-radius: 10px;
+.btn-primary:hover { background: var(--purple2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(168,85,247,.35); }
+.btn-outline {
+    padding: 13px 28px; border-radius: 12px; font-size: .9rem; font-weight: 600;
+    background: transparent; color: var(--text); text-decoration: none;
+    border: 1px solid var(--border); transition: .25s;
 }
+.btn-outline:hover { border-color: var(--purple); background: rgba(168,85,247,.08); }
+@keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+.typing-cursor::after { content:'|'; animation: blink .7s step-end infinite; color: var(--purple); }
+@keyframes blink { 50%{opacity:0} }
+body.light .hero h1 { background: linear-gradient(135deg,#4c1d95 30%,#a855f7 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
 
-/* PROJECTS */
+/* ============================================================
+   ABOUT
+============================================================ */
+.about-text { font-size:1.05rem; line-height:1.85; color:var(--dim); max-width:700px; margin-bottom:28px; }
+.about-text strong { color:var(--text); }
+.info-badges { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:30px; }
+.info-badge {
+    display:inline-flex; align-items:center; gap:7px;
+    font-size:.82rem; padding:7px 15px; border-radius:20px;
+    background:rgba(255,255,255,.04); border:1px solid var(--border);
+    color:var(--dim); transition:.25s;
+}
+.info-badge:hover { border-color:var(--purple); color:var(--accent); }
+.stats-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+@media(max-width:500px){ .stats-grid { grid-template-columns:repeat(3,1fr); gap:10px; } }
+.stat-card {
+    background:var(--card); border:1px solid var(--border); border-radius:18px;
+    padding:22px 14px; text-align:center; transition:.3s;
+}
+.stat-card:hover { border-color:var(--purple); transform:translateY(-4px); box-shadow:0 10px 28px rgba(168,85,247,.12); }
+.stat-num { font-size:1.9rem; font-weight:800; color:var(--purple); display:block; line-height:1; margin-bottom:8px; }
+.stat-lbl { font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; color:var(--dim); }
 
-.grid {
+/* ============================================================
+   EDUCATION
+============================================================ */
+.edu-card {
+    background:var(--card); border:1px solid var(--border); border-radius:20px;
+    padding:28px; display:flex; gap:20px; align-items:flex-start; transition:.3s;
+}
+.edu-card:hover { border-color:var(--purple); box-shadow:0 0 24px rgba(168,85,247,.12); transform:translateY(-4px); }
+.edu-icon { font-size:2rem; flex-shrink:0; }
+.edu-title { font-size:1.15rem; font-weight:700; margin-bottom:5px; }
+.edu-school { color:var(--purple); font-size:.9rem; margin-bottom:4px; }
+.edu-date { color:var(--dim); font-size:.82rem; margin-bottom:10px; }
+.edu-desc { color:var(--dim); font-size:.88rem; line-height:1.65; }
+
+/* ============================================================
+   COURSES
+============================================================ */
+.courses-grid {
+    display:grid; grid-template-columns:repeat(3,1fr); gap:12px;
+}
+@media(max-width:768px){ .courses-grid { grid-template-columns:repeat(2,1fr); } }
+@media(max-width:480px){ .courses-grid { grid-template-columns:1fr; } }
+.course-item {
+    background:var(--card); border:1px solid var(--border); border-radius:13px;
+    padding:15px 18px; display:flex; justify-content:space-between;
+    align-items:center; transition:.25s; font-size:.88rem;
+}
+.course-item:hover { border-color:var(--purple); background:rgba(168,85,247,.07); transform:translateX(4px); }
+.course-item span { color:var(--dim); font-size:.78rem; margin-left:8px; white-space:nowrap; }
+
+/* ============================================================
+   PROJECTS
+============================================================ */
+.projects-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
+@media(max-width:900px){ .projects-grid { grid-template-columns:repeat(2,1fr); } }
+@media(max-width:560px){ .projects-grid { grid-template-columns:1fr; } }
+.proj-card {
+    background:var(--card); border:1px solid var(--border); border-radius:20px;
+    padding:0; overflow:hidden; cursor:pointer; transition:.3s; display:flex; flex-direction:column;
+}
+.proj-card:hover { transform:translateY(-8px); border-color:var(--purple); box-shadow:0 16px 40px rgba(168,85,247,.15); }
+.proj-card img { width:100%; height:190px; object-fit:cover; }
+.proj-body { padding:20px; flex:1; display:flex; flex-direction:column; }
+.proj-tags { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:12px; }
+.proj-tag {
+    font-size:.68rem; font-weight:700; letter-spacing:.06em;
+    padding:3px 10px; border-radius:20px; text-transform:uppercase;
+}
+.tag-iot  { background:rgba(99,211,190,.14); color:#63d3be; border:1px solid rgba(99,211,190,.3); }
+.tag-ai   { background:rgba(251,146,60,.14);  color:#fb923c; border:1px solid rgba(251,146,60,.3); }
+.tag-dl   { background:rgba(168,85,247,.2);   color:#c084fc; border:1px solid rgba(168,85,247,.4); }
+.tag-ml   { background:rgba(96,165,250,.14);  color:#60a5fa; border:1px solid rgba(96,165,250,.3); }
+.tag-nlp  { background:rgba(251,191,36,.14);  color:#fbbf24; border:1px solid rgba(251,191,36,.3); }
+.tag-llm  { background:rgba(244,114,182,.14); color:#f472b6; border:1px solid rgba(244,114,182,.3); }
+.tag-cv   { background:rgba(52,211,153,.14);  color:#34d399; border:1px solid rgba(52,211,153,.3); }
+.tag-xai  { background:rgba(251,113,133,.14); color:#fb7185; border:1px solid rgba(251,113,133,.3); }
+.proj-name { font-size:1rem; font-weight:700; margin-bottom:6px; }
+.proj-period { font-size:.75rem; color:var(--dim); margin-bottom:10px; }
+.proj-desc { font-size:.83rem; color:var(--dim); line-height:1.6; flex:1; margin-bottom:14px; }
+.proj-techs { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:14px; }
+.proj-tech {
+    font-size:.74rem; padding:4px 10px; border-radius:8px;
+    background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.08); color:var(--dim);
+}
+.proj-gh {
+    display:inline-flex; align-items:center; gap:6px;
+    color:var(--purple); text-decoration:none; font-size:.82rem; font-weight:600;
+    margin-top:auto; transition:.25s;
+}
+.proj-gh svg { width:15px; height:15px; }
+.proj-gh:hover { text-shadow:0 0 8px var(--purple); gap:10px; }
+
+/* ============================================================
+   SKILLS - GRID
+============================================================ */
+.skills-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 16px;
+}
+@media(max-width: 900px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
+@media(max-width: 520px) { .skills-grid { grid-template-columns: 1fr; } }
+
+.skill-cat {
+    background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+    padding: 22px; transition: .3s;
+}
+.skill-cat:hover { border-color: rgba(168,85,247,.4); box-shadow: 0 0 22px rgba(168,85,247,.08); }
+.skill-cat-header {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 16px;
+}
+.skill-cat-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: rgba(168,85,247,.12); border: 1px solid rgba(168,85,247,.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; flex-shrink: 0;
+}
+.skill-cat-title { font-size: .9rem; font-weight: 700; }
+.skill-items { display: flex; flex-direction: column; gap: 8px; }
+.skill-item {
+    display: flex; align-items: center; gap: 8px;
+    font-size: .82rem; color: var(--dim); padding: 6px 10px;
+    border-radius: 8px; background: rgba(255,255,255,.03);
+    border: 1px solid rgba(255,255,255,.05); transition: .2s;
+}
+.skill-item:hover { background: rgba(168,85,247,.08); border-color: rgba(168,85,247,.2); color: var(--accent); }
+.skill-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--purple); flex-shrink: 0; }
+
+/* ============================================================
+   EXPERIENCE (timeline style)
+============================================================ */
+.timeline { position:relative; padding-left:40px; }
+.timeline::before {
+    content:''; position:absolute; left:14px; top:0; bottom:0;
+    width:2px; background:linear-gradient(to bottom,var(--purple),transparent);
+    border-radius:2px;
+}
+.tl-item { position:relative; margin-bottom:36px; }
+.tl-dot {
+    position:absolute; left:-33px; top:4px;
+    width:18px; height:18px; border-radius:50%;
+    background:var(--purple); border:3px solid var(--bg);
+    box-shadow:0 0 10px rgba(168,85,247,.5);
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+}
+.tl-dot svg { width:9px; height:9px; fill:white; }
+.tl-status {
+    font-size:.68rem; font-weight:700; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--purple); margin-bottom:4px;
+}
+.tl-title { font-size:1.05rem; font-weight:700; margin-bottom:3px; }
+.tl-org { color:var(--purple); font-size:.88rem; margin-bottom:3px; }
+.tl-date { color:var(--dim); font-size:.78rem; margin-bottom:10px; }
+.tl-desc { color:var(--dim); font-size:.85rem; line-height:1.65; }
+.tl-desc li { margin-bottom:4px; list-style:none; padding-left:14px; position:relative; }
+.tl-desc li::before { content:'→'; position:absolute; left:0; color:var(--purple); font-size:.8rem; }
+
+/* volunteering pills */
+.vol-wrap { display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; }
+.vol-pill {
+    font-size:.82rem; padding:8px 16px; border-radius:12px;
+    background:var(--card); border:1px solid var(--border); color:var(--dim); transition:.25s;
+}
+.vol-pill:hover { border-color:var(--purple); color:var(--accent); }
+
+/* ============================================================
+   ACHIEVEMENTS
+============================================================ */
+.ach-list { display:flex; flex-direction:column; gap:18px; }
+.ach-card {
+    background:var(--card); border:1px solid var(--border); border-radius:20px;
+    padding:26px; display:flex; gap:18px; align-items:flex-start;
+    transition:.3s; position:relative; overflow:hidden;
+}
+.ach-card::before {
+    content:''; position:absolute; left:0; top:0; bottom:0;
+    width:3px; background:var(--purple); border-radius:3px 0 0 3px;
+}
+.ach-card:hover { border-color:var(--purple); transform:translateY(-4px); box-shadow:0 12px 32px rgba(168,85,247,.12); }
+.ach-icon {
+    width:52px; height:52px; border-radius:14px; flex-shrink:0;
+    background:rgba(168,85,247,.12); border:1px solid rgba(168,85,247,.25);
+    display:flex; align-items:center; justify-content:center; font-size:1.5rem;
+}
+.ach-event { font-size:.7rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--purple); margin-bottom:5px; }
+.ach-title { font-size:1.05rem; font-weight:700; margin-bottom:8px; }
+.ach-desc { color:var(--dim); font-size:.85rem; line-height:1.6; }
+
+/* ============================================================
+   PAPERS
+============================================================ */
+.papers-list { display:flex; flex-direction:column; gap:18px; }
+.paper-card {
+    background:var(--card); border:1px solid var(--border); border-radius:20px;
+    padding:26px; display:flex; gap:20px; align-items:flex-start;
+    transition:.3s; position:relative; overflow:hidden;
+}
+.paper-card::before {
+    content:''; position:absolute; left:0; top:0; bottom:0;
+    width:3px; background:var(--purple); border-radius:3px 0 0 3px;
+}
+.paper-card:hover { border-color:var(--purple); transform:translateY(-4px); box-shadow:0 12px 32px rgba(168,85,247,.12); }
+.paper-num { font-size:2.2rem; font-weight:800; color:rgba(168,85,247,.2); flex-shrink:0; line-height:1; }
+.paper-title { font-size:1rem; font-weight:700; margin-bottom:7px; }
+.paper-desc { color:var(--dim); font-size:.85rem; line-height:1.65; margin-bottom:13px; }
+.paper-link {
+    color:var(--purple); text-decoration:none; font-size:.82rem;
+    border:1px solid rgba(168,85,247,.35); padding:5px 13px; border-radius:8px;
+    display:inline-block; transition:.25s;
+}
+.paper-link:hover { background:rgba(168,85,247,.14); box-shadow:0 0 10px rgba(168,85,247,.3); }
+
+/* ============================================================
+   CERTIFICATIONS
+============================================================ */
+.certs-list { display: flex; flex-direction: column; gap: 20px; }
+.cert-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 20px;
+    overflow: hidden; transition: .3s;
+}
+.cert-card:hover { border-color: var(--purple); box-shadow: 0 12px 32px rgba(168,85,247,.12); transform: translateY(-3px); }
+.cert-card-inner { display: flex; gap: 0; }
+.cert-img-wrap {
+    width: 160px; min-height: 130px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+    border-right: 1px solid var(--border); background: rgba(168,85,247,.04);
+}
+.cert-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; display: block; }
+.cert-img-wrap:hover img { transform: scale(1.06); }
+.cert-placeholder {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 100%; height: 130px; gap: 8px; cursor: pointer;
+}
+.cert-placeholder svg { opacity: .4; color: var(--purple); }
+.cert-placeholder span { font-size: .68rem; color: var(--dim); text-align: center; padding: 0 10px; line-height: 1.4; }
+.cert-upload-btn {
+    position: absolute; inset: 0; opacity: 0; transition: opacity .25s;
+    background: rgba(168,85,247,.2); display: flex; align-items: center; justify-content: center;
+    cursor: pointer; font-size: .72rem; color: white; font-weight: 600; gap: 6px; flex-direction: column;
+}
+.cert-img-wrap:hover .cert-upload-btn { opacity: 1; }
+.cert-file { display: none; }
+.cert-body { padding: 20px; flex: 1; }
+.cert-year { font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--purple); margin-bottom: 5px; }
+.cert-name { font-size: .95rem; font-weight: 700; margin-bottom: 4px; line-height: 1.35; }
+.cert-org { font-size: .82rem; color: var(--dim); margin-bottom: 14px; }
+.cert-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: .76rem; color: var(--purple); text-decoration: none;
+    border: 1px solid rgba(168,85,247,.3); padding: 5px 12px; border-radius: 8px;
+    transition: .25s;
+}
+.cert-link:hover { background: rgba(168,85,247,.12); }
+@media(max-width: 560px) {
+    .cert-card-inner { flex-direction: column; }
+    .cert-img-wrap { width: 100%; min-height: 150px; border-right: none; border-bottom: 1px solid var(--border); }
 }
 
-@media (max-width: 900px) {
-    .grid {
-        grid-template-columns: repeat(2, 1fr); /* جوال */
-    }
-}
-
-@media (max-width: 600px) {
-    .grid {
-        grid-template-columns: 1fr; /* شاشة صغيرة */
-    }
-}
-
-.card {
-    background: var(--card-bg);
-    padding: 25px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    border: 1px solid var(--primary-purple);
-}
-
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 15px;
-}
-
-/* SECTION */
-#skills-section {
-    margin-top: 40px;
-}
-
-/* Section title */
-#skills-section h2 {
-    margin-bottom: 25px;
-}
-
-/* Skills container */
-.skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-/* Skill item */
-.skill {
-    padding: 10px 18px;
-    border-radius: 12px;
-
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(168,85,247,0.2);
-
-    transition: 0.25s ease;
-    font-size: 15px;
-}
-
-/* Hover effect */
-.skill:hover {
-    background: rgba(168,85,247,0.2);
-    border-color: #a855f7;
-    box-shadow: 0 0 10px rgba(168,85,247,0.4);
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-
-    .skills-container {
-        justify-content: center;
-    }
-
-    .skill {
-        font-size: 14px;
-        padding: 10px 14px;
-    }
-
-}
-/* CONTACT */
-
-#contact {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-}
-
-.contact-icons {
-    margin-top: 20px;
-}
-
-.contact-icons img {
-    width: 35px;
-    margin: 0 12px;
-    filter: invert(1);
-    transition: 0.3s;
-}
-
-.contact-icons img:hover {
-    transform: scale(1.2);
-    filter: invert(1) drop-shadow(0 0 10px #a855f7);
-}
-
-/* ===== MODAL ===== */
-
-.modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(2, 6, 23, 0.95);
-    display: none;
-
-    justify-content: center;
-    align-items: center;
-
-    z-index: 1000;
-}
-
-.modal-content {
-    background: #111827;
-    padding: 25px;
-    width: 90%;
-    max-width: 600px;
-    max-height: 80vh;
-    overflow-y: auto;
-    border-radius: 20px;
-
-    margin: 0; 
-}
-
-.modal img,
-#projectImage {
-    width: 100%;
-    max-width: 100%;
-    margin: 15px 0;
-    border-radius: 12px;
-}
-
-/* عنوان المشروع */
-.modal-content h3 {
-    color: white;
-    margin-top: 10px;
-}
-
-/* زر الإغلاق */
-.close {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 28px;
-    color: white;
-    cursor: pointer;
-}
-
-/* سكرول ناعم */
-.modal-content::-webkit-scrollbar {
-    width: 5px;
-}
-
-.modal-content::-webkit-scrollbar-thumb {
-    background: #a855f7;
-    border-radius: 10px;
-}
-
-#suggestions {
-    margin-top: 60px;
-}
-
-#suggestions form {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    max-width: 500px;
-}
-        
-/*suggestions*/
-.suggest-form {
-    max-width: 600px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
+/* ============================================================
+   SUGGESTIONS
+============================================================ */
+.suggest-form { max-width:560px; display:flex; flex-direction:column; gap:14px; }
 .suggest-form textarea {
-    padding: 15px;
-    height: 120px;
-    border-radius: 12px;
-    border: none;
-    background: rgba(255,255,255,0.05);
-    color: white;
-    resize: none;
-    font-size: 1rem;
+    padding:15px; height:120px; border-radius:13px; border:1px solid var(--border);
+    background:rgba(255,255,255,.04); color:var(--text); resize:none;
+    font-size:.95rem; font-family:inherit; transition:.25s;
 }
-
+.suggest-form textarea:focus { outline:none; border-color:var(--purple); }
 .suggest-form button {
-    padding: 12px;
-    border: none;
-    border-radius: 10px;
-    background: #a855f7;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
+    padding:13px; border:none; border-radius:11px;
+    background:var(--purple); color:white; cursor:pointer;
+    font-size:.95rem; font-family:inherit; font-weight:600; transition:.3s;
 }
+.suggest-form button:hover { background:var(--purple2); transform:scale(1.02); }
+.suggest-form button:disabled { opacity:.55; cursor:not-allowed; transform:none; }
+#statusMsg { color:var(--purple); font-size:.9rem; margin-top:4px; }
 
-.suggest-form button:hover {
-    transform: scale(1.05);
+/* ============================================================
+   CONTACT
+============================================================ */
+#contact { display: block; }
+.contact-layout {
+    display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; align-items: start;
 }
-
-.suggest-form button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: none;
+@media(max-width: 768px) { .contact-layout { grid-template-columns: 1fr; } }
+.contact-left h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 12px; line-height: 1.3; }
+.contact-left p { color: var(--dim); font-size: .9rem; line-height: 1.7; margin-bottom: 28px; }
+.contact-info { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
+.contact-info-item {
+    display: flex; align-items: center; gap: 12px; font-size: .85rem; color: var(--dim);
 }
-
-#statusMsg {
-    text-align: center;
-    color: #a855f7;
+.contact-info-item svg { width: 18px; height: 18px; color: var(--purple); flex-shrink: 0; }
+.contact-info-item a { color: var(--dim); text-decoration: none; transition: color .2s; }
+.contact-info-item a:hover { color: var(--purple); }
+.contact-socials { display: flex; gap: 12px; }
+.social-icon {
+    width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center;
+    background: var(--card); border: 1px solid var(--border); color: var(--dim); text-decoration: none; transition: .25s;
 }
-
-/* FORCE LEFT ALIGN FOR ALL TEXT */
-body {
-    text-align: left;
+.social-icon svg { width: 18px; height: 18px; }
+.social-icon:hover { border-color: var(--purple); color: var(--purple); background: rgba(168,85,247,.1); }
+.contact-form-box {
+    background: var(--card); border: 1px solid var(--border); border-radius: 20px; padding: 28px;
 }
-
-section {
-    text-align: left;
+.contact-form-box h4 { font-size: 1rem; font-weight: 700; margin-bottom: 20px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+@media(max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+.form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+.form-group label { font-size: .75rem; color: var(--dim); letter-spacing: .04em; }
+.form-group input, .form-group textarea, .form-group select {
+    padding: 11px 14px; border-radius: 10px; font-size: .88rem;
+    background: rgba(255,255,255,.05); border: 1px solid var(--border);
+    color: var(--text); font-family: inherit; transition: border-color .25s;
+    outline: none;
 }
-
-h1, h2, h3, p {
-    text-align: left;
+.form-group input:focus, .form-group textarea:focus { border-color: var(--purple); }
+.form-group textarea { height: 110px; resize: none; }
+body.light .form-group input,
+body.light .form-group textarea { background: white; color: var(--text); border-color: rgba(168,85,247,.25); }
+.form-submit {
+    width: 100%; padding: 13px; border: none; border-radius: 12px;
+    background: var(--purple); color: white; font-size: .9rem; font-weight: 600;
+    font-family: inherit; cursor: pointer; transition: .25s;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
 }
+.form-submit:hover { background: var(--purple2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(168,85,247,.3); }
+.form-submit:disabled { opacity: .55; cursor: not-allowed; transform: none; }
+#contactStatus { margin-top: 10px; font-size: .85rem; color: var(--purple); }
 
-/* FORM FIX */
-.suggest-form {
-    text-align: left;
+/* ============================================================
+   MODAL
+============================================================ */
+.modal {
+    position:fixed; inset:0; background:rgba(2,6,23,.95);
+    display:none; justify-content:center; align-items:center; z-index:1000;
 }
-
-.suggest-form textarea {
-    text-align: left;
+.modal-inner {
+    background:#111827; padding:26px; width:92%; max-width:580px;
+    max-height:82vh; overflow-y:auto; border-radius:20px; position:relative;
 }
-
-/* SKILLS OR ANY GRID ITEMS */
-.card, .skill {
-    text-align: left;
+.modal-inner::-webkit-scrollbar { width:4px; }
+.modal-inner::-webkit-scrollbar-thumb { background:var(--purple); border-radius:4px; }
+.modal-inner h3 { color:white; margin-bottom:14px; font-size:1.1rem; }
+.modal-inner img { width:100%; border-radius:12px; margin-bottom:12px; }
+.modal-nav { text-align:center; margin:8px 0; }
+.modal-nav button {
+    background:rgba(168,85,247,.15); border:1px solid var(--border); color:white;
+    padding:6px 18px; border-radius:8px; cursor:pointer; font-size:1.1rem; margin:0 5px; transition:.2s;
 }
-        
-/* FOOTER */
+.modal-nav button:hover { background:rgba(168,85,247,.35); }
+.modal-close {
+    position:absolute; top:14px; right:16px; font-size:26px;
+    color:var(--dim); cursor:pointer; line-height:1; transition:.2s;
+}
+.modal-close:hover { color:white; }
+.modal-desc { color:var(--dim); font-size:.88rem; line-height:1.7; white-space:pre-line; }
 
+/* ============================================================
+   FOOTER
+============================================================ */
 footer {
-    text-align: center;
-    padding: 40px;
-    color: #64748b;
+    text-align:center; padding:38px 20px; color:var(--dim);
+    font-size:.85rem; border-top:1px solid var(--border);
+    transition: color .35s;
 }
 
-
-@media (max-width:768px){
-
-#about p{
-font-size:0.85rem;
-line-height:1.5;
-max-width:320px;
-margin:0;
-}
-
-}
-
-@media (max-width: 768px) {
-
-    .modal-content {
-        width: 90%;
-        max-width: 90%;
-        padding: 15px;
-        border-radius: 15px;
-    }
-
-    .modal img,
-    #projectImage {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .modal-content h3 {
-        font-size: 18px;
-    }
-
-    .modal-content p {
-        font-size: 14px;
-    }
-
-    .close {
-        font-size: 24px;
-        top: 10px;
-        right: 10px;
-    }
-
+/* ============================================================
+   HEADINGS underline
+============================================================ */
+h2.section-title::after {
+    content:''; display:block; width:50px; height:3px;
+    background:var(--purple); margin-top:10px; border-radius:10px;
 }
     </style>
 </head>
 <body>
 
-    <div class="stars-container">
-        <div class="stars"></div>
-    </div>
+<!-- Backgrounds -->
+<div class="gradient-bg"></div>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+<div class="stars-wrap"><div class="stars"></div></div>
 
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills-section">Skills</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<!-- NAV -->
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#achievements">Awards</a>
+    <a href="#certifications">Certs</a>
+    <a href="#contact">Contact</a>
+    <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">
+        <svg id="themeIcon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <span id="themeLabel">Light</span>
+    </button>
+</nav>
 
-    <section class="hero" id="home">
-        <div class="hero-container">
-            <div class="hero-photo">
-                <img src="profile.png" alt="Shahad">
-            </div>
-            <div class="hero-text">
-                <h1>Shahad AlAnazi</h1>
-                <p>
-                    Artificial Intelligence Student<br>
-                    <span style="color: #a855f7;">• Machine Learning • NLP • Deep Learning</span>
-                </p>
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <!-- Sparkles - centered via absolute positioning relative to hero -->
+    <span class="sparkle" style="top:12%;left:8%"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="color:#a855f7"><path d="M12 2l1.5 7.5L21 12l-7.5 1.5L12 21l-1.5-7.5L3 12l7.5-1.5z"/></svg></span>
+    <span class="sparkle" style="top:20%;right:10%"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="color:#c084fc"><path d="M12 2l1.5 7.5L21 12l-7.5 1.5L12 21l-1.5-7.5L3 12l7.5-1.5z"/></svg></span>
+    <span class="sparkle" style="bottom:22%;left:14%"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="color:#7c3aed"><path d="M12 2l1.5 7.5L21 12l-7.5 1.5L12 21l-1.5-7.5L3 12l7.5-1.5z"/></svg></span>
+    <span class="sparkle" style="bottom:18%;right:8%"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="color:#a855f7"><path d="M12 2l1.5 7.5L21 12l-7.5 1.5L12 21l-1.5-7.5L3 12l7.5-1.5z"/></svg></span>
+    <span class="sparkle" style="top:50%;left:5%"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="color:#e879f9"><path d="M12 2l1.5 7.5L21 12l-7.5 1.5L12 21l-1.5-7.5L3 12l7.5-1.5z"/></svg></span>
+    <span class="sparkle" style="top:40%;right:5%"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color:#c084fc"><path d="M12 2l1.5 7.5L21 12l-7.5 1.5L12 21l-1.5-7.5L3 12l7.5-1.5z"/></svg></span>
+
+    <div class="hero-inner">
+        <!-- Profile photo -->
+        <div class="hero-photo-wrap">
+            <div class="hero-photo-halo"></div>
+            <img src="profile.png" alt="Shahad AlAnazi" class="hero-photo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="hero-photo-placeholder">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                <span>profile.png</span>
             </div>
         </div>
-    </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p style="font-size: 1.2rem; line-height: 1.8; color: var(--text-dim);">
-            I am an Artificial Intelligence student passionate about building technology that matters. 
-            My focus is on transforming complex data into actionable insights and creating 
-            practical prototypes for real-world challenges.
+        <p class="hero-greeting">✦ AI Researcher & Engineer ✦</p>
+        <h1>Shahad AlAnazi</h1>
+        <div class="hero-roles">
+            <span class="hero-role">Machine Learning</span>
+            <span class="hero-role">NLP & LLMs</span>
+            <span class="hero-role">Computer Vision</span>
+            <span class="hero-role">Embedded AI</span>
+        </div>
+        <p class="hero-typing">
+            <span class="hero-typing-static">Passionate about </span><span class="typing-cursor" id="typingEl"></span>
         </p>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-
-        <div class="grid">
-            <div class="card" onclick="openProject('Smart Cane for the Visually Impaired',
-                                                   ['Smart Cane 4.jpeg','Smart Cane 3.jpeg','Smart Cane 5.jpeg','Smart Cane 6.jpeg','Smart Cane 7.jpeg'],
-                                                   'Developed a smart cane prototype powered by Arduino Uno to assist visually impaired individuals in navigating safely. The system integrates obstacle detection sensors and a built-in GPS module, providing vibration-based feedback to ensure usability in different environments.\n\nPresented the project to:\n- The Canadian delegation\n- The Healthcare delegation\n- The Global Health Forum\n- The Academic Accreditation Authority\n\nParticipated in TEDx, where the project was showcased to a diverse audience.')">
-                <img src="Smart Cane 1.jpeg">
-                <h3>Smart Cane for the Visually Impaired</h3>
-                <p style="color:#94a3b8; font-size:0.9rem;">IoT & Arduino</p>
-
-            </div>
-            <div class="card" onclick="openProject('Hair Type Detection Using EfficientNet-B0', ['DL1.png','DL2.png'],'Hair Type Detection Using EfficientNet-B0 is a deep learning project that classifies hair types from images using the EfficientNet-B0 model. The system processes and analyzes input images to identify different hair categories such as straight, wavy, curly, kinky, and dreadlocks. It applies transfer learning, data preprocessing, and augmentation techniques to improve accuracy and performance. The model achieved strong results, demonstrating the effectiveness of EfficientNet-B0 in image classification tasks.')">
-                <img src="DL3.png">
-                <h3>Hair Type Detection</h3>
-                <p style="color:#94a3b8; font-size:0.9rem;">Deep Learning</p>
-            </div>
-            
-            <div class="card" onclick="openProject('Global Impact of Social Support on Happiness ', ['ML.png','ML2.png','ML3.png','ML4.png'],'This project analyzes how income and social support affect happiness using data from the World Happiness Report. After preprocessing a global dataset of 156 countries, multiple regression models were tested, including Linear Regression, Elastic Net, Random Forest, and Support Vector Regression (SVR).\n\nSVR achieved the best performance, making it the final model for analysis. The results showed that social support is the strongest predictor of happiness, followed by income. Both factors have a positive impact, but the highest happiness levels occur when both income and social support are high.\n\nFeature importance analysis confirmed that social support contributes the most, while generosity and trust have minimal impact. Partial dependence plots further showed a steady increase in happiness as both income and social support rise.\n\nScenario testing revealed that increasing social support leads to a greater improvement in happiness compared to increasing income alone. Additionally, the relationship between these factors and happiness is consistent across different countries.\n\nOverall, the study highlights that while income matters, social support plays a more critical role in improving well-being, and the combination of both yields the best outcomes.')">
-                <img src="ML.png">
-                <h3>Global Impact of Social Support on Happiness</h3>
-                <p style="color:#94a3b8; font-size:0.9rem;">Machine Learning</p>
-            </div>
-
+        <div class="hero-badges">
+            <span class="hero-badge">🎓 Princess Nourah University</span>
+            <span class="hero-badge">📍 Riyadh, Saudi Arabia</span>
+            <span class="hero-badge">🔍 Open to Opportunities</span>
         </div>
-    </section>
-
-    <section id="skills-section">
-
-        <h2>Technical Skills</h2>
-
-        <div class="skills-container">
-
-            <span class="skill">Python</span>
-            <span class="skill">ML</span>
-            <span class="skill">NLP</span>
-            <span class="skill">Arduino</span>
-            <span class="skill">AI</span>
-            <span class="skill">IOT</span>
-            <span class="skill">DL</span>
-            <span class="skill">Java</span>
-            <span class="skill">Unity</span>
-
+        <div class="hero-cta">
+            <a href="#projects" class="btn-primary">View Projects</a>
+            <a href="#contact" class="btn-outline">Get In Touch</a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="suggestions">
-        <h2>Suggestions</h2>
-        <form id="suggestForm" class="suggest-form">    
-            <textarea 
-                id="message" 
-                placeholder="Write your suggestion..."
-                required></textarea>
-            <button type="submit">Send</button>
-        </form>
-        <p id="statusMsg"></p>
-    </section>
+<!-- ABOUT -->
+<section id="about" class="reveal">
+    <span class="section-label">Get to Know Me</span>
+    <h2 class="section-title">About <span>Me</span></h2>
+    <p class="about-text">
+        I'm an <strong>Artificial Intelligence student at Princess Nourah Bint Abdulrahman University</strong> with a deep interest in Machine Learning, NLP, Computer Vision, and Embedded AI. I enjoy building AI-powered solutions that solve real-world problems — from <strong>legal technology and identity verification</strong> to healthcare, accessibility, and education. Alongside research, I have leadership experience in technical communities, mentoring students, and running Arduino training programs.
+    </p>
+    <div class="info-badges">
+        <span class="info-badge">🎓 PNU — Princess Nourah University</span>
+        <span class="info-badge">📍 Riyadh, Saudi Arabia</span>
+        <span class="info-badge">🔍 Open to Opportunities</span>
+    </div>
+    <div class="stats-grid">
+        <div class="stat-card"><span class="stat-num">7+</span><span class="stat-lbl">Projects Built</span></div>
+        <div class="stat-card"><span class="stat-num">3</span><span class="stat-lbl">Awards Won</span></div>
+        <div class="stat-card"><span class="stat-num">∞</span><span class="stat-lbl">Curiosity</span></div>
+    </div>
+</section>
 
-    <section id="contact" style="text-align: center;">
-        <h2>Get In Touch</h2>
-<div class="contact-icons">
-
-<a href="https://x.com/shahadal3anazi" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/5968/5968830.png">
-</a>
-
-<a href="https://www.linkedin.com/in/shahad-alanazi-ma" target="_blank">
-<img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png">
-</a>
-
-<a href="mailto:shahadmaalanazi@gmail.com">
-<img src="https://cdn-icons-png.flaticon.com/512/561/561127.png">
-</a>
-
-</div>
-    </section>
-
-    <footer>
-        ©️ 2026 Shahad AlAnazi
-    </footer>
-
-<div id="projectModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeProject()">&times;</span>
-        <h3 id="projectTitle" style="margin:0;"></h3>
-        <img id="projectImage" src="">
-        <div style="text-align:center; margin-top:10px;">
-            <button onclick="prevImage()" style="margin:5px;">‹</button>
-            <button onclick="nextImage()" style="margin:5px;">›</button>
+<!-- EDUCATION -->
+<section id="education" class="reveal">
+    <span class="section-label">Academic Background</span>
+    <h2 class="section-title">Education</h2>
+    <div class="edu-card">
+        <div class="edu-icon">🎓</div>
+        <div>
+            <p class="edu-title">B.S. in Artificial Intelligence</p>
+            <p class="edu-school">Princess Nourah Bint Abdulrahman University — Riyadh, Saudi Arabia</p>
+            <p class="edu-date">2023 – Present</p>
+            <p class="edu-desc">Focused on machine learning, deep learning, natural language processing, computer vision, and embedded AI systems. Engaged in research, hands-on projects, and leadership initiatives that bridge theory with real-world AI applications.</p>
         </div>
-        <p id="projectDesc" style="color: var(--text-dim);"></p>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="reveal">
+    <span class="section-label">What I've Built</span>
+    <h2 class="section-title">Featured <span>Projects</span></h2>
+    <div class="projects-grid">
+
+        <!-- Taw'amah -->
+        <div class="proj-card" onclick="openModal(
+            &quot;Taw'amah — AI Legal Contract Analysis&quot;,
+            ['Smart Cane 1.jpeg'],
+            &quot;An AI-powered legal technology platform that helps users understand Arabic legal contracts before signing.\n\nKey Features:\n• LLMs for contract understanding\n• Automatic extraction of obligations & responsibilities\n• Risk, ambiguity, and imbalance detection\n• Explainable AI for transparent legal reasoning\n• Predictive AI for dispute and risk estimation\n• Contract simulation using Digital Twin technology\n\nAwarded: Most Promising Idea — ThakaThon 2026&quot;
+        )">
+            <img src="Smart Cane 1.jpeg" alt="Taw'amah">
+            <div class="proj-body">
+                <div class="proj-tags">
+                    <span class="proj-tag tag-llm">LLMs</span>
+                    <span class="proj-tag tag-nlp">NLP</span>
+                    <span class="proj-tag tag-xai">XAI</span>
+                </div>
+                <p class="proj-name">Taw'amah</p>
+                <p class="proj-period">Feb 2026 – Present</p>
+                <p class="proj-desc">AI-powered Arabic legal contract analysis platform with risk detection, obligation extraction, and Digital Twin simulation.</p>
+                <div class="proj-techs">
+                    <span class="proj-tech">LLMs</span>
+                    <span class="proj-tech">NLP</span>
+                    <span class="proj-tech">Explainable AI</span>
+                    <span class="proj-tech">Digital Twin</span>
+                </div>
+                <a class="proj-gh" href="#" onclick="event.stopPropagation()">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.04c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.75-1.33-1.75-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    View on GitHub →
+                </a>
+            </div>
+        </div>
+
+        <!-- Smart Digital ID -->
+        <div class="proj-card" onclick="openModal(
+            'Smart Digital ID Pass',
+            ['DL3.png'],
+            'AI-based identity verification system for universities.\n\nFeatures:\n• OCR for ID information extraction\n• Face Recognition\n• Liveness Detection\n• Identity Verification\n• Secure campus authentication\n\nPeriod: Jan 2026 – May 2026'
+        )">
+            <img src="DL3.png" alt="Smart Digital ID">
+            <div class="proj-body">
+                <div class="proj-tags">
+                    <span class="proj-tag tag-cv">CV</span>
+                    <span class="proj-tag tag-ai">AI</span>
+                </div>
+                <p class="proj-name">Smart Digital ID Pass</p>
+                <p class="proj-period">Jan 2026 – May 2026</p>
+                <p class="proj-desc">AI-based university identity verification system using OCR, face recognition, and liveness detection.</p>
+                <div class="proj-techs">
+                    <span class="proj-tech">Python</span>
+                    <span class="proj-tech">OCR</span>
+                    <span class="proj-tech">CNN</span>
+                    <span class="proj-tech">Face Recognition</span>
+                </div>
+                <a class="proj-gh" href="#" onclick="event.stopPropagation()">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.04c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.75-1.33-1.75-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    View on GitHub →
+                </a>
+            </div>
+        </div>
+
+        <!-- Smart Cane -->
+        <div class="proj-card" onclick="openModal(
+            'Smart Cane for the Visually Impaired',
+            ['Smart Cane 4.jpeg','Smart Cane 3.jpeg','Smart Cane 5.jpeg','Smart Cane 6.jpeg','Smart Cane 7.jpeg'],
+            'Arduino-based smart cane assisting visually impaired users with obstacle detection and vibration feedback.\n\nFeatures:\n• Obstacle detection sensors\n• GPS integration\n• Vibration feedback\n• Arduino Uno implementation\n\nPresented to:\n• Canadian Delegation\n• Healthcare Delegation\n• Global Health Forum\n• Academic Accreditation Authority\n• TEDxPNU\n\nAward: 3rd Place — Arduino Bootcamp'
+        )">
+            <img src="Smart Cane 1.jpeg" alt="Smart Cane">
+            <div class="proj-body">
+                <div class="proj-tags">
+                    <span class="proj-tag tag-iot">IoT</span>
+                    <span class="proj-tag tag-ai">Arduino</span>
+                </div>
+                <p class="proj-name">Smart Cane for the Visually Impaired</p>
+                <p class="proj-period">Apr 2024 – Jan 2026</p>
+                <p class="proj-desc">Award-winning smart cane with obstacle detection, GPS, and vibration feedback. Showcased at TEDxPNU and international delegations.</p>
+                <div class="proj-techs">
+                    <span class="proj-tech">Arduino Uno</span>
+                    <span class="proj-tech">GPS</span>
+                    <span class="proj-tech">Ultrasonic</span>
+                    <span class="proj-tech">C++</span>
+                </div>
+                <a class="proj-gh" href="#" onclick="event.stopPropagation()">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.04c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.75-1.33-1.75-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    View on GitHub →
+                </a>
+            </div>
+        </div>
+
+        <!-- Arabic NLP -->
+        <div class="proj-card" onclick="openModal(
+            'Automatic Arabic Text Summarization',
+            ['ML.png'],
+            'NLP system that automatically summarizes Arabic text using transformer-based models.\n\nFeatures:\n• Text preprocessing pipeline\n• Automatic summarization\n• Evaluation using ROUGE metrics\n• Deployed with Streamlit\n\nPeriod: Mar 2026 – May 2026'
+        )">
+            <img src="ML.png" alt="NLP Summarization">
+            <div class="proj-body">
+                <div class="proj-tags">
+                    <span class="proj-tag tag-nlp">NLP</span>
+                    <span class="proj-tag tag-dl">Transformers</span>
+                </div>
+                <p class="proj-name">Arabic Text Summarization</p>
+                <p class="proj-period">Mar 2026 – May 2026</p>
+                <p class="proj-desc">Transformer-based NLP system for automatic Arabic text summarization with ROUGE evaluation and Streamlit deployment.</p>
+                <div class="proj-techs">
+                    <span class="proj-tech">Python</span>
+                    <span class="proj-tech">Transformers</span>
+                    <span class="proj-tech">Streamlit</span>
+                    <span class="proj-tech">ROUGE</span>
+                </div>
+                <a class="proj-gh" href="#" onclick="event.stopPropagation()">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.04c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.75-1.33-1.75-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    View on GitHub →
+                </a>
+            </div>
+        </div>
+
+        <!-- Hair Detection -->
+        <div class="proj-card" onclick="openModal(
+            'Hair Type Detection — EfficientNet-B0',
+            ['DL1.png','DL2.png'],
+            'Deep learning project classifying hair types using EfficientNet-B0 with transfer learning.\n\nCategories: Straight, Wavy, Curly, Kinky, Dreadlocks\n\nApproach:\n• Transfer learning with EfficientNet-B0\n• Data preprocessing & augmentation\n• Strong classification accuracy achieved'
+        )">
+            <img src="DL3.png" alt="Hair Detection">
+            <div class="proj-body">
+                <div class="proj-tags">
+                    <span class="proj-tag tag-dl">Deep Learning</span>
+                    <span class="proj-tag tag-cv">CV</span>
+                </div>
+                <p class="proj-name">Hair Type Detection</p>
+                <p class="proj-period">Deep Learning Project</p>
+                <p class="proj-desc">Image classification using EfficientNet-B0 with transfer learning to detect 5 hair types with high accuracy.</p>
+                <div class="proj-techs">
+                    <span class="proj-tech">Python</span>
+                    <span class="proj-tech">EfficientNet-B0</span>
+                    <span class="proj-tech">PyTorch</span>
+                    <span class="proj-tech">Augmentation</span>
+                </div>
+                <a class="proj-gh" href="#" onclick="event.stopPropagation()">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.04c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.75-1.33-1.75-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    View on GitHub →
+                </a>
+            </div>
+        </div>
+
+        <!-- Happiness ML -->
+        <div class="proj-card" onclick="openModal(
+            'Global Impact of Social Support on Happiness',
+            ['ML.png','ML2.png','ML3.png','ML4.png'],
+            'Machine Learning research analyzing the relationship between social support, income, and happiness using the World Happiness Report dataset (156 countries).\n\nModels tested: Linear Regression, Elastic Net, Random Forest, SVR\nBest Model: SVR\n\nKey Findings:\n• Social support is the strongest predictor of happiness\n• Combination of high income + high social support yields best outcomes\n• Generosity and trust have minimal impact\n\nPeriod: Oct 2025 – Dec 2025'
+        )">
+            <img src="ML.png" alt="Happiness ML">
+            <div class="proj-body">
+                <div class="proj-tags">
+                    <span class="proj-tag tag-ml">Machine Learning</span>
+                </div>
+                <p class="proj-name">Social Support & Happiness</p>
+                <p class="proj-period">Oct 2025 – Dec 2025</p>
+                <p class="proj-desc">ML research on global happiness predictors across 156 countries. SVR model identified social support as the strongest factor.</p>
+                <div class="proj-techs">
+                    <span class="proj-tech">Python</span>
+                    <span class="proj-tech">SVR</span>
+                    <span class="proj-tech">Scikit-learn</span>
+                    <span class="proj-tech">Pandas</span>
+                </div>
+                <a class="proj-gh" href="#" onclick="event.stopPropagation()">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.04c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.75-1.33-1.75-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    View on GitHub →
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="reveal">
+    <span class="section-label">Capabilities</span>
+    <h2 class="section-title">Skills & <span>Technologies</span></h2>
+    <div class="skills-grid">
+
+        <div class="skill-cat">
+            <div class="skill-cat-header">
+                <div class="skill-cat-icon">🧠</div>
+                <p class="skill-cat-title">Artificial Intelligence</p>
+            </div>
+            <div class="skill-items">
+                <div class="skill-item"><span class="skill-dot"></span>Machine Learning</div>
+                <div class="skill-item"><span class="skill-dot"></span>Deep Learning</div>
+                <div class="skill-item"><span class="skill-dot"></span>Natural Language Processing</div>
+                <div class="skill-item"><span class="skill-dot"></span>Computer Vision</div>
+                <div class="skill-item"><span class="skill-dot"></span>Large Language Models</div>
+                <div class="skill-item"><span class="skill-dot"></span>Explainable AI</div>
+                <div class="skill-item"><span class="skill-dot"></span>Predictive AI</div>
+            </div>
+        </div>
+
+        <div class="skill-cat">
+            <div class="skill-cat-header">
+                <div class="skill-cat-icon">💻</div>
+                <p class="skill-cat-title">Programming</p>
+            </div>
+            <div class="skill-items lang-grid">
+                <div class="lang-badge">
+                    <svg viewBox="0 0 24 24" fill="#3776AB"><path d="M11.914 0C5.82 0 6.2 2.656 6.2 2.656l.007 2.752h5.814v.826H3.9S0 5.789 0 11.969c0 6.18 3.403 5.96 3.403 5.96h2.03v-2.867s-.109-3.4 3.345-3.4h5.763s3.236.052 3.236-3.13V3.13S18.28 0 11.914 0zm-3.2 1.812a1.047 1.047 0 0 1 1.048 1.047 1.047 1.047 0 0 1-1.048 1.047A1.047 1.047 0 0 1 7.667 2.86a1.047 1.047 0 0 1 1.047-1.048zM12.086 24c6.094 0 5.714-2.656 5.714-2.656l-.007-2.752h-5.814v-.826h8.121S24 18.211 24 12.031c0-6.18-3.403-5.96-3.403-5.96h-2.03v2.867s.109 3.4-3.345 3.4h-5.763s-3.236-.052-3.236 3.13v5.402S5.72 24 12.086 24zm3.2-1.812a1.047 1.047 0 0 1-1.048-1.047 1.047 1.047 0 0 1 1.048-1.047 1.047 1.047 0 0 1 1.047 1.047 1.047 1.047 0 0 1-1.047 1.047z"/></svg>
+                    Python
+                </div>
+                <div class="lang-badge">
+                    <svg viewBox="0 0 24 24" fill="#007396"><path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0-.001-8.216 2.051-4.292 6.573M19.33 20.504s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.998.527-.114.828-.093.828-.093-.953-.671-6.156 1.317-2.643 1.887 9.58 1.553 17.462-.7 14.977-1.82M9.292 13.21s-4.362 1.036-1.544 1.412c1.189.159 3.561.123 5.774-.062 1.806-.152 3.618-.477 3.618-.477s-.637.272-1.098.587c-4.429 1.165-12.981.623-10.52-.568 2.082-1.006 3.77-.892 3.77-.892M17.116 17.584c4.503-2.34 2.421-4.589.968-4.285-.355.074-.515.138-.515.138s.132-.207.385-.297c2.875-1.011 5.086 2.981-.928 4.562 0-.001.07-.062.09-.118M14.401 0s2.494 2.494-2.365 6.33c-3.896 3.077-.888 4.832-.001 6.836-2.274-2.053-3.943-3.858-2.824-5.539 1.644-2.469 6.197-3.665 5.19-7.627M9.734 23.924c4.322.277 10.959-.153 11.116-2.198 0 0-.302.775-3.572 1.391-3.688.694-8.239.613-10.937.168 0-.001.553.457 3.393.639"/></svg>
+                    Java
+                </div>
+                <div class="lang-badge">
+                    <svg viewBox="0 0 24 24" fill="#00599C"><path d="M22.394 6c-.167-.29-.398-.543-.652-.69L12.926.22c-.509-.294-1.34-.294-1.848 0L2.26 5.31c-.508.293-.923 1.013-.923 1.6v10.18c0 .294.104.62.271.91.167.29.398.543.652.69l8.816 5.09c.508.293 1.34.293 1.848 0l8.816-5.09c.254-.147.485-.4.652-.69.167-.29.27-.616.27-.91V6.91c.003-.294-.1-.62-.268-.91zM12 19.109c-3.92 0-7.109-3.189-7.109-7.109S8.08 4.891 12 4.891a7.133 7.133 0 0 1 6.156 3.552l-3.076 1.781A3.567 3.567 0 0 0 12 8.445c-1.96 0-3.554 1.595-3.554 3.555S10.04 15.555 12 15.555a3.57 3.57 0 0 0 3.08-1.778l3.077 1.78A7.135 7.135 0 0 1 12 19.109z"/></svg>
+                    C++
+                </div>
+                <div class="lang-badge">
+                    <svg viewBox="0 0 24 24" fill="#E34F26"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.373-1.53L18.59 4.414z"/></svg>
+                    HTML
+                </div>
+                <div class="lang-badge">
+                    <svg viewBox="0 0 24 24" fill="#1572B6"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-6.64l.24 2.573h6.182l-.366 3.523-2.91.804-2.956-.81-.188-2.11h-2.61l.29 3.855L12 19.288l5.374-1.53L18.59 4.414z"/></svg>
+                    CSS
+                </div>
+                <div class="lang-badge">
+                    <svg viewBox="0 0 24 24" fill="#F7DF1E"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg>
+                    JavaScript
+                </div>
+                <div class="lang-badge">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#00979D" stroke-width="1.5"><rect x="7" y="2" width="10" height="20" rx="2"/><circle cx="12" cy="18" r="1" fill="#00979D"/><path d="M9 6h6M9 10h6M9 14h3" stroke="#00979D" stroke-linecap="round"/></svg>
+                    Arduino
+                </div>
+            </div>
+        </div>
+
+        <div class="skill-cat">
+            <div class="skill-cat-header">
+                <div class="skill-cat-icon">📦</div>
+                <p class="skill-cat-title">Frameworks & Libraries</p>
+            </div>
+            <div class="skill-items">
+                <div class="skill-item"><span class="skill-dot"></span>TensorFlow</div>
+                <div class="skill-item"><span class="skill-dot"></span>PyTorch</div>
+                <div class="skill-item"><span class="skill-dot"></span>OpenCV</div>
+                <div class="skill-item"><span class="skill-dot"></span>Transformers (HuggingFace)</div>
+                <div class="skill-item"><span class="skill-dot"></span>Streamlit / Flask</div>
+                <div class="skill-item"><span class="skill-dot"></span>Scikit-learn</div>
+                <div class="skill-item"><span class="skill-dot"></span>Pandas & NumPy</div>
+            </div>
+        </div>
+
+        <div class="skill-cat">
+            <div class="skill-cat-header">
+                <div class="skill-cat-icon">🔧</div>
+                <p class="skill-cat-title">Tools & Workflow</p>
+            </div>
+            <div class="skill-items">
+                <div class="skill-item"><span class="skill-dot"></span>GitHub</div>
+                <div class="skill-item"><span class="skill-dot"></span>VS Code</div>
+                <div class="skill-item"><span class="skill-dot"></span>Google Colab</div>
+                <div class="skill-item"><span class="skill-dot"></span>Jupyter Notebook</div>
+                <div class="skill-item"><span class="skill-dot"></span>Figma</div>
+                <div class="skill-item"><span class="skill-dot"></span>Canva</div>
+                <div class="skill-item"><span class="skill-dot"></span>NetBeans</div>
+            </div>
+        </div>
+
+        <div class="skill-cat">
+            <div class="skill-cat-header">
+                <div class="skill-cat-icon">🤖</div>
+                <p class="skill-cat-title">Hardware & Embedded</p>
+            </div>
+            <div class="skill-items">
+                <div class="skill-item"><span class="skill-dot"></span>Arduino Prototyping</div>
+                <div class="skill-item"><span class="skill-dot"></span>Embedded Systems</div>
+                <div class="skill-item"><span class="skill-dot"></span>Sensors Integration</div>
+                <div class="skill-item"><span class="skill-dot"></span>3DOF Robotic Arm</div>
+                <div class="skill-item"><span class="skill-dot"></span>ESP32</div>
+            </div>
+        </div>
+
+        <div class="skill-cat">
+            <div class="skill-cat-header">
+                <div class="skill-cat-icon">🔬</div>
+                <p class="skill-cat-title">Research Interests</p>
+            </div>
+            <div class="skill-items">
+                <div class="skill-item"><span class="skill-dot"></span>Generative AI</div>
+                <div class="skill-item"><span class="skill-dot"></span>Artificial Intelligence (AI)</div>
+                <div class="skill-item"><span class="skill-dot"></span>Smart Systems</div>
+                <div class="skill-item"><span class="skill-dot"></span>NLP & LLMs</div>
+                <div class="skill-item"><span class="skill-dot"></span>Computer Vision</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- EXPERIENCE & LEADERSHIP -->
+<section id="experience" class="reveal">
+    <span class="section-label">Experience & Leadership</span>
+    <h2 class="section-title">Leading and <span>creating.</span></h2>
+    <div class="timeline">
+
+        <div class="tl-item">
+            <div class="tl-dot">
+                <svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zm-9 8H7v-2h4v2zm6 0h-4v-2h4v2zM7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/></svg>
+            </div>
+            <p class="tl-status">Ongoing</p>
+            <p class="tl-title">Generative AI & NLP Researcher</p>
+            <p class="tl-org">AI Center — Princess Nourah University</p>
+            <p class="tl-date">Nov 2025 – Present</p>
+            <ul class="tl-desc">
+                <li>Conducting AI and NLP research projects</li>
+                <li>Developing AI prototypes and proof-of-concepts</li>
+                <li>Participating in university innovation initiatives</li>
+            </ul>
+        </div>
+
+        <div class="tl-item">
+            <div class="tl-dot">
+                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <p class="tl-status">Ongoing</p>
+            <p class="tl-title">Deputy Leader — Arduino Training Program</p>
+            <p class="tl-org">PNU Student Community</p>
+            <p class="tl-date">Jul 2025 – Present</p>
+            <ul class="tl-desc">
+                <li>Led Arduino workshops for 30+ students</li>
+                <li>Supervised hands-on embedded systems projects</li>
+                <li>Mentored beginners in electronics and microcontrollers</li>
+            </ul>
+        </div>
+
+        <div class="tl-item">
+            <div class="tl-dot">
+                <svg viewBox="0 0 24 24" fill="white"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <p class="tl-status">Apr 2025 – Jan 2026</p>
+            <p class="tl-title">Co-Founder</p>
+            <p class="tl-org">Umda Startup</p>
+            <p class="tl-date">Apr 2025 – Jan 2026</p>
+            <ul class="tl-desc">
+                <li>Co-founded an AI-focused startup</li>
+                <li>Led product planning and business strategy</li>
+                <li>Managed digital marketing and branding</li>
+            </ul>
+        </div>
+
+        <div class="tl-item">
+            <div class="tl-dot">
+                <svg viewBox="0 0 24 24" fill="white"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </div>
+            <p class="tl-status">Leadership</p>
+            <p class="tl-title">Design Leader</p>
+            <p class="tl-org">Elixir Hub</p>
+            <p class="tl-date">Ongoing</p>
+            <ul class="tl-desc">
+                <li>Led the design team for club initiatives and events</li>
+                <li>Created visual identities and promotional materials</li>
+                <li>Coordinated design workflow across team members</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <h3 style="margin-top:40px; margin-bottom:16px; font-size:.95rem; color:var(--dim); font-weight:600; letter-spacing:.05em; text-transform:uppercase;">Volunteering & Community</h3>
+    <div class="vol-wrap">
+        <span class="vol-pill">📚 Oracle Student Ambassador</span>
+        <span class="vol-pill">🤖 AI Advisor — Maeen PNU</span>
+        <span class="vol-pill">🎨 Design Member — Google Developer Groups</span>
+        <span class="vol-pill">🔐 Cybersecurity Club Member</span>
+        <span class="vol-pill">💡 Design Committee — TechMinds Club</span>
+        <span class="vol-pill">🏆 Tuwaiq Club Member</span>
+    </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements" class="reveal">
+    <span class="section-label">Recognition</span>
+    <h2 class="section-title">Recognized for <span>building what matters.</span></h2>
+    <div class="ach-list">
+        <div class="ach-card">
+            <div class="ach-icon">🏆</div>
+            <div>
+                <p class="ach-event">ThakaThon 2026</p>
+                <p class="ach-title">Most Promising Idea Award</p>
+                <p class="ach-desc">Awarded for developing Taw'amah — an AI-powered legal technology platform that helps users understand Arabic contracts before signing, using LLMs, Explainable AI, and Digital Twin simulation.</p>
+                <a href="https://www.linkedin.com/in/shahad-alanazi-ma" target="_blank" class="cert-link" style="margin-top:12px;display:inline-flex;">View on LinkedIn ↗</a>
+            </div>
+        </div>
+        <div class="ach-card">
+            <div class="ach-icon">🥉</div>
+            <div>
+                <p class="ach-event">Arduino Bootcamp</p>
+                <p class="ach-title">3rd Place Award</p>
+                <p class="ach-desc">Awarded for the Smart Cane for the Visually Impaired — an IoT prototype using Arduino Uno with obstacle detection sensors, GPS, and vibration feedback. Presented at TEDxPNU and multiple international delegations.</p>
+                <a href="https://www.linkedin.com/in/shahad-alanazi-ma" target="_blank" class="cert-link" style="margin-top:12px;display:inline-flex;">View on LinkedIn ↗</a>
+            </div>
+        </div>
+        <div class="ach-card">
+            <div class="ach-icon">🎖️</div>
+            <div>
+                <p class="ach-event">College of Computer and Information Sciences — PNU</p>
+                <p class="ach-title">Dean's Honor — Active Participation Award</p>
+                <p class="ach-desc">Honored by the Dean of the College of Computer and Information Sciences for outstanding active participation in extracurricular activities and community initiatives.</p>
+                <a href="https://www.linkedin.com/in/shahad-alanazi-ma" target="_blank" class="cert-link" style="margin-top:12px;display:inline-flex;">View on LinkedIn ↗</a>
+            </div>
+        </div>
+    </div>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="reveal">
+    <span class="section-label">Credentials</span>
+    <h2 class="section-title">Certifications</h2>
+    <div class="certs-list">
+
+        <!-- 1 -->
+        <div class="cert-card">
+            <div class="cert-card-inner">
+                <div class="cert-img-wrap" onclick="triggerUpload('cert1')">
+                    <div class="cert-placeholder" id="cert1-placeholder">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Click to upload certificate image</span>
+                    </div>
+                    <img id="cert1-img" src="" alt="" style="display:none;">
+                    <div class="cert-upload-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        Upload Image
+                    </div>
+                    <input type="file" class="cert-file" id="cert1" accept="image/*" onchange="loadCertImg(this,'cert1')">
+                </div>
+                <div class="cert-body">
+                    <p class="cert-year">May 2026 — Expires May 2029</p>
+                    <p class="cert-name">Certified Associate in Project Management (CAPM)®</p>
+                    <p class="cert-org">Project Management Institute (PMI)</p>
+                    <a href="#" class="cert-link">View Credential ↗</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="cert-card">
+            <div class="cert-card-inner">
+                <div class="cert-img-wrap" onclick="triggerUpload('cert2')">
+                    <div class="cert-placeholder" id="cert2-placeholder">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Click to upload certificate image</span>
+                    </div>
+                    <img id="cert2-img" src="" alt="" style="display:none;">
+                    <div class="cert-upload-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        Upload Image
+                    </div>
+                    <input type="file" class="cert-file" id="cert2" accept="image/*" onchange="loadCertImg(this,'cert2')">
+                </div>
+                <div class="cert-body">
+                    <p class="cert-year">May 2026</p>
+                    <p class="cert-name">A Complete Guide to Game Design</p>
+                    <p class="cert-org">edX Verified Certificate</p>
+                    <a href="#" class="cert-link">View Credential ↗</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="cert-card">
+            <div class="cert-card-inner">
+                <div class="cert-img-wrap" onclick="triggerUpload('cert3')">
+                    <div class="cert-placeholder" id="cert3-placeholder">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Click to upload certificate image</span>
+                    </div>
+                    <img id="cert3-img" src="" alt="" style="display:none;">
+                    <div class="cert-upload-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        Upload Image
+                    </div>
+                    <input type="file" class="cert-file" id="cert3" accept="image/*" onchange="loadCertImg(this,'cert3')">
+                </div>
+                <div class="cert-body">
+                    <p class="cert-year">Apr 2026</p>
+                    <p class="cert-name">AWS Academy Graduate – ML for Natural Language Processing</p>
+                    <p class="cert-org">Amazon Web Services (AWS)</p>
+                    <a href="#" class="cert-link">View Credential ↗</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="cert-card">
+            <div class="cert-card-inner">
+                <div class="cert-img-wrap" onclick="triggerUpload('cert4')">
+                    <div class="cert-placeholder" id="cert4-placeholder">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Click to upload certificate image</span>
+                    </div>
+                    <img id="cert4-img" src="" alt="" style="display:none;">
+                    <div class="cert-upload-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        Upload Image
+                    </div>
+                    <input type="file" class="cert-file" id="cert4" accept="image/*" onchange="loadCertImg(this,'cert4')">
+                </div>
+                <div class="cert-body">
+                    <p class="cert-year">Apr 2026</p>
+                    <p class="cert-name">Google UX Design</p>
+                    <p class="cert-org">Google</p>
+                    <a href="#" class="cert-link">View Credential ↗</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="cert-card">
+            <div class="cert-card-inner">
+                <div class="cert-img-wrap" onclick="triggerUpload('cert5')">
+                    <div class="cert-placeholder" id="cert5-placeholder">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Click to upload certificate image</span>
+                    </div>
+                    <img id="cert5-img" src="" alt="" style="display:none;">
+                    <div class="cert-upload-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        Upload Image
+                    </div>
+                    <input type="file" class="cert-file" id="cert5" accept="image/*" onchange="loadCertImg(this,'cert5')">
+                </div>
+                <div class="cert-body">
+                    <p class="cert-year">Mar 2026</p>
+                    <p class="cert-name">IBM AI Developer</p>
+                    <p class="cert-org">IBM</p>
+                    <a href="#" class="cert-link">View Credential ↗</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="cert-card">
+            <div class="cert-card-inner">
+                <div class="cert-img-wrap" onclick="triggerUpload('cert6')">
+                    <div class="cert-placeholder" id="cert6-placeholder">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Click to upload certificate image</span>
+                    </div>
+                    <img id="cert6-img" src="" alt="" style="display:none;">
+                    <div class="cert-upload-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        Upload Image
+                    </div>
+                    <input type="file" class="cert-file" id="cert6" accept="image/*" onchange="loadCertImg(this,'cert6')">
+                </div>
+                <div class="cert-body">
+                    <p class="cert-year">Jul 2025</p>
+                    <p class="cert-name">AWS Educate Machine Learning Foundations</p>
+                    <p class="cert-org">Amazon Web Services (AWS)</p>
+                    <a href="#" class="cert-link">View Credential ↗</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="cert-card">
+            <div class="cert-card-inner">
+                <div class="cert-img-wrap" onclick="triggerUpload('cert7')">
+                    <div class="cert-placeholder" id="cert7-placeholder">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Click to upload certificate image</span>
+                    </div>
+                    <img id="cert7-img" src="" alt="" style="display:none;">
+                    <div class="cert-upload-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        Upload Image
+                    </div>
+                    <input type="file" class="cert-file" id="cert7" accept="image/*" onchange="loadCertImg(this,'cert7')">
+                </div>
+                <div class="cert-body">
+                    <p class="cert-year">Jun 2025</p>
+                    <p class="cert-name">Introducing Generative AI with AWS</p>
+                    <p class="cert-org">Udacity</p>
+                    <a href="#" class="cert-link">View Credential ↗</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="cert-card">
+            <div class="cert-card-inner">
+                <div class="cert-img-wrap" onclick="triggerUpload('cert8')">
+                    <div class="cert-placeholder" id="cert8-placeholder">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Click to upload certificate image</span>
+                    </div>
+                    <img id="cert8-img" src="" alt="" style="display:none;">
+                    <div class="cert-upload-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        Upload Image
+                    </div>
+                    <input type="file" class="cert-file" id="cert8" accept="image/*" onchange="loadCertImg(this,'cert8')">
+                </div>
+                <div class="cert-body">
+                    <p class="cert-year">Jun 2025</p>
+                    <p class="cert-name">CCNA: Introduction to Networks</p>
+                    <p class="cert-org">Cisco</p>
+                    <a href="#" class="cert-link">View Credential ↗</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="cert-card">
+            <div class="cert-card-inner">
+                <div class="cert-img-wrap" onclick="triggerUpload('cert9')">
+                    <div class="cert-placeholder" id="cert9-placeholder">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Click to upload certificate image</span>
+                    </div>
+                    <img id="cert9-img" src="" alt="" style="display:none;">
+                    <div class="cert-upload-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        Upload Image
+                    </div>
+                    <input type="file" class="cert-file" id="cert9" accept="image/*" onchange="loadCertImg(this,'cert9')">
+                </div>
+                <div class="cert-body">
+                    <p class="cert-year">Mar 2025</p>
+                    <p class="cert-name">Machine Learning with Python (V2)</p>
+                    <p class="cert-org">Coursera</p>
+                    <a href="#" class="cert-link">View Credential ↗</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="cert-card">
+            <div class="cert-card-inner">
+                <div class="cert-img-wrap" onclick="triggerUpload('cert10')">
+                    <div class="cert-placeholder" id="cert10-placeholder">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Click to upload certificate image</span>
+                    </div>
+                    <img id="cert10-img" src="" alt="" style="display:none;">
+                    <div class="cert-upload-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        Upload Image
+                    </div>
+                    <input type="file" class="cert-file" id="cert10" accept="image/*" onchange="loadCertImg(this,'cert10')">
+                </div>
+                <div class="cert-body">
+                    <p class="cert-year">Feb 2025</p>
+                    <p class="cert-name">Developing AI Applications with Python and Flask</p>
+                    <p class="cert-org">IBM</p>
+                    <a href="#" class="cert-link">View Credential ↗</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="cert-card">
+            <div class="cert-card-inner">
+                <div class="cert-img-wrap" onclick="triggerUpload('cert11')">
+                    <div class="cert-placeholder" id="cert11-placeholder">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                        <span>Click to upload certificate image</span>
+                    </div>
+                    <img id="cert11-img" src="" alt="" style="display:none;">
+                    <div class="cert-upload-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        Upload Image
+                    </div>
+                    <input type="file" class="cert-file" id="cert11" accept="image/*" onchange="loadCertImg(this,'cert11')">
+                </div>
+                <div class="cert-body">
+                    <p class="cert-year">May 2024</p>
+                    <p class="cert-name">Machine Learning Bootcamp</p>
+                    <p class="cert-org">SDAIA — Saudi Data & AI Authority</p>
+                    <a href="#" class="cert-link">View Credential ↗</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SUGGESTIONS -->
+<section id="suggestions" class="reveal">
+    <span class="section-label">Feedback</span>
+    <h2 class="section-title">Suggestions</h2>
+    <form id="suggestForm" class="suggest-form">
+        <textarea id="message" placeholder="Write your suggestion..." required></textarea>
+        <button type="submit">Send</button>
+    </form>
+    <p id="statusMsg"></p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="reveal">
+    <span class="section-label">Let's Connect</span>
+    <h2 class="section-title">Get In <span>Touch</span></h2>
+
+    <div class="contact-layout">
+
+        <!-- Left: info -->
+        <div class="contact-left">
+            <h3>Let's build something together.</h3>
+            <p>I'm currently open to internships, research collaborations, and AI opportunities. Whether you have a project idea or just want to say hi — I'd love to hear from you!</p>
+
+            <div class="contact-info">
+                <div class="contact-info-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <a href="mailto:shahadmaalanazi@gmail.com">shahadmaalanazi@gmail.com</a>
+                </div>
+                <div class="contact-info-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span>Riyadh, Saudi Arabia</span>
+                </div>
+                <div class="contact-info-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span>Open to Opportunities</span>
+                </div>
+            </div>
+
+            <div class="contact-socials">
+                <a href="https://x.com/shahadal3anazi" target="_blank" class="social-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/shahad-alanazi-ma" target="_blank" class="social-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="mailto:shahadmaalanazi@gmail.com" class="social-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Right: form -->
+        <div class="contact-form-box">
+            <h4>Send me a message</h4>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>YOUR NAME</label>
+                    <input type="text" id="cName" placeholder="Noura Ahmed">
+                </div>
+                <div class="form-group">
+                    <label>YOUR EMAIL</label>
+                    <input type="email" id="cEmail" placeholder="noura@example.com">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>SUBJECT</label>
+                <input type="text" id="cSubject" placeholder="How can I help you?">
+            </div>
+            <div class="form-group">
+                <label>MESSAGE</label>
+                <textarea id="cMessage" placeholder="Write your message here..."></textarea>
+            </div>
+            <button class="form-submit" id="sendBtn" onclick="sendContact()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                Send Message
+            </button>
+            <p id="contactStatus"></p>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p style="margin-bottom:14px;">Designed & built by <strong>Shahad AlAnazi</strong> · © 2026</p>
+    <div style="display:flex;justify-content:center;gap:14px;">
+        <a href="https://x.com/shahadal3anazi" target="_blank" style="color:var(--dim);transition:.2s;" onmouseover="this.style.color='var(--purple)'" onmouseout="this.style.color='var(--dim)'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/shahad-alanazi-ma" target="_blank" style="color:var(--dim);transition:.2s;" onmouseover="this.style.color='var(--purple)'" onmouseout="this.style.color='var(--dim)'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://github.com/shahad-alanazi" target="_blank" style="color:var(--dim);transition:.2s;" onmouseover="this.style.color='var(--purple)'" onmouseout="this.style.color='var(--dim)'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.04c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.75-1.33-1.75-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="mailto:shahadmaalanazi@gmail.com" style="color:var(--dim);transition:.2s;" onmouseover="this.style.color='var(--purple)'" onmouseout="this.style.color='var(--dim)'">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </a>
+    </div>
+</footer>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-inner">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <h3 id="modalTitle"></h3>
+        <img id="modalImg" src="" alt="">
+        <div class="modal-nav">
+            <button onclick="prevImg()">‹</button>
+            <button onclick="nextImg()">›</button>
+        </div>
+        <p id="modalDesc" class="modal-desc"></p>
     </div>
 </div>
 
-    <script>
-let images = [];
-let currentIndex = 0;
+<script>
+// BACK TO TOP
+const backBtn = document.getElementById('backTop');
+window.addEventListener('scroll', () => {
+    backBtn.classList.toggle('visible', window.scrollY > 400);
+});
 
-function openProject(title, imgs, desc) {
+/* ============================================================
+   CERT IMAGE UPLOAD
+============================================================ */
+function triggerUpload(id) {
+    document.getElementById(id).click();
+}
+function loadCertImg(input, id) {
+    if (!input.files || !input.files[0]) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        const img = document.getElementById(id + '-img');
+        const placeholder = document.getElementById(id + '-placeholder');
+        img.src = e.target.result;
+        img.style.display = 'block';
+        if (placeholder) placeholder.style.display = 'none';
+    };
+    reader.readAsDataURL(input.files[0]);
+}
 
-    document.getElementById("projectModal").style.display = "flex";
+/* ============================================================
+   THEME TOGGLE
+============================================================ */
+const moonPath = `<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>`;
+const sunPath  = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>`;
 
-    document.getElementById("projectTitle").innerText = title;
+function toggleTheme() {
+    const isLight = document.body.classList.toggle('light');
+    document.getElementById('themeIcon').innerHTML = isLight ? sunPath : moonPath;
+    document.getElementById('themeLabel').textContent = isLight ? 'Dark' : 'Light';
+}
 
-    images = imgs;
-    currentIndex = 0;
+/* ============================================================
+   TYPING EFFECT
+============================================================ */
+const phrases = ['• Machine Learning','• NLP','• Computer Vision','• LLMs','• Embedded AI','• Explainable AI'];
+let pi=0, ci=0, deleting=false;
+const el = document.getElementById('typingEl');
+function typeLoop() {
+    const cur = phrases[pi];
+    if (!deleting) {
+        el.textContent = cur.slice(0,++ci);
+        if (ci===cur.length) { deleting=true; setTimeout(typeLoop,1600); return; }
+    } else {
+        el.textContent = cur.slice(0,--ci);
+        if (ci===0) { deleting=false; pi=(pi+1)%phrases.length; }
+    }
+    setTimeout(typeLoop, deleting?55:85);
+}
+typeLoop();
 
-    document.getElementById("projectImage").src = images[currentIndex];
+/* ============================================================
+   SCROLL REVEAL
+============================================================ */
+const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-    document.getElementById("projectDesc").innerText = desc;
-
+/* ============================================================
+   MODAL
+============================================================ */
+let imgs=[], idx=0;
+function openModal(title, images, desc) {
+    imgs=images; idx=0;
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalImg').src = imgs[idx];
+    document.getElementById('modalDesc').textContent = desc;
+    document.getElementById('modal').style.display = 'flex';
     document.body.style.overflow = 'hidden';
 }
-
-function nextImage(){
-    currentIndex = (currentIndex + 1) % images.length;
-    document.getElementById("projectImage").src = images[currentIndex];
-}
-
-function prevImage(){
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    document.getElementById("projectImage").src = images[currentIndex];
-}
-
-function closeProject() {
-    document.getElementById("projectModal").style.display = "none";
+function closeModal() {
+    document.getElementById('modal').style.display = 'none';
     document.body.style.overflow = 'auto';
 }
+function nextImg() { idx=(idx+1)%imgs.length; document.getElementById('modalImg').src=imgs[idx]; }
+function prevImg() { idx=(idx-1+imgs.length)%imgs.length; document.getElementById('modalImg').src=imgs[idx]; }
+window.onclick = e => { if(e.target===document.getElementById('modal')) closeModal(); };
 
-window.onclick = function(event) {
-    let modal = document.getElementById("projectModal");
-    if (event.target == modal) closeProject();
-}
-
-
-document.getElementById("suggestForm").addEventListener("submit", function(e){
-    e.preventDefault();
-
-    let msg = document.getElementById("message").value.trim();
-    if (!msg) return;
-
-    let submitBtn = e.target.querySelector("button[type='submit']");
-    submitBtn.disabled = true;
-    document.getElementById("statusMsg").innerText = "Sending...";
-
-    fetch("https://script.google.com/macros/s/AKfycbzr2EGaXLcaVBuqNc6R9xtAaGtkSJ4FQRaSFQQO48BbTBWipzMxhERTZhVr3oG8M0K7oA/exec", {
-        method: "POST",
-        mode: "no-cors",  
-        body: JSON.stringify({ message: msg }),
-        headers: {
-            "Content-Type": "application/json"
-        }
+/* ============================================================
+   CONTACT FORM
+============================================================ */
+function sendContact() {
+    const name    = document.getElementById('cName').value.trim();
+    const email   = document.getElementById('cEmail').value.trim();
+    const subject = document.getElementById('cSubject').value.trim();
+    const message = document.getElementById('cMessage').value.trim();
+    const status  = document.getElementById('contactStatus');
+    const btn     = document.getElementById('sendBtn');
+    if (!name || !email || !message) { status.textContent = 'Please fill in all required fields.'; return; }
+    btn.disabled = true;
+    status.textContent = 'Sending...';
+    fetch('https://script.google.com/macros/s/AKfycbzr2EGaXLcaVBuqNc6R9xtAaGtkSJ4FQRaSFQQO48BbTBWipzMxhERTZhVr3oG8M0K7oA/exec', {
+        method: 'POST', mode: 'no-cors',
+        body: JSON.stringify({ name, email, subject, message }),
+        headers: { 'Content-Type': 'application/json' }
     })
     .then(() => {
-        // Note: with mode "no-cors" the browser can't read the real response,
-        // so we can't be 100% sure the server actually processed it.
-        // This only confirms the request was sent without a network error.
-        document.getElementById("statusMsg").innerText = "Sent successfully!";
-        document.getElementById("message").value = "";
+        status.textContent = '✓ Message sent! I\'ll get back to you soon.';
+        document.getElementById('cName').value = '';
+        document.getElementById('cEmail').value = '';
+        document.getElementById('cSubject').value = '';
+        document.getElementById('cMessage').value = '';
     })
-    .catch(() => {
-        document.getElementById("statusMsg").innerText = "Something went wrong. Please try again.";
+    .catch(() => { status.textContent = 'Something went wrong. Please try again.'; })
+    .finally(() => { btn.disabled = false; });
+}
+
+/* ============================================================
+   SUGGESTIONS FORM (kept for backward compat)
+============================================================ */
+document.getElementById('suggestForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const msg = document.getElementById('message').value.trim();
+    if(!msg) return;
+    const btn = e.target.querySelector('button');
+    btn.disabled=true;
+    document.getElementById('statusMsg').textContent='Sending...';
+    fetch('https://script.google.com/macros/s/AKfycbzr2EGaXLcaVBuqNc6R9xtAaGtkSJ4FQRaSFQQO48BbTBWipzMxhERTZhVr3oG8M0K7oA/exec',{
+        method:'POST', mode:'no-cors',
+        body:JSON.stringify({message:msg}),
+        headers:{'Content-Type':'application/json'}
     })
-    .finally(() => {
-        submitBtn.disabled = false;
-    });
+    .then(()=>{ document.getElementById('statusMsg').textContent='Sent successfully!'; document.getElementById('message').value=''; })
+    .catch(()=>{ document.getElementById('statusMsg').textContent='Something went wrong.'; })
+    .finally(()=>{ btn.disabled=false; });
 });
-    </script>
+</script>
+<!-- BACK TO TOP -->
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"/>
+    </svg>
+</button>
+
 </body>
 </html>
