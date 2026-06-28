@@ -6,19 +6,7 @@ A personal portfolio website for Shahad AlAnazi, an Artificial Intelligence stud
 ](https://shahadmaalanazi.github.io/portfolio/)
 ---
 
-## ✨ Features
 
-- **Animated starfield background** — subtle moving stars for a space-themed dark UI.
-- **Responsive navbar** — adapts to a scrollable pill-style menu on mobile.
-- **Hero section** — name, title, and profile photo.
-- **About section** — short bio.
-- **Projects section** — card grid with click-to-open modal showing:
-  - Project title & description
-  - Image gallery with next/previous navigation
-- **Skills section** — tag-style list of technical skills.
-- **Suggestions form** — visitors can submit feedback, sent to a Google Apps Script endpoint.
-- **Contact section** — links to X (Twitter), LinkedIn, and Email.
-- **Fully responsive** — optimized layouts for desktop, tablet, and mobile.
 
 ---
 
