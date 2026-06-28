@@ -10,18 +10,6 @@ A personal portfolio website for Shahad AlAnazi, an Artificial Intelligence stud
 
 ---
 
-## 🗂️ Project Structure
-
-```
-.
-├── index.html          # Main file (HTML + CSS + JS all-in-one)
-├── logo.png             # Favicon
-├── profile.png           # Hero profile photo
-├── Smart Cane 1.jpeg     # Project images (Smart Cane)
-├── Smart Cane 3-7.jpeg
-├── DL1.png, DL2.png, DL3.png      # Project images (Hair Type Detection)
-├── ML.png, ML2.png, ML3.png, ML4.png  # Project images (Happiness ML project)
-```
 ---
 
 ## 🛠️ Built With
