@@ -558,6 +558,9 @@ body.light .hero h1 { background: linear-gradient(135deg,#4c1d95 30%,#a855f7 100
     transition: opacity .5s ease, transform .5s ease;
 }
 .vol-pill.tl-visible { opacity: 1; transform: translateY(0); }
+
+/* ============================================================
+   CERTIFICATIONS
 ============================================================ */
 .certs-list { display: flex; flex-direction: column; gap: 20px; }
 .cert-card {
@@ -571,22 +574,9 @@ body.light .hero h1 { background: linear-gradient(135deg,#4c1d95 30%,#a855f7 100
     display: flex; align-items: center; justify-content: center;
     position: relative; overflow: hidden;
     border-right: 1px solid var(--border); background: rgba(168,85,247,.04);
-    cursor: pointer;
 }
 .cert-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; display: block; }
-.cert-img-wrap:hover img { transform: scale(1.06); }
-.cert-placeholder {
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    width: 100%; height: 160px; gap: 10px; cursor: pointer;
-}
-.cert-placeholder svg { opacity: .35; color: var(--purple); }
-.cert-placeholder span { font-size: .72rem; color: var(--dim); text-align: center; padding: 0 16px; line-height: 1.5; }
-.cert-upload-btn {
-    position: absolute; inset: 0; opacity: 0; transition: opacity .25s;
-    background: rgba(168,85,247,.25); display: flex; align-items: center; justify-content: center;
-    cursor: pointer; font-size: .75rem; color: white; font-weight: 600; gap: 6px; flex-direction: column;
-}
-.cert-img-wrap:hover .cert-upload-btn { opacity: 1; }
+.cert-img-wrap:hover img { transform: scale(1.04); }
 .cert-file { display: none; }
 .cert-body { padding: 22px; flex: 1; display: flex; flex-direction: column; justify-content: center; }
 .cert-year { font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--purple); margin-bottom: 5px; }
@@ -1278,17 +1268,9 @@ h2.section-title::after {
         <!-- 1 -->
         <div class="cert-card">
             <div class="cert-card-inner">
-                <div class="cert-img-wrap" onclick="triggerUpload('cert1')">
-                    <div class="cert-placeholder" id="cert1-placeholder">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                        <span>Click to upload certificate image</span>
-                    </div>
-                    <img id="cert1-img" src="" alt="" style="display:none;">
-                    <div class="cert-upload-btn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                        Upload Image
-                    </div>
-                    <input type="file" class="cert-file" id="cert1" accept="image/*" onchange="loadCertImg(this,'cert1')">
+                <div class="cert-img-wrap">
+                    <img src="" id="cert1-img" alt="Certificate" style="display:none;">
+                    <div class="cert-img-placeholder"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
                 </div>
                 <div class="cert-body">
                     <p class="cert-year">May 2026 — Expires May 2029</p>
@@ -1302,17 +1284,9 @@ h2.section-title::after {
         <!-- 2 -->
         <div class="cert-card">
             <div class="cert-card-inner">
-                <div class="cert-img-wrap" onclick="triggerUpload('cert2')">
-                    <div class="cert-placeholder" id="cert2-placeholder">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                        <span>Click to upload certificate image</span>
-                    </div>
-                    <img id="cert2-img" src="" alt="" style="display:none;">
-                    <div class="cert-upload-btn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                        Upload Image
-                    </div>
-                    <input type="file" class="cert-file" id="cert2" accept="image/*" onchange="loadCertImg(this,'cert2')">
+                <div class="cert-img-wrap">
+                    <img src="" id="cert2-img" alt="Certificate" style="display:none;">
+                    <div class="cert-img-placeholder"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
                 </div>
                 <div class="cert-body">
                     <p class="cert-year">May 2026</p>
@@ -1326,17 +1300,9 @@ h2.section-title::after {
         <!-- 3 -->
         <div class="cert-card">
             <div class="cert-card-inner">
-                <div class="cert-img-wrap" onclick="triggerUpload('cert3')">
-                    <div class="cert-placeholder" id="cert3-placeholder">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                        <span>Click to upload certificate image</span>
-                    </div>
-                    <img id="cert3-img" src="" alt="" style="display:none;">
-                    <div class="cert-upload-btn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                        Upload Image
-                    </div>
-                    <input type="file" class="cert-file" id="cert3" accept="image/*" onchange="loadCertImg(this,'cert3')">
+                <div class="cert-img-wrap">
+                    <img src="" id="cert3-img" alt="Certificate" style="display:none;">
+                    <div class="cert-img-placeholder"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
                 </div>
                 <div class="cert-body">
                     <p class="cert-year">Apr 2026</p>
@@ -1350,17 +1316,9 @@ h2.section-title::after {
         <!-- 4 -->
         <div class="cert-card">
             <div class="cert-card-inner">
-                <div class="cert-img-wrap" onclick="triggerUpload('cert4')">
-                    <div class="cert-placeholder" id="cert4-placeholder">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                        <span>Click to upload certificate image</span>
-                    </div>
-                    <img id="cert4-img" src="" alt="" style="display:none;">
-                    <div class="cert-upload-btn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                        Upload Image
-                    </div>
-                    <input type="file" class="cert-file" id="cert4" accept="image/*" onchange="loadCertImg(this,'cert4')">
+                <div class="cert-img-wrap">
+                    <img src="" id="cert4-img" alt="Certificate" style="display:none;">
+                    <div class="cert-img-placeholder"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
                 </div>
                 <div class="cert-body">
                     <p class="cert-year">Apr 2026</p>
@@ -1374,17 +1332,9 @@ h2.section-title::after {
         <!-- 5 -->
         <div class="cert-card">
             <div class="cert-card-inner">
-                <div class="cert-img-wrap" onclick="triggerUpload('cert5')">
-                    <div class="cert-placeholder" id="cert5-placeholder">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                        <span>Click to upload certificate image</span>
-                    </div>
-                    <img id="cert5-img" src="" alt="" style="display:none;">
-                    <div class="cert-upload-btn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                        Upload Image
-                    </div>
-                    <input type="file" class="cert-file" id="cert5" accept="image/*" onchange="loadCertImg(this,'cert5')">
+                <div class="cert-img-wrap">
+                    <img src="" id="cert5-img" alt="Certificate" style="display:none;">
+                    <div class="cert-img-placeholder"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
                 </div>
                 <div class="cert-body">
                     <p class="cert-year">Mar 2026</p>
@@ -1398,17 +1348,9 @@ h2.section-title::after {
         <!-- 6 -->
         <div class="cert-card">
             <div class="cert-card-inner">
-                <div class="cert-img-wrap" onclick="triggerUpload('cert6')">
-                    <div class="cert-placeholder" id="cert6-placeholder">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                        <span>Click to upload certificate image</span>
-                    </div>
-                    <img id="cert6-img" src="" alt="" style="display:none;">
-                    <div class="cert-upload-btn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                        Upload Image
-                    </div>
-                    <input type="file" class="cert-file" id="cert6" accept="image/*" onchange="loadCertImg(this,'cert6')">
+                <div class="cert-img-wrap">
+                    <img src="" id="cert6-img" alt="Certificate" style="display:none;">
+                    <div class="cert-img-placeholder"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
                 </div>
                 <div class="cert-body">
                     <p class="cert-year">Jul 2025</p>
@@ -1422,17 +1364,9 @@ h2.section-title::after {
         <!-- 7 -->
         <div class="cert-card">
             <div class="cert-card-inner">
-                <div class="cert-img-wrap" onclick="triggerUpload('cert7')">
-                    <div class="cert-placeholder" id="cert7-placeholder">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                        <span>Click to upload certificate image</span>
-                    </div>
-                    <img id="cert7-img" src="" alt="" style="display:none;">
-                    <div class="cert-upload-btn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                        Upload Image
-                    </div>
-                    <input type="file" class="cert-file" id="cert7" accept="image/*" onchange="loadCertImg(this,'cert7')">
+                <div class="cert-img-wrap">
+                    <img src="" id="cert7-img" alt="Certificate" style="display:none;">
+                    <div class="cert-img-placeholder"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
                 </div>
                 <div class="cert-body">
                     <p class="cert-year">Jun 2025</p>
@@ -1446,17 +1380,9 @@ h2.section-title::after {
         <!-- 8 -->
         <div class="cert-card">
             <div class="cert-card-inner">
-                <div class="cert-img-wrap" onclick="triggerUpload('cert8')">
-                    <div class="cert-placeholder" id="cert8-placeholder">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                        <span>Click to upload certificate image</span>
-                    </div>
-                    <img id="cert8-img" src="" alt="" style="display:none;">
-                    <div class="cert-upload-btn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                        Upload Image
-                    </div>
-                    <input type="file" class="cert-file" id="cert8" accept="image/*" onchange="loadCertImg(this,'cert8')">
+                <div class="cert-img-wrap">
+                    <img src="" id="cert8-img" alt="Certificate" style="display:none;">
+                    <div class="cert-img-placeholder"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
                 </div>
                 <div class="cert-body">
                     <p class="cert-year">Jun 2025</p>
@@ -1470,17 +1396,9 @@ h2.section-title::after {
         <!-- 9 -->
         <div class="cert-card">
             <div class="cert-card-inner">
-                <div class="cert-img-wrap" onclick="triggerUpload('cert9')">
-                    <div class="cert-placeholder" id="cert9-placeholder">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                        <span>Click to upload certificate image</span>
-                    </div>
-                    <img id="cert9-img" src="" alt="" style="display:none;">
-                    <div class="cert-upload-btn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                        Upload Image
-                    </div>
-                    <input type="file" class="cert-file" id="cert9" accept="image/*" onchange="loadCertImg(this,'cert9')">
+                <div class="cert-img-wrap">
+                    <img src="" id="cert9-img" alt="Certificate" style="display:none;">
+                    <div class="cert-img-placeholder"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
                 </div>
                 <div class="cert-body">
                     <p class="cert-year">Mar 2025</p>
@@ -1494,17 +1412,9 @@ h2.section-title::after {
         <!-- 10 -->
         <div class="cert-card">
             <div class="cert-card-inner">
-                <div class="cert-img-wrap" onclick="triggerUpload('cert10')">
-                    <div class="cert-placeholder" id="cert10-placeholder">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                        <span>Click to upload certificate image</span>
-                    </div>
-                    <img id="cert10-img" src="" alt="" style="display:none;">
-                    <div class="cert-upload-btn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                        Upload Image
-                    </div>
-                    <input type="file" class="cert-file" id="cert10" accept="image/*" onchange="loadCertImg(this,'cert10')">
+                <div class="cert-img-wrap">
+                    <img src="" id="cert10-img" alt="Certificate" style="display:none;">
+                    <div class="cert-img-placeholder"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
                 </div>
                 <div class="cert-body">
                     <p class="cert-year">Feb 2025</p>
@@ -1518,17 +1428,9 @@ h2.section-title::after {
         <!-- 11 -->
         <div class="cert-card">
             <div class="cert-card-inner">
-                <div class="cert-img-wrap" onclick="triggerUpload('cert11')">
-                    <div class="cert-placeholder" id="cert11-placeholder">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-                        <span>Click to upload certificate image</span>
-                    </div>
-                    <img id="cert11-img" src="" alt="" style="display:none;">
-                    <div class="cert-upload-btn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                        Upload Image
-                    </div>
-                    <input type="file" class="cert-file" id="cert11" accept="image/*" onchange="loadCertImg(this,'cert11')">
+                <div class="cert-img-wrap">
+                    <img src="" id="cert11-img" alt="Certificate" style="display:none;">
+                    <div class="cert-img-placeholder"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
                 </div>
                 <div class="cert-body">
                     <p class="cert-year">May 2024</p>
@@ -1671,14 +1573,19 @@ h2.section-title::after {
     </div>
 </div>
 
+<!-- BACK TO TOP -->
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"/>
+    </svg>
+</button>
+
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+
 // TIMELINE ANIMATION
 const tlObs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-        if (e.isIntersecting) {
-            e.target.classList.add('tl-visible');
-        }
-    });
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('tl-visible'); });
 }, { threshold: 0.15 });
 document.querySelectorAll('.tl-item, .vol-pill').forEach((el, i) => {
     el.style.transitionDelay = (i * 0.12) + 's';
@@ -1688,177 +1595,127 @@ document.querySelectorAll('.tl-item, .vol-pill').forEach((el, i) => {
 // BACK TO TOP
 const backBtn = document.getElementById('backTop');
 function checkScroll() {
-    if (window.scrollY > 300) {
-        backBtn.classList.add('visible');
-    } else {
-        backBtn.classList.remove('visible');
-    }
+    if (window.scrollY > 300) backBtn.classList.add('visible');
+    else backBtn.classList.remove('visible');
 }
 window.addEventListener('scroll', checkScroll, { passive: true });
 checkScroll();
 
-/* ============================================================
-   CERT IMAGE UPLOAD — OWNER ONLY
-============================================================ */
-const OWNER_PASS = 'shahad2026';
-function triggerUpload(id) {
-    const pw = prompt('Enter password to upload:');
-    if (pw !== OWNER_PASS) { if(pw !== null) alert('Incorrect password.'); return; }
-    document.getElementById(id).click();
-}
-function loadCertImg(input, id) {
-    if (!input.files || !input.files[0]) return;
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        const img = document.getElementById(id + '-img');
-        const placeholder = document.getElementById(id + '-placeholder');
-        img.src = e.target.result;
-        img.style.display = 'block';
-        if (placeholder) placeholder.style.display = 'none';
-    };
-    reader.readAsDataURL(input.files[0]);
-}
-
-/* ============================================================
-   THEME TOGGLE
-============================================================ */
+// THEME TOGGLE
 const moonPath = `<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>`;
 const sunPath  = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>`;
-
-function toggleTheme() {
+window.toggleTheme = function() {
     const isLight = document.body.classList.toggle('light');
     document.getElementById('themeIcon').innerHTML = isLight ? sunPath : moonPath;
     document.getElementById('themeLabel').textContent = isLight ? 'Dark' : 'Light';
-}
+};
 
-/* ============================================================
-   TYPING EFFECT
-============================================================ */
+// TYPING EFFECT
 const phrases = ['• Machine Learning','• NLP','• Computer Vision','• LLMs','• Embedded AI','• Explainable AI'];
 let pi=0, ci=0, deleting=false;
-const el = document.getElementById('typingEl');
+const typingEl = document.getElementById('typingEl');
 function typeLoop() {
     const cur = phrases[pi];
     if (!deleting) {
-        el.textContent = cur.slice(0,++ci);
+        typingEl.textContent = cur.slice(0,++ci);
         if (ci===cur.length) { deleting=true; setTimeout(typeLoop,1600); return; }
     } else {
-        el.textContent = cur.slice(0,--ci);
+        typingEl.textContent = cur.slice(0,--ci);
         if (ci===0) { deleting=false; pi=(pi+1)%phrases.length; }
     }
     setTimeout(typeLoop, deleting?55:85);
 }
-typeLoop();
+if (typingEl) typeLoop();
 
-/* ============================================================
-   SCROLL REVEAL
-============================================================ */
+// SCROLL REVEAL
 const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+document.querySelectorAll('.reveal').forEach(item => obs.observe(item));
 
-/* ============================================================
-   MODAL
-============================================================ */
+// MODAL
 let imgs=[], idx=0;
-function openModal(title, images, desc, period, tags, techs) {
+window.openModal = function(title, images, desc, period, tags, techs) {
     imgs = images || []; idx = 0;
     document.getElementById('modalTitle').textContent = title;
     document.getElementById('modalPeriod').textContent = period || '';
     document.getElementById('modalDesc').textContent = desc;
-
-    // tags
     const tagsEl = document.getElementById('modalTags');
     tagsEl.innerHTML = (tags||[]).map(t=>`<span class="proj-tag ${t.cls}">${t.label}</span>`).join('');
-
-    // images
     const imgEl = document.getElementById('modalImg');
     const navEl = document.getElementById('modalNavBtns');
     if (imgs.length > 0) {
         imgEl.src = imgs[0]; imgEl.style.display = 'block';
         navEl.style.display = imgs.length > 1 ? 'flex' : 'none';
         updateImgCount();
-    } else {
-        imgEl.style.display = 'none'; navEl.style.display = 'none';
-    }
-
-    // techs
+    } else { imgEl.style.display = 'none'; navEl.style.display = 'none'; }
     const techsWrap = document.getElementById('modalTechsWrap');
     if (techs && techs.length) {
         document.getElementById('modalTechs').innerHTML = techs.map(t=>`<span class="modal-tech">${t}</span>`).join('');
         techsWrap.style.display = 'block';
     } else { techsWrap.style.display = 'none'; }
-
     document.getElementById('modal').style.display = 'flex';
     document.body.style.overflow = 'hidden';
-}
+};
 function updateImgCount() {
     document.getElementById('modalImgCount').textContent = imgs.length > 1 ? `${idx+1} / ${imgs.length}` : '';
 }
-function closeModal() {
+window.closeModal = function() {
     document.getElementById('modal').style.display = 'none';
     document.body.style.overflow = 'auto';
-}
-function nextImg() { idx=(idx+1)%imgs.length; document.getElementById('modalImg').src=imgs[idx]; updateImgCount(); }
-function prevImg() { idx=(idx-1+imgs.length)%imgs.length; document.getElementById('modalImg').src=imgs[idx]; updateImgCount(); }
-window.onclick = e => { if(e.target===document.getElementById('modal')) closeModal(); };
+};
+window.nextImg = function() { idx=(idx+1)%imgs.length; document.getElementById('modalImg').src=imgs[idx]; updateImgCount(); };
+window.prevImg = function() { idx=(idx-1+imgs.length)%imgs.length; document.getElementById('modalImg').src=imgs[idx]; updateImgCount(); };
+document.getElementById('modal').addEventListener('click', function(e) {
+    if (e.target === this) window.closeModal();
+});
 
-/* ============================================================
-   CONTACT FORM
-============================================================ */
-function sendContact() {
+// CONTACT FORM
+window.sendContact = function() {
     const name    = document.getElementById('cName').value.trim();
     const email   = document.getElementById('cEmail').value.trim();
     const subject = document.getElementById('cSubject').value.trim();
     const message = document.getElementById('cMessage').value.trim();
     const status  = document.getElementById('contactStatus');
-    const btn     = document.getElementById('sendBtn');
+    const sendBtn = document.getElementById('sendBtn');
     if (!name || !email || !message) { status.textContent = 'Please fill in all required fields.'; return; }
-    btn.disabled = true;
+    sendBtn.disabled = true;
     status.textContent = 'Sending...';
     fetch('https://script.google.com/macros/s/AKfycbzr2EGaXLcaVBuqNc6R9xtAaGtkSJ4FQRaSFQQO48BbTBWipzMxhERTZhVr3oG8M0K7oA/exec', {
-        method: 'POST', mode: 'no-cors',
+        method:'POST', mode:'no-cors',
         body: JSON.stringify({ name, email, subject, message }),
         headers: { 'Content-Type': 'application/json' }
     })
     .then(() => {
-        status.textContent = '✓ Message sent! I\'ll get back to you soon.';
-        document.getElementById('cName').value = '';
-        document.getElementById('cEmail').value = '';
-        document.getElementById('cSubject').value = '';
-        document.getElementById('cMessage').value = '';
+        status.textContent = "✓ Message sent! I'll get back to you soon.";
+        ['cName','cEmail','cSubject','cMessage'].forEach(id => document.getElementById(id).value = '');
     })
     .catch(() => { status.textContent = 'Something went wrong. Please try again.'; })
-    .finally(() => { btn.disabled = false; });
+    .finally(() => { sendBtn.disabled = false; });
+};
+
+// SUGGESTIONS FORM
+const suggestForm = document.getElementById('suggestForm');
+if (suggestForm) {
+    suggestForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const msg = document.getElementById('message').value.trim();
+        if (!msg) return;
+        const submitBtn = e.target.querySelector('button');
+        submitBtn.disabled = true;
+        document.getElementById('statusMsg').textContent = 'Sending...';
+        fetch('https://script.google.com/macros/s/AKfycbzr2EGaXLcaVBuqNc6R9xtAaGtkSJ4FQRaSFQQO48BbTBWipzMxhERTZhVr3oG8M0K7oA/exec', {
+            method:'POST', mode:'no-cors',
+            body: JSON.stringify({ message: msg }),
+            headers: { 'Content-Type': 'application/json' }
+        })
+        .then(() => { document.getElementById('statusMsg').textContent = 'Sent successfully!'; document.getElementById('message').value = ''; })
+        .catch(() => { document.getElementById('statusMsg').textContent = 'Something went wrong.'; })
+        .finally(() => { submitBtn.disabled = false; });
+    });
 }
 
-/* ============================================================
-   SUGGESTIONS FORM (kept for backward compat)
-============================================================ */
-document.getElementById('suggestForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    const msg = document.getElementById('message').value.trim();
-    if(!msg) return;
-    const btn = e.target.querySelector('button');
-    btn.disabled=true;
-    document.getElementById('statusMsg').textContent='Sending...';
-    fetch('https://script.google.com/macros/s/AKfycbzr2EGaXLcaVBuqNc6R9xtAaGtkSJ4FQRaSFQQO48BbTBWipzMxhERTZhVr3oG8M0K7oA/exec',{
-        method:'POST', mode:'no-cors',
-        body:JSON.stringify({message:msg}),
-        headers:{'Content-Type':'application/json'}
-    })
-    .then(()=>{ document.getElementById('statusMsg').textContent='Sent successfully!'; document.getElementById('message').value=''; })
-    .catch(()=>{ document.getElementById('statusMsg').textContent='Something went wrong.'; })
-    .finally(()=>{ btn.disabled=false; });
-});
+}); // end DOMContentLoaded
 </script>
-<!-- BACK TO TOP -->
-<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="18 15 12 9 6 15"/>
-    </svg>
-</button>
-
 </body>
 </html>
