@@ -1441,17 +1441,6 @@ h2.section-title::after {
     </div>
 </section>
 
-<!-- SUGGESTIONS -->
-<section id="suggestions" class="reveal">
-    <span class="section-label">Feedback</span>
-    <h2 class="section-title">Suggestions</h2>
-    <form id="suggestForm" class="suggest-form">
-        <textarea id="message" placeholder="Write your suggestion..." required></textarea>
-        <button type="submit">Send</button>
-    </form>
-    <p id="statusMsg"></p>
-</section>
-
 <!-- CONTACT -->
 <section id="contact" class="reveal">
     <span class="section-label">Let's Connect</span>
@@ -1624,29 +1613,25 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(item => obs.observe(item));
 
-// MODAL — supports mixed media: {type:'image'|'video'|'pdf', src:'...', poster:'...' }
+}); // end DOMContentLoaded
+
+// MODAL — outside DOMContentLoaded so onclick works globally
 let mediaList = [], mediaIdx = 0;
 window.openModal = function(title, media, desc, period, tags, techs) {
-    // backward-compat: if media is an array of plain strings, treat as images
     mediaList = (media || []).map(m => typeof m === 'string' ? { type:'image', src:m } : m);
     mediaIdx = 0;
-
     document.getElementById('modalTitle').textContent = title;
     document.getElementById('modalPeriod').textContent = period || '';
     document.getElementById('modalDesc').textContent = desc;
-
     const tagsEl = document.getElementById('modalTags');
     tagsEl.innerHTML = (tags||[]).map(t=>`<span class="proj-tag ${t.cls}">${t.label}</span>`).join('');
-
     renderMainMedia();
     renderThumbs();
-
     const techsWrap = document.getElementById('modalTechsWrap');
     if (techs && techs.length) {
         document.getElementById('modalTechs').innerHTML = techs.map(t=>`<span class="modal-tech">${t}</span>`).join('');
         techsWrap.style.display = 'block';
     } else { techsWrap.style.display = 'none'; }
-
     document.getElementById('modal').style.display = 'flex';
     document.body.style.overflow = 'hidden';
 };
@@ -1657,7 +1642,7 @@ function renderMainMedia() {
     main.style.display = 'block';
     const m = mediaList[mediaIdx];
     if (m.type === 'video') {
-        main.innerHTML = `<video src="${m.src}" controls ${m.poster ? `poster="${m.poster}"` : ''} style="width:100%;max-height:360px;display:block;"></video>`;
+        main.innerHTML = `<video src="${m.src}" controls ${m.poster ? `poster="${m.poster}"` : ''} style="width:100%;max-height:360px;display:block;border-radius:14px;"></video>`;
     } else if (m.type === 'pdf') {
         main.innerHTML = `<div class="modal-pdf-box">
             <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
@@ -1668,7 +1653,7 @@ function renderMainMedia() {
             </a>
         </div>`;
     } else {
-        main.innerHTML = `<img src="${m.src}" alt="">`;
+        main.innerHTML = `<img src="${m.src}" alt="" style="width:100%;max-height:360px;object-fit:cover;border-radius:14px;display:block;">`;
     }
 }
 
@@ -1698,12 +1683,12 @@ window.selectMedia = function(i) {
 window.closeModal = function() {
     document.getElementById('modal').style.display = 'none';
     document.body.style.overflow = 'auto';
-    // stop any playing video
     const v = document.querySelector('#modalMediaMain video');
     if (v) v.pause();
 };
-document.getElementById('modal').addEventListener('click', function(e) {
-    if (e.target === this) window.closeModal();
+
+document.addEventListener('click', function(e) {
+    if (e.target === document.getElementById('modal')) window.closeModal();
 });
 
 // CONTACT FORM
@@ -1717,7 +1702,7 @@ window.sendContact = function() {
     if (!name || !email || !message) { status.textContent = 'Please fill in all required fields.'; return; }
     sendBtn.disabled = true;
     status.textContent = 'Sending...';
-    fetch('<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf_kYcUyzOEZQ41l-ACAcAm--o7rDvZy15IWZ-D2VmqbhyMnQ/viewform?embedded=true" width="640" height="776" frameborder="0" marginheight="0" marginwidth="0">جارٍ التحميل…</iframe>', {
+    fetch('https://script.google.com/macros/s/AKfycbzr2EGaXLcaVBuqNc6R9xtAaGtkSJ4FQRaSFQQO48BbTBWipzMxhERTZhVr3oG8M0K7oA/exec', {
         method:'POST', mode:'no-cors',
         body: JSON.stringify({ name, email, subject, message }),
         headers: { 'Content-Type': 'application/json' }
@@ -1729,29 +1714,6 @@ window.sendContact = function() {
     .catch(() => { status.textContent = 'Something went wrong. Please try again.'; })
     .finally(() => { sendBtn.disabled = false; });
 };
-
-// SUGGESTIONS FORM
-const suggestForm = document.getElementById('suggestForm');
-if (suggestForm) {
-    suggestForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const msg = document.getElementById('message').value.trim();
-        if (!msg) return;
-        const submitBtn = e.target.querySelector('button');
-        submitBtn.disabled = true;
-        document.getElementById('statusMsg').textContent = 'Sending...';
-        fetch('https://script.google.com/macros/s/AKfycbzr2EGaXLcaVBuqNc6R9xtAaGtkSJ4FQRaSFQQO48BbTBWipzMxhERTZhVr3oG8M0K7oA/exec', {
-            method:'POST', mode:'no-cors',
-            body: JSON.stringify({ message: msg }),
-            headers: { 'Content-Type': 'application/json' }
-        })
-        .then(() => { document.getElementById('statusMsg').textContent = 'Sent successfully!'; document.getElementById('message').value = ''; })
-        .catch(() => { document.getElementById('statusMsg').textContent = 'Something went wrong.'; })
-        .finally(() => { submitBtn.disabled = false; });
-    });
-}
-
-}); // end DOMContentLoaded
 </script>
 </body>
 </html>
