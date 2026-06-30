@@ -25,37 +25,107 @@
    LIGHT MODE
 ============================================================ */
 body.light {
-    --bg:    #f5f3ff;
-    --card:  rgba(255,255,255,0.9);
-    --border:rgba(168,85,247,0.2);
-    --text:  #1e1b4b;
-    --dim:   #5b21b6;
+    --bg:    #ffffff;
+    --card:  #f8f7ff;
+    --border:rgba(124,58,237,0.14);
+    --text:  #1a1035;
+    --dim:   #4c3d7a;
     --accent:#7c3aed;
 }
-body.light .gradient-bg   { opacity: 0.3; }
-body.light .stars-wrap    { opacity: 1; }
-body.light .stars         { background-image:
-    radial-gradient(2px 2px at 20px 30px,rgba(109,40,217,.5),transparent),
-    radial-gradient(2px 2px at 40px 70px,rgba(139,92,246,.4),transparent),
-    radial-gradient(2px 2px at 90px 160px,rgba(109,40,217,.3),transparent),
-    radial-gradient(2px 2px at 150px 40px,rgba(168,85,247,.5),transparent),
-    radial-gradient(1px 1px at 200px 80px,rgba(109,40,217,.3),transparent),
-    radial-gradient(1px 1px at 60px 200px,rgba(139,92,246,.4),transparent); }
-body.light .orb           { opacity: 0.06; }
-body.light nav            { background: rgba(245,243,255,0.92); border-bottom-color: rgba(168,85,247,0.2); }
-body.light .hero          { background: radial-gradient(circle at center, #ede9fe 0%, #f5f3ff 70%); }
-body.light .hero-text h1  { background: linear-gradient(to right,#4c1d95,#a855f7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+body.light .gradient-bg { opacity: 0; }
+body.light .stars-wrap { opacity: 1; }
+body.light .stars {
+    background-image:
+        radial-gradient(2px 2px at 20px 30px,rgba(124,58,237,.2),transparent),
+        radial-gradient(2px 2px at 40px 70px,rgba(168,85,247,.15),transparent),
+        radial-gradient(2px 2px at 90px 160px,rgba(124,58,237,.12),transparent),
+        radial-gradient(2px 2px at 150px 40px,rgba(168,85,247,.2),transparent),
+        radial-gradient(1px 1px at 200px 80px,rgba(124,58,237,.12),transparent),
+        radial-gradient(1px 1px at 60px 200px,rgba(168,85,247,.15),transparent);
+}
+body.light .orb { opacity: 0.03; }
+body.light nav { background: rgba(255,255,255,.94); border-bottom: 1px solid rgba(124,58,237,.1); box-shadow: 0 1px 20px rgba(124,58,237,.06); }
+body.light nav a { color: #1a1035; }
+body.light nav a:hover { background: rgba(124,58,237,.06); color: #7c3aed; }
+body.light .theme-btn { color: #1a1035; border-color: rgba(124,58,237,.2); }
+body.light .hero { background: linear-gradient(160deg, #fff 55%, #f3f0ff 100%); }
+body.light .hero h1 { background: linear-gradient(135deg,#3b0764 0%,#7c3aed 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+body.light .hero-greeting { color: #7c3aed; }
+body.light .hero-role, body.light .hero-badge { background: white; color: #4c3d7a; border-color: rgba(124,58,237,.16); box-shadow: 0 2px 8px rgba(124,58,237,.05); }
+body.light .hero-typing-static { color: #4c3d7a; }
+body.light .btn-outline { color: #1a1035; border-color: rgba(124,58,237,.2); }
+body.light .btn-outline:hover { background: rgba(124,58,237,.06); }
 body.light .section-label { color: #7c3aed; }
-body.light .tag-iot    { background:rgba(99,211,190,.12); color:#047857; border-color:rgba(99,211,190,.3); }
-body.light .tag-ai     { background:rgba(251,146,60,.12); color:#c2410c; border-color:rgba(251,146,60,.3); }
-body.light .tag-dl     { background:rgba(168,85,247,.12); color:#6d28d9; border-color:rgba(168,85,247,.3); }
-body.light .tag-ml     { background:rgba(96,165,250,.12); color:#1d4ed8; border-color:rgba(96,165,250,.3); }
-body.light .tag-nlp    { background:rgba(251,191,36,.12); color:#b45309; border-color:rgba(251,191,36,.3); }
-body.light .tag-llm    { background:rgba(244,114,182,.12);color:#be185d; border-color:rgba(244,114,182,.3); }
-body.light .tag-cv     { background:rgba(52,211,153,.12); color:#065f46; border-color:rgba(52,211,153,.3); }
-body.light footer      { color:#6d28d9; background:rgba(237,233,254,.7); }
-body.light .suggest-form textarea { background:white; border:1px solid rgba(168,85,247,.3); color:var(--text); }
-body.light .contact-btn { background:white; color:var(--text); }
+body.light h2.section-title { color: #1a1035; }
+body.light h2.section-title span { color: #7c3aed; }
+body.light h2.section-title::after { background: #7c3aed; }
+body.light h3, body.light .tl-title, body.light .cert-name, body.light .ach-title, body.light .proj-name { color: #1a1035; }
+body.light p, body.light .edu-desc, body.light .about-text, body.light .proj-desc, body.light .ach-desc { color: #4c3d7a; }
+body.light .section-label { color: #7c3aed; }
+body.light .edu-school, body.light .tl-org, body.light .cert-org, body.light .tl-status { color: #7c3aed; }
+body.light .edu-date, body.light .tl-date, body.light .cert-year, body.light .proj-period, body.light .ach-event { color: #9d87c7; }
+body.light .edu-card, body.light .skill-cat, body.light .stat-card,
+body.light .proj-card, body.light .cert-card, body.light .ach-card,
+body.light .course-item, body.light .contact-form-box, body.light .tl-desc {
+    background: white; border-color: rgba(124,58,237,.11); box-shadow: 0 2px 16px rgba(124,58,237,.06);
+}
+body.light .skill-item { background: #f8f7ff; border-color: rgba(124,58,237,.1); color: #4c3d7a; }
+body.light .skill-item:hover { background: rgba(124,58,237,.06); color: #7c3aed; }
+body.light .skill-cat-title { color: #1a1035; }
+body.light .chip { background: rgba(124,58,237,.07); border-color: rgba(124,58,237,.15); color: #5b21b6; }
+body.light .lang-badge { background: white; color: #1a1035; border-color: rgba(124,58,237,.14); }
+body.light .vol-pill { background: white; color: #4c3d7a; border-color: rgba(124,58,237,.14); }
+body.light .info-badge { background: white; color: #4c3d7a; border-color: rgba(124,58,237,.14); }
+body.light .stat-num { color: #7c3aed; }
+body.light .stat-lbl { color: #9d87c7; }
+body.light .proj-tech { background: #f3f0ff; border-color: rgba(124,58,237,.14); color: #5b21b6; }
+body.light .proj-gh { color: #7c3aed; }
+body.light .timeline::before { background: linear-gradient(to bottom, #7c3aed, transparent); }
+body.light .tl-dot { border-color: #fff; box-shadow: 0 0 10px rgba(124,58,237,.3); }
+body.light .tl-desc li { color: #4c3d7a; }
+body.light .tl-desc li::before { color: #7c3aed; }
+body.light .ach-card::before { background: #7c3aed; }
+body.light .ach-icon { background: rgba(124,58,237,.07); border-color: rgba(124,58,237,.14); }
+body.light .cert-img-wrap { background: #f3f0ff; border-right-color: rgba(124,58,237,.1); }
+body.light .cert-link { color: #7c3aed; border-color: rgba(124,58,237,.2); }
+body.light .cert-link:hover { background: rgba(124,58,237,.06); }
+body.light .social-icon { background: white; color: #4c3d7a; border-color: rgba(124,58,237,.14); }
+body.light .social-icon:hover { color: #7c3aed; border-color: #7c3aed; background: rgba(124,58,237,.05); }
+body.light .contact-btn { background: white; color: #1a1035; border-color: rgba(124,58,237,.14); }
+body.light .contact-btn:hover { background: rgba(124,58,237,.05); border-color: #7c3aed; }
+body.light .contact-info-item { color: #4c3d7a; }
+body.light .contact-info-item a { color: #4c3d7a; }
+body.light .form-group input, body.light .form-group textarea { background: #f8f7ff; border-color: rgba(124,58,237,.18); color: #1a1035; }
+body.light .form-group label { color: #9d87c7; }
+body.light .modal-inner { background: #ffffff; border-color: rgba(124,58,237,.14); box-shadow: 0 20px 60px rgba(124,58,237,.12); }
+body.light .modal-close { color: #9d87c7; }
+body.light .modal-inner h3 { color: #1a1035; }
+body.light .modal-desc { color: #4c3d7a; }
+body.light .modal-period { color: #9d87c7; }
+body.light .modal-section-title { color: #7c3aed; }
+body.light .modal-tech { background: rgba(124,58,237,.07); border-color: rgba(124,58,237,.14); color: #5b21b6; }
+body.light .modal-thumb { background: #f3f0ff; }
+body.light .modal-thumb.active { border-color: #7c3aed; }
+body.light .modal-pdf-link { background: #7c3aed; }
+body.light footer { color: #9d87c7; background: #f8f7ff; border-top-color: rgba(124,58,237,.1); }
+body.light .tag-iot { background:rgba(99,211,190,.1); color:#065f46; border-color:rgba(99,211,190,.25); }
+body.light .tag-ai  { background:rgba(251,146,60,.1); color:#9a3412; border-color:rgba(251,146,60,.25); }
+body.light .tag-dl  { background:rgba(124,58,237,.1); color:#5b21b6; border-color:rgba(124,58,237,.25); }
+body.light .tag-ml  { background:rgba(59,130,246,.1); color:#1e40af; border-color:rgba(59,130,246,.25); }
+body.light .tag-nlp { background:rgba(234,179,8,.1);  color:#854d0e; border-color:rgba(234,179,8,.25); }
+body.light .tag-llm { background:rgba(236,72,153,.1); color:#9d174d; border-color:rgba(236,72,153,.25); }
+body.light .tag-xai { background:rgba(239,68,68,.1);  color:#991b1b; border-color:rgba(239,68,68,.25); }
+
+/* ============================================================
+   SCROLLBAR
+============================================================ */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: rgba(255,255,255,.03); }
+::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #c084fc; }
+* { scrollbar-width: thin; scrollbar-color: var(--purple) transparent; }
+body.light ::-webkit-scrollbar-track { background: rgba(168,85,247,.06); }
+body.light ::-webkit-scrollbar-thumb { background: #7c3aed; }
 
 /* ============================================================
    RESET & BASE
@@ -276,13 +346,15 @@ body.light .lang-badge { background: white; }
     animation: fadeUp .7s .4s forwards;
 }
 .hero-roles {
-    display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
     margin-bottom: 20px; opacity: 0; animation: fadeUp .7s .6s forwards;
+    width: 100%; max-width: 800px;
 }
 .hero-role {
-    font-size: .8rem; padding: 6px 16px; border-radius: 20px;
+    font-size: .85rem; padding: 8px 24px; border-radius: 20px;
     border: 1px solid var(--border); color: var(--dim);
-    background: rgba(255,255,255,.04);
+    background: rgba(255,255,255,.06);
+    flex: 1 1 auto; text-align: center; min-width: 140px; max-width: 220px;
 }
 .hero-typing {
     font-size: clamp(.95rem,2.5vw,1.1rem); margin: 4px 0 24px;
@@ -838,9 +910,9 @@ h2.section-title::after {
         <span class="info-badge">🔍 Open to Opportunities</span>
     </div>
     <div class="stats-grid">
-        <div class="stat-card"><span class="stat-num">7+</span><span class="stat-lbl">Projects Built</span></div>
-        <div class="stat-card"><span class="stat-num">3</span><span class="stat-lbl">Awards Won</span></div>
-        <div class="stat-card"><span class="stat-num">11</span><span class="stat-lbl">Certifications</span></div>
+        <div class="stat-card"><span class="stat-num" data-target="7" data-suffix="+">0</span><span class="stat-lbl">Projects Built</span></div>
+        <div class="stat-card"><span class="stat-num" data-target="3">0</span><span class="stat-lbl">Awards Won</span></div>
+        <div class="stat-card"><span class="stat-num" data-target="11">0</span><span class="stat-lbl">Certifications</span></div>
     </div>
 </section>
 
@@ -1612,6 +1684,31 @@ const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(item => obs.observe(item));
+
+// COUNTER ANIMATION
+const counterObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = +el.dataset.target;
+        const suffix = el.dataset.suffix || '';
+        const duration = 1200;
+        const steps = 40;
+        const increment = target / steps;
+        let current = 0;
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                el.textContent = target + suffix;
+                clearInterval(timer);
+            } else {
+                el.textContent = Math.floor(current) + suffix;
+            }
+        }, duration / steps);
+        counterObs.unobserve(el);
+    });
+}, { threshold: 0.5 });
+document.querySelectorAll('.stat-num[data-target]').forEach(el => counterObs.observe(el));
 
 }); // end DOMContentLoaded
 
