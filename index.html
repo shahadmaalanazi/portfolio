@@ -25,107 +25,37 @@
    LIGHT MODE
 ============================================================ */
 body.light {
-    --bg:    #ffffff;
-    --card:  #f8f7ff;
-    --border:rgba(124,58,237,0.14);
-    --text:  #1a1035;
-    --dim:   #4c3d7a;
+    --bg:    #f5f3ff;
+    --card:  rgba(255,255,255,0.9);
+    --border:rgba(168,85,247,0.2);
+    --text:  #1e1b4b;
+    --dim:   #5b21b6;
     --accent:#7c3aed;
 }
-body.light .gradient-bg { opacity: 0; }
-body.light .stars-wrap { opacity: 1; }
-body.light .stars {
-    background-image:
-        radial-gradient(2px 2px at 20px 30px,rgba(124,58,237,.2),transparent),
-        radial-gradient(2px 2px at 40px 70px,rgba(168,85,247,.15),transparent),
-        radial-gradient(2px 2px at 90px 160px,rgba(124,58,237,.12),transparent),
-        radial-gradient(2px 2px at 150px 40px,rgba(168,85,247,.2),transparent),
-        radial-gradient(1px 1px at 200px 80px,rgba(124,58,237,.12),transparent),
-        radial-gradient(1px 1px at 60px 200px,rgba(168,85,247,.15),transparent);
-}
-body.light .orb { opacity: 0.03; }
-body.light nav { background: rgba(255,255,255,.94); border-bottom: 1px solid rgba(124,58,237,.1); box-shadow: 0 1px 20px rgba(124,58,237,.06); }
-body.light nav a { color: #1a1035; }
-body.light nav a:hover { background: rgba(124,58,237,.06); color: #7c3aed; }
-body.light .theme-btn { color: #1a1035; border-color: rgba(124,58,237,.2); }
-body.light .hero { background: linear-gradient(160deg, #fff 55%, #f3f0ff 100%); }
-body.light .hero h1 { background: linear-gradient(135deg,#3b0764 0%,#7c3aed 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
-body.light .hero-greeting { color: #7c3aed; }
-body.light .hero-role, body.light .hero-badge { background: white; color: #4c3d7a; border-color: rgba(124,58,237,.16); box-shadow: 0 2px 8px rgba(124,58,237,.05); }
-body.light .hero-typing-static { color: #4c3d7a; }
-body.light .btn-outline { color: #1a1035; border-color: rgba(124,58,237,.2); }
-body.light .btn-outline:hover { background: rgba(124,58,237,.06); }
+body.light .gradient-bg   { opacity: 0.3; }
+body.light .stars-wrap    { opacity: 1; }
+body.light .stars         { background-image:
+    radial-gradient(2px 2px at 20px 30px,rgba(109,40,217,.5),transparent),
+    radial-gradient(2px 2px at 40px 70px,rgba(139,92,246,.4),transparent),
+    radial-gradient(2px 2px at 90px 160px,rgba(109,40,217,.3),transparent),
+    radial-gradient(2px 2px at 150px 40px,rgba(168,85,247,.5),transparent),
+    radial-gradient(1px 1px at 200px 80px,rgba(109,40,217,.3),transparent),
+    radial-gradient(1px 1px at 60px 200px,rgba(139,92,246,.4),transparent); }
+body.light .orb           { opacity: 0.06; }
+body.light nav            { background: rgba(245,243,255,0.92); border-bottom-color: rgba(168,85,247,0.2); }
+body.light .hero          { background: radial-gradient(circle at center, #ede9fe 0%, #f5f3ff 70%); }
+body.light .hero-text h1  { background: linear-gradient(to right,#4c1d95,#a855f7); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
 body.light .section-label { color: #7c3aed; }
-body.light h2.section-title { color: #1a1035; }
-body.light h2.section-title span { color: #7c3aed; }
-body.light h2.section-title::after { background: #7c3aed; }
-body.light h3, body.light .tl-title, body.light .cert-name, body.light .ach-title, body.light .proj-name { color: #1a1035; }
-body.light p, body.light .edu-desc, body.light .about-text, body.light .proj-desc, body.light .ach-desc { color: #4c3d7a; }
-body.light .section-label { color: #7c3aed; }
-body.light .edu-school, body.light .tl-org, body.light .cert-org, body.light .tl-status { color: #7c3aed; }
-body.light .edu-date, body.light .tl-date, body.light .cert-year, body.light .proj-period, body.light .ach-event { color: #9d87c7; }
-body.light .edu-card, body.light .skill-cat, body.light .stat-card,
-body.light .proj-card, body.light .cert-card, body.light .ach-card,
-body.light .course-item, body.light .contact-form-box, body.light .tl-desc {
-    background: white; border-color: rgba(124,58,237,.11); box-shadow: 0 2px 16px rgba(124,58,237,.06);
-}
-body.light .skill-item { background: #f8f7ff; border-color: rgba(124,58,237,.1); color: #4c3d7a; }
-body.light .skill-item:hover { background: rgba(124,58,237,.06); color: #7c3aed; }
-body.light .skill-cat-title { color: #1a1035; }
-body.light .chip { background: rgba(124,58,237,.07); border-color: rgba(124,58,237,.15); color: #5b21b6; }
-body.light .lang-badge { background: white; color: #1a1035; border-color: rgba(124,58,237,.14); }
-body.light .vol-pill { background: white; color: #4c3d7a; border-color: rgba(124,58,237,.14); }
-body.light .info-badge { background: white; color: #4c3d7a; border-color: rgba(124,58,237,.14); }
-body.light .stat-num { color: #7c3aed; }
-body.light .stat-lbl { color: #9d87c7; }
-body.light .proj-tech { background: #f3f0ff; border-color: rgba(124,58,237,.14); color: #5b21b6; }
-body.light .proj-gh { color: #7c3aed; }
-body.light .timeline::before { background: linear-gradient(to bottom, #7c3aed, transparent); }
-body.light .tl-dot { border-color: #fff; box-shadow: 0 0 10px rgba(124,58,237,.3); }
-body.light .tl-desc li { color: #4c3d7a; }
-body.light .tl-desc li::before { color: #7c3aed; }
-body.light .ach-card::before { background: #7c3aed; }
-body.light .ach-icon { background: rgba(124,58,237,.07); border-color: rgba(124,58,237,.14); }
-body.light .cert-img-wrap { background: #f3f0ff; border-right-color: rgba(124,58,237,.1); }
-body.light .cert-link { color: #7c3aed; border-color: rgba(124,58,237,.2); }
-body.light .cert-link:hover { background: rgba(124,58,237,.06); }
-body.light .social-icon { background: white; color: #4c3d7a; border-color: rgba(124,58,237,.14); }
-body.light .social-icon:hover { color: #7c3aed; border-color: #7c3aed; background: rgba(124,58,237,.05); }
-body.light .contact-btn { background: white; color: #1a1035; border-color: rgba(124,58,237,.14); }
-body.light .contact-btn:hover { background: rgba(124,58,237,.05); border-color: #7c3aed; }
-body.light .contact-info-item { color: #4c3d7a; }
-body.light .contact-info-item a { color: #4c3d7a; }
-body.light .form-group input, body.light .form-group textarea { background: #f8f7ff; border-color: rgba(124,58,237,.18); color: #1a1035; }
-body.light .form-group label { color: #9d87c7; }
-body.light .modal-inner { background: #ffffff; border-color: rgba(124,58,237,.14); box-shadow: 0 20px 60px rgba(124,58,237,.12); }
-body.light .modal-close { color: #9d87c7; }
-body.light .modal-inner h3 { color: #1a1035; }
-body.light .modal-desc { color: #4c3d7a; }
-body.light .modal-period { color: #9d87c7; }
-body.light .modal-section-title { color: #7c3aed; }
-body.light .modal-tech { background: rgba(124,58,237,.07); border-color: rgba(124,58,237,.14); color: #5b21b6; }
-body.light .modal-thumb { background: #f3f0ff; }
-body.light .modal-thumb.active { border-color: #7c3aed; }
-body.light .modal-pdf-link { background: #7c3aed; }
-body.light footer { color: #9d87c7; background: #f8f7ff; border-top-color: rgba(124,58,237,.1); }
-body.light .tag-iot { background:rgba(99,211,190,.1); color:#065f46; border-color:rgba(99,211,190,.25); }
-body.light .tag-ai  { background:rgba(251,146,60,.1); color:#9a3412; border-color:rgba(251,146,60,.25); }
-body.light .tag-dl  { background:rgba(124,58,237,.1); color:#5b21b6; border-color:rgba(124,58,237,.25); }
-body.light .tag-ml  { background:rgba(59,130,246,.1); color:#1e40af; border-color:rgba(59,130,246,.25); }
-body.light .tag-nlp { background:rgba(234,179,8,.1);  color:#854d0e; border-color:rgba(234,179,8,.25); }
-body.light .tag-llm { background:rgba(236,72,153,.1); color:#9d174d; border-color:rgba(236,72,153,.25); }
-body.light .tag-xai { background:rgba(239,68,68,.1);  color:#991b1b; border-color:rgba(239,68,68,.25); }
-
-/* ============================================================
-   SCROLLBAR
-============================================================ */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: rgba(255,255,255,.03); }
-::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 10px; }
-::-webkit-scrollbar-thumb:hover { background: #c084fc; }
-* { scrollbar-width: thin; scrollbar-color: var(--purple) transparent; }
-body.light ::-webkit-scrollbar-track { background: rgba(168,85,247,.06); }
-body.light ::-webkit-scrollbar-thumb { background: #7c3aed; }
+body.light .tag-iot    { background:rgba(99,211,190,.12); color:#047857; border-color:rgba(99,211,190,.3); }
+body.light .tag-ai     { background:rgba(251,146,60,.12); color:#c2410c; border-color:rgba(251,146,60,.3); }
+body.light .tag-dl     { background:rgba(168,85,247,.12); color:#6d28d9; border-color:rgba(168,85,247,.3); }
+body.light .tag-ml     { background:rgba(96,165,250,.12); color:#1d4ed8; border-color:rgba(96,165,250,.3); }
+body.light .tag-nlp    { background:rgba(251,191,36,.12); color:#b45309; border-color:rgba(251,191,36,.3); }
+body.light .tag-llm    { background:rgba(244,114,182,.12);color:#be185d; border-color:rgba(244,114,182,.3); }
+body.light .tag-cv     { background:rgba(52,211,153,.12); color:#065f46; border-color:rgba(52,211,153,.3); }
+body.light footer      { color:#6d28d9; background:rgba(237,233,254,.7); }
+body.light .suggest-form textarea { background:white; border:1px solid rgba(168,85,247,.3); color:var(--text); }
+body.light .contact-btn { background:white; color:var(--text); }
 
 /* ============================================================
    RESET & BASE
@@ -346,15 +276,13 @@ body.light .lang-badge { background: white; }
     animation: fadeUp .7s .4s forwards;
 }
 .hero-roles {
-    display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
     margin-bottom: 20px; opacity: 0; animation: fadeUp .7s .6s forwards;
-    width: 100%; max-width: 800px;
 }
 .hero-role {
-    font-size: .85rem; padding: 8px 24px; border-radius: 20px;
+    font-size: .8rem; padding: 6px 16px; border-radius: 20px;
     border: 1px solid var(--border); color: var(--dim);
-    background: rgba(255,255,255,.06);
-    flex: 1 1 auto; text-align: center; min-width: 140px; max-width: 220px;
+    background: rgba(255,255,255,.04);
 }
 .hero-typing {
     font-size: clamp(.95rem,2.5vw,1.1rem); margin: 4px 0 24px;
@@ -471,6 +399,24 @@ body.light .hero h1 { background: linear-gradient(135deg,#4c1d95 30%,#a855f7 100
 .tag-llm  { background:rgba(244,114,182,.14); color:#f472b6; border:1px solid rgba(244,114,182,.3); }
 .tag-cv   { background:rgba(52,211,153,.14);  color:#34d399; border:1px solid rgba(52,211,153,.3); }
 .tag-xai  { background:rgba(251,113,133,.14); color:#fb7185; border:1px solid rgba(251,113,133,.3); }
+.tag-embedded { background:rgba(99,211,190,.14); color:#63d3be; border:1px solid rgba(99,211,190,.3); }
+.tag-robotics  { background:rgba(129,140,248,.14); color:#818cf8; border:1px solid rgba(129,140,248,.3); }
+
+/* PROJECT FILTER BAR */
+.filter-bar {
+    display:flex; flex-wrap:wrap; gap:10px; margin-bottom:30px;
+}
+.filter-btn {
+    font-family:inherit; font-size:.8rem; font-weight:600;
+    padding:8px 18px; border-radius:50px; cursor:pointer;
+    background:var(--card); border:1px solid var(--border); color:var(--dim);
+    transition:.25s;
+}
+.filter-btn:hover { color:var(--accent); border-color:var(--purple); }
+.filter-btn.active {
+    background:var(--purple); color:#fff; border-color:var(--purple);
+}
+.proj-card.hidden { display:none; }
 .proj-name { font-size:1rem; font-weight:700; margin-bottom:6px; }
 .proj-period { font-size:.75rem; color:var(--dim); margin-bottom:10px; }
 .proj-desc { font-size:.83rem; color:var(--dim); line-height:1.6; flex:1; margin-bottom:14px; }
@@ -665,25 +611,6 @@ body.light .hero h1 { background: linear-gradient(135deg,#4c1d95 30%,#a855f7 100
     .cert-card-inner { flex-direction: column; }
     .cert-img-wrap { width: 100%; min-height: 170px; border-right: none; border-bottom: 1px solid var(--border); }
 }
-
-/* ============================================================
-   SUGGESTIONS
-============================================================ */
-.suggest-form { max-width:560px; display:flex; flex-direction:column; gap:14px; }
-.suggest-form textarea {
-    padding:15px; height:120px; border-radius:13px; border:1px solid var(--border);
-    background:rgba(255,255,255,.04); color:var(--text); resize:none;
-    font-size:.95rem; font-family:inherit; transition:.25s;
-}
-.suggest-form textarea:focus { outline:none; border-color:var(--purple); }
-.suggest-form button {
-    padding:13px; border:none; border-radius:11px;
-    background:var(--purple); color:white; cursor:pointer;
-    font-size:.95rem; font-family:inherit; font-weight:600; transition:.3s;
-}
-.suggest-form button:hover { background:var(--purple2); transform:scale(1.02); }
-.suggest-form button:disabled { opacity:.55; cursor:not-allowed; transform:none; }
-#statusMsg { color:var(--purple); font-size:.9rem; margin-top:4px; }
 
 /* ============================================================
    CONTACT
@@ -910,9 +837,9 @@ h2.section-title::after {
         <span class="info-badge">🔍 Open to Opportunities</span>
     </div>
     <div class="stats-grid">
-        <div class="stat-card"><span class="stat-num" data-target="7" data-suffix="+">0</span><span class="stat-lbl">Projects Built</span></div>
-        <div class="stat-card"><span class="stat-num" data-target="3">0</span><span class="stat-lbl">Awards Won</span></div>
-        <div class="stat-card"><span class="stat-num" data-target="11">0</span><span class="stat-lbl">Certifications</span></div>
+        <div class="stat-card"><span class="stat-num">7+</span><span class="stat-lbl">Projects Built</span></div>
+        <div class="stat-card"><span class="stat-num">3</span><span class="stat-lbl">Awards Won</span></div>
+        <div class="stat-card"><span class="stat-num">11</span><span class="stat-lbl">Certifications</span></div>
     </div>
 </section>
 
@@ -935,10 +862,21 @@ h2.section-title::after {
 <section id="projects" class="reveal">
     <span class="section-label">What I've Built</span>
     <h2 class="section-title">Featured <span>Projects</span></h2>
-    <div class="projects-grid">
+
+    <div class="filter-bar" id="filterBar">
+        <button class="filter-btn active" data-filter="all" onclick="filterProjects('all')">All</button>
+        <button class="filter-btn" data-filter="ml" onclick="filterProjects('ml')">ML</button>
+        <button class="filter-btn" data-filter="dl" onclick="filterProjects('dl')">DL</button>
+        <button class="filter-btn" data-filter="nlp" onclick="filterProjects('nlp')">NLP</button>
+        <button class="filter-btn" data-filter="cv" onclick="filterProjects('cv')">Computer Vision</button>
+        <button class="filter-btn" data-filter="embedded" onclick="filterProjects('embedded')">Embedded Systems</button>
+        <button class="filter-btn" data-filter="robotics" onclick="filterProjects('robotics')">Robotics</button>
+    </div>
+
+    <div class="projects-grid" id="projectsGrid">
 
         <!-- Taw'amah -->
-        <div class="proj-card" onclick="openModal(
+        <div class="proj-card" data-cats="dl nlp" onclick="openModal(
             &quot;Taw\'amah — AI Legal Contract Analysis&quot;,
             [
                 {type:'image', src:'Smart Cane 1.jpeg'},
@@ -964,15 +902,11 @@ h2.section-title::after {
                     <span class="proj-tech">Explainable AI</span>
                     <span class="proj-tech">Digital Twin</span>
                 </div>
-                <a class="proj-gh" href="#" onclick="event.stopPropagation()">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.04c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.75-1.33-1.75-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                    View on GitHub →
-                </a>
             </div>
         </div>
 
         <!-- Smart Digital ID -->
-        <div class="proj-card" onclick="openModal(
+        <div class="proj-card" data-cats="dl cv" onclick="openModal(
             'Smart Digital ID Pass',
             [
                 {type:'image', src:'DL3.png'},
@@ -1006,7 +940,7 @@ h2.section-title::after {
         </div>
 
         <!-- Smart Cane -->
-        <div class="proj-card" onclick="openModal(
+        <div class="proj-card" data-cats="embedded robotics" onclick="openModal(
             'Smart Cane for the Visually Impaired',
             [
                 {type:'image', src:'Smart Cane 4.jpeg'},
@@ -1045,7 +979,7 @@ h2.section-title::after {
         </div>
 
         <!-- Arabic NLP -->
-        <div class="proj-card" onclick="openModal(
+        <div class="proj-card" data-cats="dl nlp" onclick="openModal(
             'Automatic Arabic Text Summarization',
             [
                 {type:'image', src:'ML.png'},
@@ -1079,7 +1013,7 @@ h2.section-title::after {
         </div>
 
         <!-- Hair Detection -->
-        <div class="proj-card" onclick="openModal(
+        <div class="proj-card" data-cats="dl cv" onclick="openModal(
             'Hair Type Detection — EfficientNet-B0',
             [
                 {type:'image', src:'DL1.png'},
@@ -1113,7 +1047,7 @@ h2.section-title::after {
         </div>
 
         <!-- Happiness ML -->
-        <div class="proj-card" onclick="openModal(
+        <div class="proj-card" data-cats="ml" onclick="openModal(
             'Global Impact of Social Support on Happiness',
             [
                 {type:'image', src:'ML.png'},
@@ -1142,6 +1076,94 @@ h2.section-title::after {
                     <span class="proj-tech">Pandas</span>
                 </div>
                 <a class="proj-gh" href="https://github.com/shahadmaalanazi/Impact-on-Happiness" onclick="event.stopPropagation()">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.04c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.75-1.33-1.75-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    View on GitHub →
+                </a>
+            </div>
+        </div>
+
+        <!-- 3-DOF Robotic Arm -->
+        <div class="proj-card" data-cats="embedded robotics" onclick="openModal(
+            '3-DOF Robotic Arm',
+            [
+                {type:'image', src:'3dof-arm.jpeg'}
+            ],
+            'A 3-DOF robotic arm built entirely from scratch using popsicle sticks, Arduino, servo motors, and joystick control.\n\nThis hands-on project helped build a deep understanding of robotic arm mechanics, servo control, and hardware integration — turning a simple idea into a functional prototype.',
+            '2025',
+            [{cls:'tag-robotics',label:'Robotics'},{cls:'tag-embedded',label:'Embedded Systems'}],
+            ['Arduino','Servo Motors','Joystick Control','Robotics','Embedded Systems']
+        )">
+            <img src="3dof-arm.jpeg" alt="3-DOF Robotic Arm">
+            <div class="proj-body">
+                <div class="proj-tags">
+                    <span class="proj-tag tag-robotics">Robotics</span>
+                    <span class="proj-tag tag-embedded">Embedded Systems</span>
+                </div>
+                <p class="proj-name">3-DOF Robotic Arm</p>
+                <p class="proj-period">2025</p>
+                <p class="proj-desc">Robotic arm built from scratch using popsicle sticks, Arduino, servo motors, and joystick control.</p>
+                <div class="proj-techs">
+                    <span class="proj-tech">Arduino</span>
+                    <span class="proj-tech">Servo Motors</span>
+                    <span class="proj-tech">Joystick Control</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4-DOF Robotic Arm -->
+        <div class="proj-card" data-cats="embedded robotics" onclick="openModal(
+            '4-DOF Robotic Arm',
+            [
+                {type:'image', src:'4dof-arm.jpeg'}
+            ],
+            'A 3D-printed 4-DOF robotic arm assembled and programmed using Arduino, servo motors, and joystick control.\n\nThis project strengthened understanding of robotic arm kinematics, servo coordination, hardware integration, and embedded systems through hands-on implementation and testing.',
+            '2025',
+            [{cls:'tag-robotics',label:'Robotics'},{cls:'tag-embedded',label:'Embedded Systems'}],
+            ['Arduino','Servo Motors','3D Printing','Robotics','Embedded Systems']
+        )">
+            <img src="4dof-arm.jpeg" alt="4-DOF Robotic Arm">
+            <div class="proj-body">
+                <div class="proj-tags">
+                    <span class="proj-tag tag-robotics">Robotics</span>
+                    <span class="proj-tag tag-embedded">Embedded Systems</span>
+                </div>
+                <p class="proj-name">4-DOF Robotic Arm</p>
+                <p class="proj-period">2025</p>
+                <p class="proj-desc">3D-printed robotic arm assembled and programmed with Arduino, servo motors, and joystick control.</p>
+                <div class="proj-techs">
+                    <span class="proj-tech">Arduino</span>
+                    <span class="proj-tech">3D Printing</span>
+                    <span class="proj-tech">Servo Coordination</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Information Retrieval and Text Analysis -->
+        <div class="proj-card" data-cats="nlp ml" onclick="openModal(
+            'Information Retrieval and Text Analysis System',
+            [
+                {type:'image', src:'text-analysis.png'}
+            ],
+            'A smart information retrieval and text analysis system that processes customer reviews from two domains: beauty salons (domain-related) and gyms (out-of-domain).\n\nFeatures:\n• NLP techniques to clean and analyze text\n• Document retrieval using TF-IDF and cosine similarity\n• Email classification as spam/ham\n• Document clustering using K-Means',
+            '2025',
+            [{cls:'tag-nlp',label:'NLP'},{cls:'tag-ml',label:'Machine Learning'}],
+            ['Python','TF-IDF','Cosine Similarity','K-Means','Text Classification','NLP']
+        )">
+            <img src="text-analysis.png" alt="Information Retrieval and Text Analysis System">
+            <div class="proj-body">
+                <div class="proj-tags">
+                    <span class="proj-tag tag-nlp">NLP</span>
+                    <span class="proj-tag tag-ml">Machine Learning</span>
+                </div>
+                <p class="proj-name">Information Retrieval & Text Analysis System</p>
+                <p class="proj-period">2025</p>
+                <p class="proj-desc">NLP system retrieving similar documents with TF-IDF/cosine similarity, classifying spam/ham emails, and clustering reviews with K-Means.</p>
+                <div class="proj-techs">
+                    <span class="proj-tech">Python</span>
+                    <span class="proj-tech">TF-IDF</span>
+                    <span class="proj-tech">K-Means</span>
+                </div>
+                <a class="proj-gh" href="#" onclick="event.stopPropagation()">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.04c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.75-1.33-1.75-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
                     View on GitHub →
                 </a>
@@ -1679,56 +1701,47 @@ function typeLoop() {
 }
 if (typingEl) typeLoop();
 
+// PROJECT FILTER
+window.filterProjects = function(filter) {
+    document.querySelectorAll('#filterBar .filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.filter === filter);
+    });
+    document.querySelectorAll('#projectsGrid .proj-card').forEach(card => {
+        const cats = (card.dataset.cats || '').split(' ');
+        const show = filter === 'all' || cats.includes(filter);
+        card.classList.toggle('hidden', !show);
+    });
+};
+
 // SCROLL REVEAL
 const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(item => obs.observe(item));
 
-// COUNTER ANIMATION
-const counterObs = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const el = entry.target;
-        const target = +el.dataset.target;
-        const suffix = el.dataset.suffix || '';
-        const duration = 1200;
-        const steps = 40;
-        const increment = target / steps;
-        let current = 0;
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                el.textContent = target + suffix;
-                clearInterval(timer);
-            } else {
-                el.textContent = Math.floor(current) + suffix;
-            }
-        }, duration / steps);
-        counterObs.unobserve(el);
-    });
-}, { threshold: 0.5 });
-document.querySelectorAll('.stat-num[data-target]').forEach(el => counterObs.observe(el));
-
-}); // end DOMContentLoaded
-
-// MODAL — outside DOMContentLoaded so onclick works globally
+// MODAL — supports mixed media: {type:'image'|'video'|'pdf', src:'...', poster:'...' }
 let mediaList = [], mediaIdx = 0;
 window.openModal = function(title, media, desc, period, tags, techs) {
+    // backward-compat: if media is an array of plain strings, treat as images
     mediaList = (media || []).map(m => typeof m === 'string' ? { type:'image', src:m } : m);
     mediaIdx = 0;
+
     document.getElementById('modalTitle').textContent = title;
     document.getElementById('modalPeriod').textContent = period || '';
     document.getElementById('modalDesc').textContent = desc;
+
     const tagsEl = document.getElementById('modalTags');
     tagsEl.innerHTML = (tags||[]).map(t=>`<span class="proj-tag ${t.cls}">${t.label}</span>`).join('');
+
     renderMainMedia();
     renderThumbs();
+
     const techsWrap = document.getElementById('modalTechsWrap');
     if (techs && techs.length) {
         document.getElementById('modalTechs').innerHTML = techs.map(t=>`<span class="modal-tech">${t}</span>`).join('');
         techsWrap.style.display = 'block';
     } else { techsWrap.style.display = 'none'; }
+
     document.getElementById('modal').style.display = 'flex';
     document.body.style.overflow = 'hidden';
 };
@@ -1739,7 +1752,7 @@ function renderMainMedia() {
     main.style.display = 'block';
     const m = mediaList[mediaIdx];
     if (m.type === 'video') {
-        main.innerHTML = `<video src="${m.src}" controls ${m.poster ? `poster="${m.poster}"` : ''} style="width:100%;max-height:360px;display:block;border-radius:14px;"></video>`;
+        main.innerHTML = `<video src="${m.src}" controls ${m.poster ? `poster="${m.poster}"` : ''} style="width:100%;max-height:360px;display:block;"></video>`;
     } else if (m.type === 'pdf') {
         main.innerHTML = `<div class="modal-pdf-box">
             <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
@@ -1750,7 +1763,7 @@ function renderMainMedia() {
             </a>
         </div>`;
     } else {
-        main.innerHTML = `<img src="${m.src}" alt="" style="width:100%;max-height:360px;object-fit:cover;border-radius:14px;display:block;">`;
+        main.innerHTML = `<img src="${m.src}" alt="">`;
     }
 }
 
@@ -1780,12 +1793,12 @@ window.selectMedia = function(i) {
 window.closeModal = function() {
     document.getElementById('modal').style.display = 'none';
     document.body.style.overflow = 'auto';
+    // stop any playing video
     const v = document.querySelector('#modalMediaMain video');
     if (v) v.pause();
 };
-
-document.addEventListener('click', function(e) {
-    if (e.target === document.getElementById('modal')) window.closeModal();
+document.getElementById('modal').addEventListener('click', function(e) {
+    if (e.target === this) window.closeModal();
 });
 
 // CONTACT FORM
@@ -1799,7 +1812,7 @@ window.sendContact = function() {
     if (!name || !email || !message) { status.textContent = 'Please fill in all required fields.'; return; }
     sendBtn.disabled = true;
     status.textContent = 'Sending...';
-    fetch('https://script.google.com/macros/s/AKfycbzr2EGaXLcaVBuqNc6R9xtAaGtkSJ4FQRaSFQQO48BbTBWipzMxhERTZhVr3oG8M0K7oA/exec', {
+    fetch('<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf_kYcUyzOEZQ41l-ACAcAm--o7rDvZy15IWZ-D2VmqbhyMnQ/viewform?embedded=true" width="640" height="776" frameborder="0" marginheight="0" marginwidth="0">جارٍ التحميل…</iframe>', {
         method:'POST', mode:'no-cors',
         body: JSON.stringify({ name, email, subject, message }),
         headers: { 'Content-Type': 'application/json' }
@@ -1811,6 +1824,8 @@ window.sendContact = function() {
     .catch(() => { status.textContent = 'Something went wrong. Please try again.'; })
     .finally(() => { sendBtn.disabled = false; });
 };
+
+}); // end DOMContentLoaded
 </script>
 </body>
 </html>
