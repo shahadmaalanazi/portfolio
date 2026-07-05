@@ -71,6 +71,30 @@ body {
 }
 
 /* ============================================================
+   CUSTOM SCROLLBAR
+============================================================ */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--purple2), var(--purple));
+    border-radius: 5px;
+    border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--purple), var(--accent));
+}
+
+/* For Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--purple) var(--bg);
+}
+
+/* ============================================================
    BACKGROUNDS
 ============================================================ */
 .gradient-bg {
@@ -876,17 +900,7 @@ h2.section-title::after {
     <div class="projects-grid" id="projectsGrid">
 
         <!-- Taw'amah -->
-        <div class="proj-card" data-cats="dl nlp" onclick="openModal(
-            &quot;Taw\'amah — AI Legal Contract Analysis&quot;,
-            [
-                {type:'image', src:'ai.png'},
-                {type:'pdf', src:'tawamah-overview.pdf', label:'Project Overview (PDF)'}
-            ],
-            &quot;An AI-powered legal technology platform that helps users understand Arabic legal contracts before signing.\n\nKey Features:\n• LLMs for contract understanding\n• Automatic extraction of obligations & responsibilities\n• Risk, ambiguity, and imbalance detection\n• Explainable AI for transparent legal reasoning\n• Predictive AI for dispute and risk estimation\n• Contract simulation using Digital Twin technology\n\nAwarded: Most Promising Idea — ThakaThon 2026&quot;,
-            'Feb 2026 – Present',
-            [{cls:'tag-llm',label:'LLMs'},{cls:'tag-nlp',label:'NLP'},{cls:'tag-dl',label:'DL'}],
-            ['LLMs','NLP','Explainable AI','Digital Twin','Predictive AI']
-        )">
+        <div class="proj-card" data-cats="dl nlp" data-project-id="tawamah">
             <img src="ai.png" alt="Taw'amah">
             <div class="proj-body">
                 <div class="proj-tags">
@@ -906,17 +920,7 @@ h2.section-title::after {
         </div>
 
         <!-- Smart Digital ID -->
-        <div class="proj-card" data-cats="dl cv" onclick="openModal(
-            'Smart Digital ID Pass',
-            [
-                {type:'image', src:'DL3.png'},
-                {type:'video', src:'smart-id-demo.mp4', poster:'DL3.png'}
-            ],
-            'AI-based identity verification system for universities.\n\nFeatures:\n• OCR for ID information extraction\n• Face Recognition\n• Liveness Detection\n• Identity Verification\n• Secure campus authentication',
-            'Jan 2026 – May 2026',
-            [{cls:'tag-ai',label:'AI'},{cls:'tag-dl',label:'Face Recognition'}],
-            ['Python','OCR','CNN','Face Recognition','TensorFlow','Flask']
-        )">
+        <div class="proj-card" data-cats="dl cv" data-project-id="smart_id">
             <img src="DL3.png" alt="Smart Digital ID">
             <div class="proj-body">
                 <div class="proj-tags">
@@ -940,22 +944,7 @@ h2.section-title::after {
         </div>
 
         <!-- Smart Cane -->
-        <div class="proj-card" data-cats="embedded robotics" onclick="openModal(
-            'Smart Cane for the Visually Impaired',
-            [
-                {type:'image', src:'Smart Cane 4.jpeg'},
-                {type:'image', src:'Smart Cane 3.jpeg'},
-                {type:'image', src:'Smart Cane 5.jpeg'},
-                {type:'image', src:'Smart Cane 6.jpeg'},
-                {type:'image', src:'Smart Cane 7.jpeg'},
-                {type:'video', src:'smart-cane-demo.mp4', poster:'Smart Cane 1.jpeg'},
-                {type:'pdf', src:'smart-cane-paper.pdf', label:'Research Paper (PDF)'}
-            ],
-            'Arduino-based smart cane assisting visually impaired users with obstacle detection and vibration feedback.\n\nFeatures:\n• Obstacle detection sensors\n• GPS integration\n• Vibration feedback\n• Arduino Uno implementation\n\nPresented to:\n• Canadian Delegation\n• Healthcare Delegation\n• Global Health Forum\n• Academic Accreditation Authority\n• TEDxPNU\n\nAward: 3rd Place — Arduino Bootcamp',
-            'Apr 2024 – Jan 2026',
-            [{cls:'tag-iot',label:'IoT'},{cls:'tag-ai',label:'Arduino'}],
-            ['Arduino Uno','GPS','Ultrasonic Sensors','C++','Embedded Systems']
-        )">
+        <div class="proj-card" data-cats="embedded robotics" data-project-id="smart_cane">
             <img src="Smart Cane 1.jpeg" alt="Smart Cane">
             <div class="proj-body">
                 <div class="proj-tags">
@@ -979,17 +968,7 @@ h2.section-title::after {
         </div>
 
         <!-- Arabic NLP -->
-        <div class="proj-card" data-cats="dl nlp" onclick="openModal(
-            'Automatic Arabic Text Summarization',
-            [
-                {type:'image', src:'ML.png'},
-                {type:'pdf', src:'arabic-summarization-report.pdf', label:'Project Report (PDF)'}
-            ],
-            'NLP system that automatically summarizes Arabic text using transformer-based models.\n\nFeatures:\n• Text preprocessing pipeline\n• Automatic summarization\n• Evaluation using ROUGE metrics\n• Deployed with Streamlit',
-            'Mar 2026 – May 2026',
-            [{cls:'tag-nlp',label:'NLP'},{cls:'tag-dl',label:'Transformers'}],
-            ['Python','HuggingFace Transformers','Streamlit','ROUGE','Arabic NLP']
-        )">
+        <div class="proj-card" data-cats="dl nlp" data-project-id="arabic_nlp">
             <img src="ML.png" alt="NLP Summarization">
             <div class="proj-body">
                 <div class="proj-tags">
@@ -1013,18 +992,7 @@ h2.section-title::after {
         </div>
 
         <!-- Hair Detection -->
-        <div class="proj-card" data-cats="dl cv" onclick="openModal(
-            'Hair Type Detection — EfficientNet-B0',
-            [
-                {type:'image', src:'DL1.png'},
-                {type:'image', src:'DL2.png'},
-                {type:'image', src:'DL3.png'}
-            ],
-            'Deep learning project classifying hair types using EfficientNet-B0 with transfer learning.\n\nCategories: Straight, Wavy, Curly, Kinky, Dreadlocks\n\nApproach:\n• Transfer learning with EfficientNet-B0\n• Data preprocessing & augmentation\n• Strong classification accuracy achieved',
-            'Deep Learning Project',
-            [{cls:'tag-dl',label:'Deep Learning'}],
-            ['Python','EfficientNet-B0','PyTorch','Data Augmentation','Transfer Learning']
-        )">
+        <div class="proj-card" data-cats="dl cv" data-project-id="hair_detection">
             <img src="DL3.png" alt="Hair Detection">
             <div class="proj-body">
                 <div class="proj-tags">
@@ -1047,20 +1015,7 @@ h2.section-title::after {
         </div>
 
         <!-- Happiness ML -->
-        <div class="proj-card" data-cats="ml" onclick="openModal(
-            'Global Impact of Social Support on Happiness',
-            [
-                {type:'image', src:'ML.png'},
-                {type:'image', src:'ML2.png'},
-                {type:'image', src:'ML3.png'},
-                {type:'image', src:'ML4.png'},
-                {type:'pdf', src:'happiness-research-paper.pdf', label:'Research Paper (PDF)'}
-            ],
-            'ML research analyzing the relationship between social support, income, and happiness using the World Happiness Report dataset (156 countries).\n\nModels tested: Linear Regression, Elastic Net, Random Forest, SVR\nBest Model: SVR\n\nKey Findings:\n• Social support is the strongest predictor of happiness\n• High income + high social support = best outcomes\n• Generosity and trust have minimal impact',
-            'Oct 2025 – Dec 2025',
-            [{cls:'tag-ml',label:'Machine Learning'}],
-            ['Python','SVR','Scikit-learn','Pandas','NumPy','Data Analysis']
-        )">
+        <div class="proj-card" data-cats="ml" data-project-id="happiness_ml">
             <img src="ML.png" alt="Happiness ML">
             <div class="proj-body">
                 <div class="proj-tags">
@@ -1083,16 +1038,7 @@ h2.section-title::after {
         </div>
 
         <!-- 3-DOF Robotic Arm -->
-        <div class="proj-card" data-cats="embedded robotics" onclick="openModal(
-            '3-DOF Robotic Arm',
-            [
-                {type:'image', src:'3dof.png'}
-            ],
-            'A 3-DOF robotic arm built entirely from scratch using popsicle sticks, Arduino, servo motors, and joystick control.\n\nThis hands-on project helped build a deep understanding of robotic arm mechanics, servo control, and hardware integration — turning a simple idea into a functional prototype.',
-            '2025',
-            [{cls:'tag-robotics',label:'Robotics'},{cls:'tag-embedded',label:'Embedded Systems'}],
-            ['Arduino','Servo Motors','Joystick Control','Robotics','Embedded Systems']
-        )">
+        <div class="proj-card" data-cats="embedded robotics" data-project-id="robotic_arm_3dof">
             <img src="3dof.png" alt="3-DOF Robotic Arm">
             <div class="proj-body">
                 <div class="proj-tags">
@@ -1111,16 +1057,7 @@ h2.section-title::after {
         </div>
 
         <!-- 4-DOF Robotic Arm -->
-        <div class="proj-card" data-cats="embedded robotics" onclick="openModal(
-            '4-DOF Robotic Arm',
-            [
-                {type:'image', src:'4dof.png'}
-            ],
-            'A 3D-printed 4-DOF robotic arm assembled and programmed using Arduino, servo motors, and joystick control.\n\nThis project strengthened understanding of robotic arm kinematics, servo coordination, hardware integration, and embedded systems through hands-on implementation and testing.',
-            '2025',
-            [{cls:'tag-robotics',label:'Robotics'},{cls:'tag-embedded',label:'Embedded Systems'}],
-            ['Arduino','Servo Motors','3D Printing','Robotics','Embedded Systems']
-        )">
+        <div class="proj-card" data-cats="embedded robotics" data-project-id="robotic_arm_4dof">
             <img src="4dof.png" alt="4-DOF Robotic Arm">
             <div class="proj-body">
                 <div class="proj-tags">
@@ -1139,16 +1076,7 @@ h2.section-title::after {
         </div>
 
         <!-- Information Retrieval and Text Analysis -->
-        <div class="proj-card" data-cats="nlp ml" onclick="openModal(
-            'Information Retrieval and Text Analysis System',
-            [
-                {type:'image', src:'text-analysis.png'}
-            ],
-            'A smart information retrieval and text analysis system that processes customer reviews from two domains: beauty salons (domain-related) and gyms (out-of-domain).\n\nFeatures:\n• NLP techniques to clean and analyze text\n• Document retrieval using TF-IDF and cosine similarity\n• Email classification as spam/ham\n• Document clustering using K-Means',
-            '2025',
-            [{cls:'tag-nlp',label:'NLP'},{cls:'tag-ml',label:'Machine Learning'}],
-            ['Python','TF-IDF','Cosine Similarity','K-Means','Text Classification','NLP']
-        )">
+        <div class="proj-card" data-cats="nlp ml" data-project-id="text_analysis">
             <img src="text-analysis.png" alt="Information Retrieval and Text Analysis System">
             <div class="proj-body">
                 <div class="proj-tags">
@@ -1718,6 +1646,129 @@ const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(item => obs.observe(item));
+
+// PROJECTS DATA FOR MODAL
+const projectsData = {
+    tawamah: {
+        title: "Taw'amah — AI Legal Contract Analysis",
+        media: [
+            {type:'image', src:'ai.png'},
+            {type:'pdf', src:'tawamah-overview.pdf', label:'Project Overview (PDF)'}
+        ],
+        desc: "An AI-powered legal technology platform that helps users understand Arabic legal contracts before signing.\n\nKey Features:\n• LLMs for contract understanding\n• Automatic extraction of obligations & responsibilities\n• Risk, ambiguity, and imbalance detection\n• Explainable AI for transparent legal reasoning\n• Predictive AI for dispute and risk estimation\n• Contract simulation using Digital Twin technology\n\nAwarded: Most Promising Idea — ThakaThon 2026",
+        period: 'Feb 2026 – Present',
+        tags: [{cls:'tag-llm',label:'LLMs'},{cls:'tag-nlp',label:'NLP'},{cls:'tag-dl',label:'DL'}],
+        techs: ['LLMs','NLP','Explainable AI','Digital Twin','Predictive AI']
+    },
+    smart_id: {
+        title: 'Smart Digital ID Pass',
+        media: [
+            {type:'image', src:'DL3.png'},
+            {type:'video', src:'smart-id-demo.mp4', poster:'DL3.png'}
+        ],
+        desc: "AI-based identity verification system for universities.\n\nFeatures:\n• OCR for ID information extraction\n• Face Recognition\n• Liveness Detection\n• Identity Verification\n• Secure campus authentication",
+        period: 'Jan 2026 – May 2026',
+        tags: [{cls:'tag-ai',label:'AI'},{cls:'tag-dl',label:'Face Recognition'}],
+        techs: ['Python','OCR','CNN','Face Recognition','TensorFlow','Flask']
+    },
+    smart_cane: {
+        title: 'Smart Cane for the Visually Impaired',
+        media: [
+            {type:'image', src:'Smart Cane 4.jpeg'},
+            {type:'image', src:'Smart Cane 3.jpeg'},
+            {type:'image', src:'Smart Cane 5.jpeg'},
+            {type:'image', src:'Smart Cane 6.jpeg'},
+            {type:'image', src:'Smart Cane 7.jpeg'},
+            {type:'video', src:'smart-cane-demo.mp4', poster:'Smart Cane 1.jpeg'},
+            {type:'pdf', src:'smart-cane-paper.pdf', label:'Research Paper (PDF)'}
+        ],
+        desc: "Arduino-based smart cane assisting visually impaired users with obstacle detection and vibration feedback.\n\nFeatures:\n• Obstacle detection sensors\n• GPS integration\n• Vibration feedback\n• Arduino Uno implementation\n\nPresented to:\n• Canadian Delegation\n• Healthcare Delegation\n• Global Health Forum\n• Academic Accreditation Authority\n• TEDxPNU\n\nAward: 3rd Place — Arduino Bootcamp",
+        period: 'Apr 2024 – Jan 2026',
+        tags: [{cls:'tag-iot',label:'IoT'},{cls:'tag-ai',label:'Arduino'}],
+        techs: ['Arduino Uno','GPS','Ultrasonic Sensors','C++','Embedded Systems']
+    },
+    arabic_nlp: {
+        title: 'Automatic Arabic Text Summarization',
+        media: [
+            {type:'image', src:'ML.png'},
+            {type:'pdf', src:'arabic-summarization-report.pdf', label:'Project Report (PDF)'}
+        ],
+        desc: "NLP system that automatically summarizes Arabic text using transformer-based models.\n\nFeatures:\n• Text preprocessing pipeline\n• Automatic summarization\n• Evaluation using ROUGE metrics\n• Deployed with Streamlit",
+        period: 'Mar 2026 – May 2026',
+        tags: [{cls:'tag-nlp',label:'NLP'},{cls:'tag-dl',label:'Transformers'}],
+        techs: ['Python','HuggingFace Transformers','Streamlit','ROUGE','Arabic NLP']
+    },
+    hair_detection: {
+        title: 'Hair Type Detection — EfficientNet-B0',
+        media: [
+            {type:'image', src:'DL1.png'},
+            {type:'image', src:'DL2.png'},
+            {type:'image', src:'DL3.png'}
+        ],
+        desc: "Deep learning project classifying hair types using EfficientNet-B0 with transfer learning.\n\nCategories: Straight, Wavy, Curly, Kinky, Dreadlocks\n\nApproach:\n• Transfer learning with EfficientNet-B0\n• Data preprocessing & augmentation\n• Strong classification accuracy achieved",
+        period: 'Deep Learning Project',
+        tags: [{cls:'tag-dl',label:'Deep Learning'}],
+        techs: ['Python','EfficientNet-B0','PyTorch','Data Augmentation','Transfer Learning']
+    },
+    happiness_ml: {
+        title: 'Global Impact of Social Support on Happiness',
+        media: [
+            {type:'image', src:'ML.png'},
+            {type:'image', src:'ML2.png'},
+            {type:'image', src:'ML3.png'},
+            {type:'image', src:'ML4.png'},
+            {type:'pdf', src:'happiness-research-paper.pdf', label:'Research Paper (PDF)'}
+        ],
+        desc: "ML research analyzing the relationship between social support, income, and happiness using the World Happiness Report dataset (156 countries).\n\nModels tested: Linear Regression, Elastic Net, Random Forest, SVR\nBest Model: SVR\n\nKey Findings:\n• Social support is the strongest predictor of happiness\n• High income + high social support = best outcomes\n• Generosity and trust have minimal impact",
+        period: 'Oct 2025 – Dec 2025',
+        tags: [{cls:'tag-ml',label:'Machine Learning'}],
+        techs: ['Python','SVR','Scikit-learn','Pandas','NumPy','Data Analysis']
+    },
+    robotic_arm_3dof: {
+        title: '3-DOF Robotic Arm',
+        media: [
+            {type:'image', src:'3dof.png'}
+        ],
+        desc: "A 3-DOF robotic arm built entirely from scratch using popsicle sticks, Arduino, servo motors, and joystick control.\n\nThis hands-on project helped build a deep understanding of robotic arm mechanics, servo control, and hardware integration — turning a simple idea into a functional prototype.",
+        period: '2025',
+        tags: [{cls:'tag-robotics',label:'Robotics'},{cls:'tag-embedded',label:'Embedded Systems'}],
+        techs: ['Arduino','Servo Motors','Joystick Control','Robotics','Embedded Systems']
+    },
+    robotic_arm_4dof: {
+        title: '4-DOF Robotic Arm',
+        media: [
+            {type:'image', src:'4dof.png'}
+        ],
+        desc: "A 3D-printed 4-DOF robotic arm assembled and programmed using Arduino, servo motors, and joystick control.\n\nThis project strengthened understanding of robotic arm kinematics, servo coordination, hardware integration, and embedded systems through hands-on implementation and testing.",
+        period: '2025',
+        tags: [{cls:'tag-robotics',label:'Robotics'},{cls:'tag-embedded',label:'Embedded Systems'}],
+        techs: ['Arduino','Servo Motors','3D Printing','Robotics','Embedded Systems']
+    },
+    text_analysis: {
+        title: 'Information Retrieval and Text Analysis System',
+        media: [
+            {type:'image', src:'text-analysis.png'}
+        ],
+        desc: "A smart information retrieval and text analysis system that processes customer reviews from two domains: beauty salons (domain-related) and gyms (out-of-domain).\n\nFeatures:\n• NLP techniques to clean and analyze text\n• Document retrieval using TF-IDF and cosine similarity\n• Email classification as spam/ham\n• Document clustering using K-Means",
+        period: '2025',
+        tags: [{cls:'tag-nlp',label:'NLP'},{cls:'tag-ml',label:'Machine Learning'}],
+        techs: ['Python','TF-IDF','Cosine Similarity','K-Means','Text Classification','NLP']
+    }
+};
+
+// PROJECT CARD CLICKS
+document.querySelectorAll('.proj-card').forEach(card => {
+    card.addEventListener('click', function(e) {
+        // If clicking on GitHub link, let it proceed without modal
+        if (e.target.closest('.proj-gh')) return;
+        
+        const projId = this.dataset.projectId;
+        const p = projectsData[projId];
+        if (p) {
+            window.openModal(p.title, p.media, p.desc, p.period, p.tags, p.techs);
+        }
+    });
+});
 
 }); // end DOMContentLoaded
 
