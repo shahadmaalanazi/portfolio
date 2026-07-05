@@ -1719,10 +1719,14 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(item => obs.observe(item));
 
-// MODAL — supports mixed media: {type:'image'|'video'|'pdf', src:'...', poster:'...' }
+}); // end DOMContentLoaded
+
+// ============================================================
+// MODAL — global scope so onclick works
+// ============================================================
 let mediaList = [], mediaIdx = 0;
+
 window.openModal = function(title, media, desc, period, tags, techs) {
-    // backward-compat: if media is an array of plain strings, treat as images
     mediaList = (media || []).map(m => typeof m === 'string' ? { type:'image', src:m } : m);
     mediaIdx = 0;
 
@@ -1812,7 +1816,7 @@ window.sendContact = function() {
     if (!name || !email || !message) { status.textContent = 'Please fill in all required fields.'; return; }
     sendBtn.disabled = true;
     status.textContent = 'Sending...';
-    fetch('<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf_kYcUyzOEZQ41l-ACAcAm--o7rDvZy15IWZ-D2VmqbhyMnQ/viewform?embedded=true" width="640" height="776" frameborder="0" marginheight="0" marginwidth="0">جارٍ التحميل…</iframe>', {
+    fetch('https://script.google.com/macros/s/AKfycbzr2EGaXLcaVBuqNc6R9xtAaGtkSJ4FQRaSFQQO48BbTBWipzMxhERTZhVr3oG8M0K7oA/exec', {
         method:'POST', mode:'no-cors',
         body: JSON.stringify({ name, email, subject, message }),
         headers: { 'Content-Type': 'application/json' }
@@ -1824,8 +1828,6 @@ window.sendContact = function() {
     .catch(() => { status.textContent = 'Something went wrong. Please try again.'; })
     .finally(() => { sendBtn.disabled = false; });
 };
-
-}); // end DOMContentLoaded
 </script>
 </body>
 </html>
