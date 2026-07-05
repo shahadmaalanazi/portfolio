@@ -408,7 +408,7 @@ body.light .hero h1 { background: linear-gradient(135deg,#4c1d95 30%,#a855f7 100
     padding:0; overflow:hidden; cursor:pointer; transition:.3s; display:flex; flex-direction:column;
 }
 .proj-card:hover { transform:translateY(-8px); border-color:var(--purple); box-shadow:0 16px 40px rgba(168,85,247,.15); }
-.proj-card img { width:100%; height:190px; object-fit:cover; }
+.proj-card img { width:100%; height:190px; object-fit:contain; background:rgba(0,0,0,0.25); border-bottom: 1px solid var(--border); }
 .proj-body { padding:20px; flex:1; display:flex; flex-direction:column; }
 .proj-tags { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:12px; }
 .proj-tag {
@@ -709,7 +709,7 @@ body.light .form-group textarea { background: white; color: var(--text); border-
 .modal-inner h3 { color:white; font-size:1.4rem; font-weight:800; margin-bottom:6px; }
 .modal-period { font-size:.78rem; color:var(--dim); margin-bottom:16px; }
 .modal-img-wrap { position:relative; margin-bottom:16px; }
-.modal-inner img { width:100%; border-radius:14px; display:block; max-height:320px; object-fit:cover; }
+.modal-inner img { width:100%; border-radius:14px; display:block; max-height:450px; object-fit:contain; }
 .modal-nav { display:flex; justify-content:center; gap:10px; margin:10px 0 18px; }
 .modal-nav button {
     background:rgba(168,85,247,.15); border:1px solid var(--border); color:white;
@@ -729,7 +729,7 @@ body.light .form-group textarea { background: white; color: var(--text); border-
 /* MODAL MEDIA GALLERY */
 .modal-media-main { position:relative; border-radius:14px; overflow:hidden; background:rgba(0,0,0,.3); margin-bottom:10px; }
 .modal-media-main img,
-.modal-media-main video { width:100%; max-height:360px; object-fit:cover; display:block; }
+.modal-media-main video { width:100%; max-height:450px; object-fit:contain; display:block; }
 .modal-media-main .modal-pdf-box {
     display:flex; flex-direction:column; align-items:center; justify-content:center;
     gap:12px; padding:40px 20px; min-height:200px; text-align:center;
@@ -1792,15 +1792,16 @@ function animateStats() {
         if (isNaN(target)) return;
         
         let current = 0;
-        const duration = 1500; // 1.5 seconds
+        // Scale duration based on target so small numbers animation runs snappier and smoother
+        const duration = Math.min(1200, target * 100 + 400); 
         const startTime = performance.now();
         
         function update(currentTime) {
             const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / duration, 1);
             
-            // Easing out quadratic
-            const easeProgress = progress * (2 - progress);
+            // Easing out cubic: smooth deceleration at the end
+            const easeProgress = 1 - Math.pow(1 - progress, 3);
             current = Math.floor(easeProgress * target);
             
             el.textContent = current + (hasPlus ? '+' : '');
