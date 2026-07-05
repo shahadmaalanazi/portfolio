@@ -709,7 +709,7 @@ body.light .form-group textarea { background: white; color: var(--text); border-
 .modal-inner h3 { color:white; font-size:1.4rem; font-weight:800; margin-bottom:6px; }
 .modal-period { font-size:.78rem; color:var(--dim); margin-bottom:16px; }
 .modal-img-wrap { position:relative; margin-bottom:16px; }
-.modal-inner img { width:100%; border-radius:14px; display:block; max-height:450px; object-fit:contain; }
+.modal-inner img { max-width: 100%; max-height: 450px; width: auto; height: auto; object-fit: contain; display: block; margin: 0 auto; border-radius: 14px; }
 .modal-nav { display:flex; justify-content:center; gap:10px; margin:10px 0 18px; }
 .modal-nav button {
     background:rgba(168,85,247,.15); border:1px solid var(--border); color:white;
@@ -729,7 +729,7 @@ body.light .form-group textarea { background: white; color: var(--text); border-
 /* MODAL MEDIA GALLERY */
 .modal-media-main { position:relative; border-radius:14px; overflow:hidden; background:rgba(0,0,0,.3); margin-bottom:10px; }
 .modal-media-main img,
-.modal-media-main video { width:100%; max-height:450px; object-fit:contain; display:block; }
+.modal-media-main video { max-width: 100%; max-height: 450px; width: auto; height: auto; object-fit: contain; display: block; margin: 0 auto; }
 .modal-media-main .modal-pdf-box {
     display:flex; flex-direction:column; align-items:center; justify-content:center;
     gap:12px; padding:40px 20px; min-height:200px; text-align:center;
