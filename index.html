@@ -1332,6 +1332,7 @@ h2.section-title::after {
             </div>
         </div>
     </div>
+</section>
 
 <!-- CERTIFICATIONS -->
 <section id="certifications" class="reveal">
@@ -1769,6 +1770,50 @@ document.querySelectorAll('.proj-card').forEach(card => {
         }
     });
 });
+
+// COUNT UP ANIMATION FOR STATS
+const statsObs = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateStats();
+            observer.disconnect(); // animate only once
+        }
+    });
+}, { threshold: 0.2 });
+
+const statsGrid = document.querySelector('.stats-grid');
+if (statsGrid) statsObs.observe(statsGrid);
+
+function animateStats() {
+    document.querySelectorAll('.stat-num').forEach(el => {
+        const text = el.textContent.trim();
+        const hasPlus = text.includes('+');
+        const target = parseInt(text.replace('+', ''), 10);
+        if (isNaN(target)) return;
+        
+        let current = 0;
+        const duration = 1500; // 1.5 seconds
+        const startTime = performance.now();
+        
+        function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // Easing out quadratic
+            const easeProgress = progress * (2 - progress);
+            current = Math.floor(easeProgress * target);
+            
+            el.textContent = current + (hasPlus ? '+' : '');
+            
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            } else {
+                el.textContent = text; // set original text with plus sign
+            }
+        }
+        requestAnimationFrame(update);
+    });
+}
 
 }); // end DOMContentLoaded
 
