@@ -6,6 +6,7 @@
     <link rel="icon" href="logo.png" type="image/png">
     <title>Shahad AlAnazi — AI Engineer</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
     <style>
 /* ============================================================
    VARIABLES
@@ -1222,7 +1223,276 @@ body.rtl-mode .window-title {
         gap: 6px !important;
     }
 }
-    </style>
+    
+/* ============================================================
+   MINECRAFT THEME STYLESHEET OVERRIDES
+   ============================================================ */
+* {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M7 0h2v7h7v2H9v7H7V9H0V7h7V0z' fill='%23ffffff'/%3E%3C/svg%3E") 8 8, auto !important;
+}
+
+body, p, li, span, input, textarea, select, .about-text, .proj-desc, .tl-desc, .ach-desc, .cert-org, .cert-year, .hero-greeting, .hero-typing-static, .typing-cursor, .vol-pill {
+    font-family: 'VT323', monospace !important;
+    font-size: 1.35rem !important;
+    image-rendering: pixelated;
+}
+
+h1, h2, h3, h4, h5, h6, .window-title, .theme-btn, .btn-primary, .btn-outline, .filter-btn, .form-submit, .proj-name, .tl-title, .ach-title, .cert-name, .hud-level, .hero-role, .hero-badge {
+    font-family: 'Press Start 2P', monospace !important;
+    letter-spacing: 0px !important;
+    text-shadow: 2px 2px 0px #000000;
+}
+
+h1 {
+    font-size: clamp(1.8rem, 4vw, 3.5rem) !important;
+    color: #ffff55 !important; /* Minecraft gold title */
+}
+
+/* Background pixel texture overlay */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background-image: 
+        linear-gradient(45deg, rgba(0, 0, 0, 0.08) 25%, transparent 25%), 
+        linear-gradient(-45deg, rgba(0, 0, 0, 0.08) 25%, transparent 25%), 
+        linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.08) 75%), 
+        linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.08) 75%);
+    background-size: 6px 6px;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Minecraft GUI panels */
+.os-window, .proj-card, .skill-cat, .edu-card, .ach-card, .cert-card, .contact-form-box, .modal-inner {
+    background: #c6c6c6 !important;
+    border: 4px solid #373737 !important;
+    box-shadow: 
+        inset -4px -4px 0 #555555,
+        inset 4px 4px 0 #ffffff,
+        0 10px 30px rgba(0,0,0,0.6) !important;
+    border-radius: 0 !important;
+}
+
+.os-window *, .proj-card *, .skill-cat *, .edu-card *, .ach-card *, .cert-card *, .contact-form-box *, .modal-inner * {
+    color: #000000 !important;
+    text-shadow: none !important;
+}
+
+/* Project cards tweaks */
+.proj-card {
+    border-radius: 0 !important;
+}
+.proj-card:hover {
+    transform: translateY(-4px) !important;
+    border-color: #ffffff !important; /* highlight border on hover */
+}
+.proj-card p, .proj-card span {
+    color: #111111 !important;
+}
+
+/* Experience timeline blocky items */
+.tl-item {
+    background: #c6c6c6 !important;
+    border: 3px solid #555555 !important;
+    border-radius: 0 !important;
+    padding: 16px !important;
+    box-shadow: inset -3px -3px 0 #3a3a3a, inset 3px 3px 0 #ffffff !important;
+}
+.tl-dot {
+    background: #55ff55 !important;
+    border: 3px solid #000000 !important;
+    border-radius: 0 !important;
+}
+
+/* Minecraft slots style tags and pills */
+.proj-tag, .modal-tech, .vol-pill {
+    background: #8b8b8b !important;
+    border: 3px solid #373737 !important;
+    box-shadow: inset -3px -3px 0 #555555, inset 3px 3px 0 #ffffff !important;
+    color: #ffff55 !important; /* gold names */
+    font-size: 1.25rem !important;
+    font-weight: normal !important;
+    border-radius: 0 !important;
+    padding: 4px 8px !important;
+}
+
+/* Minecraft custom buttons */
+.theme-btn, .btn-primary, .btn-outline, .filter-btn, .form-submit, .hud-sound-btn, .view-mode-btn, .hud-lang-btn, .social-icon, .modal-close {
+    background: #8b8b8b !important;
+    border: 4px solid #000000 !important;
+    box-shadow: 
+        inset -4px -4px 0 #555555,
+        inset 4px 4px 0 #dbdbdb !important;
+    border-radius: 0 !important;
+    color: #e0e0e0 !important;
+    text-shadow: 2px 2px 0 #3f3f3f !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    image-rendering: pixelated;
+}
+
+.theme-btn:hover, .btn-primary:hover, .btn-outline:hover, .filter-btn:hover, .form-submit:hover, .hud-sound-btn:hover, .view-mode-btn:hover, .hud-lang-btn:hover, .social-icon:hover, .modal-close:hover {
+    background: #47a147 !important; /* green hover style */
+    border-color: #000000 !important;
+    box-shadow: 
+        inset -4px -4px 0 #2e692e,
+        inset 4px 4px 0 #7ae27a !important;
+    color: #ffff55 !important; /* gold text on hover */
+    text-shadow: 2px 2px 0 #1b3d1b !important;
+}
+
+/* Active filter buttons */
+.filter-btn.active {
+    background: #47a147 !important;
+    box-shadow: 
+        inset -4px -4px 0 #2e692e,
+        inset 4px 4px 0 #7ae27a !important;
+    color: #ffff55 !important;
+}
+
+/* OS Window Titlebar */
+.window-header {
+    background: #555555 !important;
+    border-bottom: 4px solid #000000 !important;
+    border-radius: 0 !important;
+    padding: 6px 12px !important;
+}
+.window-title {
+    color: #ffffff !important;
+    font-size: 0.72rem !important;
+}
+.window-actions span {
+    border-radius: 0 !important;
+    width: 14px !important;
+    height: 14px !important;
+}
+
+/* Hotbar & Dock styling */
+.os-dock {
+    background: rgba(0,0,0,0.85) !important;
+    border: 4px solid #3c3c3c !important;
+    border-radius: 0 !important;
+    padding: 8px !important;
+}
+.dock-item {
+    background: #8b8b8b !important;
+    border: 4px solid #373737 !important;
+    box-shadow: inset -4px -4px 0 #555555, inset 4px 4px 0 #ffffff !important;
+    border-radius: 0 !important;
+    width: 50px !important;
+    height: 50px !important;
+}
+.dock-item:hover {
+    border-color: #ffffff !important;
+    background: #9e9e9e !important;
+}
+
+/* HUD elements */
+.hud-bar {
+    background: #2c2c2c !important;
+    border-bottom: 4px solid #000000 !important;
+}
+.hud-level {
+    color: #55ff55 !important;
+    text-shadow: 2px 2px 0 #000000 !important;
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 0.85rem !important;
+}
+
+/* XP level bar */
+.xp-container {
+    background: #000000 !important;
+    border: 3px solid #555555 !important;
+    border-radius: 0 !important;
+    height: 14px !important;
+}
+.xp-fill {
+    background: #55ff55 !important;
+    box-shadow: inset 0 2px 0 #7afe7a !important;
+    border-radius: 0 !important;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+    width: 18px;
+    background: #2c2c2c;
+}
+::-webkit-scrollbar-thumb {
+    background: #8b8b8b;
+    border: 4px solid #2c2c2c;
+    box-shadow: inset -2px -2px 0 #555555, inset 2px 2px 0 #ffffff;
+}
+
+/* Inputs & Form styling */
+input, textarea {
+    background: #dbdbdb !important;
+    border: 3px solid #555555 !important;
+    box-shadow: inset 2px 2px 0 #8b8b8b !important;
+    border-radius: 0 !important;
+    color: #000000 !important;
+    padding: 10px !important;
+}
+input:focus, textarea:focus {
+    border-color: #55ff55 !important; /* Minecraft green highlight */
+}
+
+/* Profile image */
+.hero-photo-wrap {
+    border-radius: 0 !important;
+    border: 6px solid #8b8b8b !important;
+    box-shadow: 
+        inset -4px -4px 0 #555555,
+        inset 4px 4px 0 #ffffff,
+        0 10px 25px rgba(0,0,0,0.6) !important;
+}
+.hero-photo-img {
+    border-radius: 0 !important;
+}
+.hero-photo-halo {
+    display: none !important; /* Hide circular neon halos */
+}
+
+/* Blocky sky background override */
+.gradient-bg {
+    background: linear-gradient(to bottom, #10061e 0%, #1e1335 40%, #3a1b5d 75%, #05010a 100%) !important;
+}
+
+/* Classic view navbar */
+nav {
+    background: #2c2c2c !important;
+    border-bottom: 4px solid #111111 !important;
+    border-radius: 0 !important;
+}
+nav a {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 0.65rem !important;
+    color: #e0e0e0 !important;
+    text-shadow: 2px 2px 0 #222 !important;
+}
+nav a:hover {
+    color: #ffff55 !important; /* Minecraft highlight hover */
+}
+#classicToggleBtn {
+    background: #8b8b8b !important;
+    border: 4px solid #000000 !important;
+    box-shadow: inset -4px -4px 0 #555555, inset 4px 4px 0 #dbdbdb !important;
+    color: #ffffff !important;
+    font-size: 0.65rem !important;
+}
+#classicToggleBtn:hover {
+    background: #47a147 !important;
+    color: #ffff55 !important;
+}
+
+/* Hide circular cyber shapes in favor of pixel graphics */
+svg.cyber-float path, svg.cyber-float rect, svg.cyber-float line {
+    stroke-linecap: square !important;
+    stroke-linejoin: miter !important;
+}
+
+</style>
 </head>
 <body>
 
@@ -1233,23 +1503,85 @@ body.rtl-mode .window-title {
 <div class="orb orb3"></div>
 <div class="stars-wrap"><div class="stars"></div></div>
 
-<!-- Background Cyber Elements -->
-<svg class="cyber-float" style="top:60%; right:5%; width:100px; height:100px; animation-delay:2s; animation-duration:10s;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-    <path d="M12 2a10 10 0 0 0-10 10v2a4 4 0 0 0 4 4h12a4 4 0 0 0 4-4v-2a10 10 0 0 0-10-10z"/>
-    <path d="M9 11h.01M15 11h.01"/>
-    <path d="M8 15a4 4 0 0 0 8 0"/>
-    <path d="M12 2v2M2 12h2M20 12h2"/>
+<!-- Background Minecraft Elements -->
+<svg class="cyber-float" style="top:15%; left:8%; width:80px; height:80px; animation-duration:15s;" viewBox="0 0 8 8" fill="none">
+    <rect width="8" height="8" fill="rgba(92,142,50,0.18)"/>
+    <rect x="1" y="2" width="2" height="2" fill="rgba(0,0,0,0.3)"/>
+    <rect x="5" y="2" width="2" height="2" fill="rgba(0,0,0,0.3)"/>
+    <rect x="3" y="4" width="2" height="3" fill="rgba(0,0,0,0.3)"/>
+    <rect x="2" y="5" width="4" height="2" fill="rgba(0,0,0,0.3)"/>
+    <rect x="2" y="7" width="1" height="1" fill="rgba(92,142,50,0.18)"/>
+    <rect x="5" y="7" width="1" height="1" fill="rgba(92,142,50,0.18)"/>
 </svg>
 
-<svg class="cyber-float" style="top:15%; left:12%; width:90px; height:90px; animation-duration:12s;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
-    <line x1="2" y1="20" x2="22" y2="20"/>
-    <line x1="12" y1="17" x2="12" y2="20"/>
+<svg class="cyber-float" style="top:55%; left:6%; width:80px; height:80px; animation-duration:12s;" viewBox="0 0 16 16" fill="none">
+    <rect x="1" y="14" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+    <rect x="2" y="13" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+    <rect x="3" y="12" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+    <rect x="4" y="11" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+    <rect x="5" y="10" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+    <rect x="6" y="9" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+    <rect x="7" y="8" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+    <rect x="8" y="7" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+    <rect x="9" y="6" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+    <rect x="10" y="5" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+    <rect x="11" y="4" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+    <rect x="12" y="3" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+    <rect x="13" y="2" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+    <rect x="14" y="1" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+    <rect x="15" y="0" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+    <rect x="11" y="2" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+    <rect x="10" y="1" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+    <rect x="9" y="0" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+    <rect x="13" y="3" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+    <rect x="12" y="4" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+    <rect x="11" y="5" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
 </svg>
 
-<div class="cyber-float" style="top: 45%; left: 6%; font-size: 3.5rem; font-weight: 900; font-family: monospace; color: rgba(192, 132, 252, 0.12); text-shadow: 0 0 10px rgba(192, 132, 252, 0.3); animation-duration: 9s;">AI</div>
-<div class="cyber-float" style="bottom: 12%; left: 22%; font-size: 2.2rem; font-weight: 800; font-family: monospace; color: rgba(124, 58, 237, 0.1); text-shadow: 0 0 10px rgba(124, 58, 237, 0.25); animation-duration: 14s;">[ARTIFICIAL_INTELLIGENCE]</div>
-<div class="cyber-float" style="top: 25%; right: 18%; font-size: 1.8rem; font-weight: 800; font-family: monospace; color: rgba(168, 85, 247, 0.12); text-shadow: 0 0 8px rgba(168, 85, 247, 0.25); animation-duration: 11s;">&lt;Neural_Net /&gt;</div>
+<svg class="cyber-float" style="bottom:12%; left:22%; width:90px; height:90px; animation-duration:16s;" viewBox="0 0 16 16" fill="none">
+    <rect x="1" y="14" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+    <rect x="2" y="13" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+    <rect x="3" y="12" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+    <rect x="2" y="11" width="2" height="2" fill="rgba(85,85,85,0.3)"/>
+    <rect x="4" y="13" width="2" height="2" fill="rgba(85,85,85,0.3)"/>
+    <rect x="4" y="11" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+    <rect x="5" y="10" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+    <rect x="6" y="9" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+    <rect x="7" y="8" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+    <rect x="8" y="7" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+    <rect x="9" y="6" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+    <rect x="10" y="5" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+    <rect x="11" y="4" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+    <rect x="12" y="3" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+    <rect x="13" y="2" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+    <rect x="14" y="1" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+    <rect x="15" y="0" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+</svg>
+
+<svg class="cyber-float" style="top:25%; right:18%; width:80px; height:80px; animation-duration:11s;" viewBox="0 0 9 9" fill="none">
+    <rect x="1" y="0" width="2" height="1" fill="rgba(255,85,85,0.25)"/>
+    <rect x="6" y="0" width="2" height="1" fill="rgba(255,85,85,0.25)"/>
+    <rect x="0" y="1" width="4" height="1" fill="rgba(255,85,85,0.25)"/>
+    <rect x="5" y="1" width="4" height="1" fill="rgba(255,85,85,0.25)"/>
+    <rect x="0" y="2" width="9" height="1" fill="rgba(255,85,85,0.25)"/>
+    <rect x="0" y="3" width="9" height="1" fill="rgba(255,85,85,0.25)"/>
+    <rect x="1" y="4" width="7" height="1" fill="rgba(255,85,85,0.25)"/>
+    <rect x="2" y="5" width="5" height="1" fill="rgba(255,85,85,0.25)"/>
+    <rect x="3" y="6" width="3" height="1" fill="rgba(255,85,85,0.25)"/>
+    <rect x="4" y="7" width="1" height="1" fill="rgba(255,85,85,0.25)"/>
+</svg>
+
+<svg class="cyber-float" style="top:60%; right:5%; width:80px; height:80px; animation-duration:14s;" viewBox="0 0 9 9" fill="none">
+    <rect x="4" y="0" width="1" height="1" fill="rgba(85,255,255,0.3)"/>
+    <rect x="3" y="1" width="3" height="1" fill="rgba(85,255,255,0.3)"/>
+    <rect x="2" y="2" width="5" height="1" fill="rgba(85,255,255,0.3)"/>
+    <rect x="1" y="3" width="7" height="1" fill="rgba(85,255,255,0.3)"/>
+    <rect x="0" y="4" width="9" height="1" fill="rgba(85,255,255,0.3)"/>
+    <rect x="1" y="5" width="7" height="1" fill="rgba(85,255,255,0.3)"/>
+    <rect x="2" y="6" width="5" height="1" fill="rgba(85,255,255,0.3)"/>
+    <rect x="3" y="7" width="3" height="1" fill="rgba(85,255,255,0.3)"/>
+    <rect x="4" y="8" width="1" height="1" fill="rgba(85,255,255,0.3)"/>
+</svg>
 
 <!-- NAV -->
 <nav>
@@ -1262,6 +1594,7 @@ body.rtl-mode .window-title {
     <a href="#achievements"><span class="lang-en">Awards</span><span class="lang-ar">الجوائز</span></a>
     <a href="#certifications"><span class="lang-en">Certs</span><span class="lang-ar">الشهادات</span></a>
     <a href="#contact"><span class="lang-en">Contact</span><span class="lang-ar">اتصل بي</span></a>
+    <button class="theme-btn" id="langToggleBtn" onclick="toggleLanguage()">🌐 EN</button>
     <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">
         <svg id="themeIcon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"/>
@@ -2857,7 +3190,7 @@ function addClassicToggleBtn() {
         toggleBtn.style.fontWeight = '700';
         toggleBtn.innerHTML = 'Shahad OS 🚀';
         toggleBtn.onclick = () => toggleViewMode('os');
-        nav.insertBefore(toggleBtn, nav.querySelector('#themeBtn'));
+        nav.insertBefore(toggleBtn, nav.querySelector('#langToggleBtn') || nav.querySelector('#themeBtn'));
     }
 }
 
@@ -3054,6 +3387,9 @@ function applyLanguage(lang) {
 
     const btn = document.querySelector('.hud-lang-btn');
     if (btn) btn.textContent = lang === 'en' ? '🌐 EN' : '🌐 AR';
+    
+    const classicLangBtn = document.getElementById('langToggleBtn');
+    if (classicLangBtn) classicLangBtn.textContent = lang === 'en' ? '🌐 EN' : '🌐 AR';
     
     if (lang === 'ar') {
         document.body.classList.add('rtl-mode');
