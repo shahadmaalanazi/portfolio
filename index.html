@@ -1266,7 +1266,7 @@ body.rtl-mode .window-title {
     <a href="#achievements"><span class="lang-en">Awards</span><span class="lang-ar">الجوائز</span></a>
     <a href="#certifications"><span class="lang-en">Certs</span><span class="lang-ar">الشهادات</span></a>
     <a href="#contact"><span class="lang-en">Contact</span><span class="lang-ar">اتصل بي</span></a>
-    <button class="theme-btn" id="langToggleBtn" onclick="toggleLanguage()">🌐 EN</button>
+
     <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">
         <svg id="themeIcon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"/>
@@ -2862,7 +2862,7 @@ function addClassicToggleBtn() {
         toggleBtn.style.fontWeight = '700';
         toggleBtn.innerHTML = 'Shahad OS 🚀';
         toggleBtn.onclick = () => toggleViewMode('os');
-        nav.insertBefore(toggleBtn, nav.querySelector('#langToggleBtn') || nav.querySelector('#themeBtn'));
+        nav.insertBefore(toggleBtn, nav.querySelector('#themeBtn'));
     }
 }
 
@@ -3060,9 +3060,7 @@ function applyLanguage(lang) {
     const btn = document.querySelector('.hud-lang-btn');
     if (btn) btn.textContent = lang === 'en' ? '🌐 EN' : '🌐 AR';
     
-    const classicLangBtn = document.getElementById('langToggleBtn');
-    if (classicLangBtn) classicLangBtn.textContent = lang === 'en' ? '🌐 EN' : '🌐 AR';
-    
+
     if (lang === 'ar') {
         document.body.classList.add('rtl-mode');
     } else {
