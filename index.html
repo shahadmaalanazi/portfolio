@@ -1076,6 +1076,143 @@ body.os-mode .window-body h2.section-title { font-size: 1.3rem; margin-bottom: 1
     filter: drop-shadow(0 0 8px rgba(168,85,247,0.3));
     color: rgba(168, 85, 247, 0.15);
 }
+
+/* ============================================================
+   LIGHT MODE OS ENVIRONMENT OVERRIDES
+============================================================ */
+body.light.os-mode {
+    background: radial-gradient(circle at center, #ede9fe 0%, #f5f3ff 70%) !important;
+}
+body.light .boot-screen {
+    background: #f5f3ff !important;
+}
+body.light .boot-terminal {
+    background: #ffffff !important;
+    border-color: rgba(168,85,247,0.4) !important;
+    box-shadow: 0 10px 30px rgba(168,85,247,0.15) !important;
+    color: #7c3aed !important;
+}
+body.light .hud-bar {
+    background: rgba(245, 243, 255, 0.85) !important;
+    border-bottom-color: rgba(168, 85, 247, 0.2) !important;
+    color: #1e1b4b !important;
+}
+body.light .system-status {
+    color: #7c3aed !important;
+}
+body.light .hud-level {
+    color: #7c3aed !important;
+}
+body.light .xp-container {
+    background: rgba(168, 85, 247, 0.08) !important;
+    border-color: rgba(168, 85, 247, 0.2) !important;
+}
+body.light .hud-sound-btn, 
+body.light .view-mode-btn {
+    background: rgba(168, 85, 247, 0.08) !important;
+    border-color: rgba(168, 85, 247, 0.25) !important;
+    color: #1e1b4b !important;
+}
+body.light .hud-sound-btn:hover, 
+body.light .view-mode-btn:hover {
+    background: rgba(168, 85, 247, 0.2) !important;
+}
+body.light .view-mode-btn {
+    color: #7c3aed !important;
+}
+body.light .desktop-icon {
+    color: #1e1b4b !important;
+}
+body.light .desktop-icon:hover {
+    color: #7c3aed !important;
+    text-shadow: 0 0 8px rgba(168, 85, 247, 0.3) !important;
+}
+body.light .desktop-icon-img {
+    background: rgba(255, 255, 255, 0.7) !important;
+    border-color: rgba(168, 85, 247, 0.3) !important;
+}
+body.light .os-dock {
+    background: rgba(255, 255, 255, 0.7) !important;
+    border-color: rgba(168, 85, 247, 0.3) !important;
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.15) !important;
+}
+body.light .dock-item {
+    background: rgba(168, 85, 247, 0.05) !important;
+    border-color: rgba(168, 85, 247, 0.15) !important;
+}
+body.light .dock-item:hover {
+    background: rgba(168, 85, 247, 0.15) !important;
+}
+body.light .os-window {
+    background: rgba(255, 255, 255, 0.75) !important;
+    border-color: rgba(168, 85, 247, 0.35) !important;
+    box-shadow: 0 20px 50px rgba(168, 85, 247, 0.12) !important;
+}
+body.light .window-header {
+    background: rgba(245, 243, 255, 0.7) !important;
+    border-bottom-color: rgba(168, 85, 247, 0.2) !important;
+}
+body.light .window-title {
+    color: #1e1b4b !important;
+}
+body.light .cyber-float {
+    color: rgba(124, 58, 237, 0.08) !important;
+}
+body.light svg.cyber-float {
+    color: rgba(124, 58, 237, 0.15) !important;
+}
+body.light .level-up-flash {
+    background: rgba(168, 85, 247, 0.1) !important;
+    color: #7c3aed !important;
+    text-shadow: 0 0 15px rgba(168,85,247,0.4) !important;
+}
+body.light .modal-tech {
+    background: rgba(124, 58, 237, 0.08) !important;
+    border-color: rgba(124, 58, 237, 0.2) !important;
+    color: #6d28d9 !important;
+}
+body.light .proj-tag {
+    background: rgba(124, 58, 237, 0.08) !important;
+    border-color: rgba(124, 58, 237, 0.25) !important;
+    color: #6d28d9 !important;
+}
+
+/* RTL / Arabic Mode Overrides */
+body.rtl-mode {
+    direction: rtl;
+    text-align: right;
+}
+body.rtl-mode .window-header {
+    flex-direction: row-reverse;
+}
+body.rtl-mode .window-actions {
+    margin-right: 0;
+    margin-left: 16px;
+    flex-direction: row-reverse;
+}
+body.rtl-mode .hud-bar {
+    flex-direction: row-reverse;
+}
+body.rtl-mode .hud-right {
+    flex-direction: row-reverse;
+    gap: 8px !important;
+}
+body.rtl-mode .desktop-grid {
+    left: auto;
+    right: 40px;
+}
+body.rtl-mode .project-details-grid {
+    direction: rtl;
+}
+body.rtl-mode .window-title {
+    margin-right: 0;
+    margin-left: 50px;
+}
+@media (max-width: 768px) {
+    body.rtl-mode .hud-right {
+        gap: 6px !important;
+    }
+}
     </style>
 </head>
 <body>
@@ -2530,7 +2667,7 @@ window.openModal = function(title, media, desc, period, tags, techs) {
                     ${deviceHtml}
                 </div>
                 <div>
-                    <h3 style="color:white;font-size:1.15rem;margin-bottom:6px;">${title}</h3>
+                    <h3 style="color:var(--text);font-size:1.15rem;margin-bottom:6px;">${title}</h3>
                     <p style="color:var(--purple);font-size:0.75rem;font-weight:700;margin-bottom:12px;">${period || ''}</p>
                     
                     <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;">
@@ -2540,7 +2677,7 @@ window.openModal = function(title, media, desc, period, tags, techs) {
                     <p style="color:var(--dim);font-size:0.83rem;line-height:1.7;white-space:pre-line;margin-bottom:18px;">${desc}</p>
                     
                     <div>
-                        <h4 style="color:white;font-size:0.8rem;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.04em;">Technologies:</h4>
+                        <h4 style="color:var(--text);font-size:0.8rem;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.04em;">Technologies:</h4>
                         <div style="display:flex;gap:6px;flex-wrap:wrap;">
                             ${(techs||[]).map(t => `<span class="modal-tech" style="font-size:0.68rem;padding:3px 8px;border-radius:6px;background:rgba(168,85,247,0.1);border:1px solid rgba(168,85,247,0.2);color:#d8b4fe;">${t}</span>`).join('')}
                         </div>
@@ -2603,7 +2740,7 @@ function addClassicToggleBtn() {
         toggleBtn.style.color = 'white';
         toggleBtn.style.borderColor = 'var(--purple)';
         toggleBtn.style.fontWeight = '700';
-        toggleBtn.innerHTML = 'Shahad_OS 🚀';
+        toggleBtn.innerHTML = 'Shahad OS 🚀';
         toggleBtn.onclick = () => toggleViewMode('os');
         nav.insertBefore(toggleBtn, nav.querySelector('#themeBtn'));
     }
@@ -2639,27 +2776,35 @@ function startBootSequence(onComplete) {
     bootScreen.appendChild(terminal);
     document.body.appendChild(bootScreen);
     
-    const lines = [
-        '> SHAHAD_OS [VERSION 3.0] COLD INITIALIZATION...',
+    const bootLines = currentLang === 'en' ? [
+        '> SHAHAD OS [VERSION 3.0] COLD INITIALIZATION...',
         '> LOAD STACK: OK',
         '> SYNC NEURAL WEIGHTS & BIASES... [SUCCESS]',
         '> ASSETS PRELOAD... [SUCCESS]',
         '> DETECTED AI NODES: CV, NLP, EMBEDDED_ML',
         '> ACCESS GRANTED. SYSTEM READY FOR USER.',
         '> DEPLOYING HUD INTERFACE...'
+    ] : [
+        '> نظام شهد [نسخة 3.0] تهيئة النظام الحركي...',
+        '> تحميل الحزم والمكتبات المدمجة... [نجاح]',
+        '> مزامنة شبكة الخلايا العصبية والذكاء الاصطناعي... [نجاح]',
+        '> فحص ملفات السيرة الذاتية... [نجاح]',
+        '> التعرف على مسارات التعلم: الرؤية الحاسوبية، اللغويات، الأنظمة المدمجة',
+        '> تم السماح بالدخول. النظام جاهز للمستخدم.',
+        '> تشغيل واجهة المستخدم الرسومية...'
     ];
     
     let lineIdx = 0;
     
     function addLine() {
-        if (lineIdx < lines.length) {
+        if (lineIdx < bootLines.length) {
             const line = document.createElement('div');
             line.className = 'boot-line';
-            line.textContent = lines[lineIdx];
+            line.textContent = bootLines[lineIdx];
             terminal.appendChild(line);
             terminal.scrollTop = terminal.scrollHeight;
             
-            if (lineIdx < lines.length - 1) playSound('click');
+            if (lineIdx < bootLines.length - 1) playSound('click');
             
             lineIdx++;
             setTimeout(addLine, 180 + Math.random() * 120);
@@ -2678,13 +2823,103 @@ function startBootSequence(onComplete) {
     setTimeout(addLine, 300);
 }
 
+// TRANSLATION ENGINE
+const translations = {
+    en: {
+        about: 'About Me',
+        education: 'Education',
+        projects: 'Projects',
+        skills: 'Skills',
+        experience: 'Experience',
+        achievements: 'Awards',
+        certifications: 'Credentials',
+        contact: 'Contact',
+        sysStatus: 'Shahad OS',
+        classicView: 'Classic ↗',
+        level: 'LVL',
+        projDetails: 'Project Details'
+    },
+    ar: {
+        about: 'من أنا',
+        education: 'التعليم',
+        projects: 'المشاريع',
+        skills: 'المهارات',
+        experience: 'الخبرة',
+        achievements: 'الجوائز',
+        certifications: 'الشهادات',
+        contact: 'اتصل بي',
+        sysStatus: 'نظام شهد',
+        classicView: 'الكلاسيكي ↗',
+        level: 'مستوى',
+        projDetails: 'تفاصيل المشروع'
+    }
+};
+
+let currentLang = localStorage.getItem('portfolio-lang') || 'en';
+
+window.toggleLanguage = function() {
+    currentLang = currentLang === 'en' ? 'ar' : 'en';
+    localStorage.setItem('portfolio-lang', currentLang);
+    playSound('click');
+    applyLanguage(currentLang);
+};
+
+function applyLanguage(lang) {
+    const btn = document.querySelector('.hud-lang-btn');
+    if (btn) btn.textContent = lang === 'en' ? '🌐 EN' : '🌐 AR';
+    
+    if (lang === 'ar') {
+        document.body.classList.add('rtl-mode');
+    } else {
+        document.body.classList.remove('rtl-mode');
+    }
+    
+    // Update Desktop Icons
+    document.querySelectorAll('.desktop-icon').forEach(icon => {
+        const onClickStr = icon.getAttribute('onclick');
+        if (onClickStr) {
+            const match = onClickStr.match(/'([^']+)'/);
+            if (match) {
+                const id = match[1];
+                const label = icon.querySelector('span');
+                if (label && translations[lang][id]) {
+                    label.textContent = translations[lang][id];
+                }
+            }
+        }
+    });
+    
+    // Update OS Windows titles
+    document.querySelectorAll('.os-window').forEach(win => {
+        const id = win.id.replace('win-', '');
+        const titleEl = win.querySelector('.window-title');
+        if (titleEl && translations[lang][id]) {
+            titleEl.textContent = translations[lang][id];
+        }
+    });
+    
+    // Update HUD labels
+    const sysStatus = document.querySelector('.system-status');
+    if (sysStatus) {
+        sysStatus.innerHTML = `<span class="status-dot"></span> ${translations[lang].sysStatus} <span class="sys-version">v3.0</span>`;
+    }
+    const lvlText = document.getElementById('lvlText');
+    if (lvlText) {
+        lvlText.textContent = `${translations[lang].level} ${level}`;
+    }
+    const viewBtn = document.querySelector('.view-mode-btn');
+    if (viewBtn) {
+        viewBtn.textContent = translations[lang].classicView;
+    }
+}
+
 // MAIN OS ENTRY POINT
 function initOSEnvironment() {
     const hud = document.createElement('div');
     hud.className = 'hud-bar';
     hud.innerHTML = `
         <div class="hud-left">
-            <span class="system-status"><span class="status-dot"></span> Shahad_OS <span class="sys-version">v3.0</span></span>
+            <span class="system-status"><span class="status-dot"></span> Shahad OS <span class="sys-version">v3.0</span></span>
         </div>
         <div class="hud-center">
             <span class="hud-level" id="lvlText">LVL 99</span>
@@ -2693,6 +2928,9 @@ function initOSEnvironment() {
             </div>
         </div>
         <div class="hud-right">
+            <button class="hud-lang-btn" onclick="toggleLanguage()" title="Switch Language" style="background:rgba(168,85,247,0.08); border:1px solid rgba(168,85,247,0.25); color:inherit; padding:4px 9px; border-radius:8px; cursor:pointer; font-size:0.75rem; font-weight:700;">
+                🌐 EN
+            </button>
             <button class="hud-sound-btn" onclick="toggleSound()" title="Toggle Sound">
                 <svg id="soundIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
             </button>
@@ -2759,6 +2997,9 @@ function initOSEnvironment() {
     initCustomCursor();
     wrapSectionsInWindows();
     createProjectDetailsWindow();
+    
+    // Apply default language labels on init
+    applyLanguage(currentLang);
     
     const savedMode = localStorage.getItem('portfolio-mode') || 'os';
     if (savedMode === 'os') {
