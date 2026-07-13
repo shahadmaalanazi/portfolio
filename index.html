@@ -1177,6 +1177,15 @@ body.light .proj-tag {
     color: #6d28d9 !important;
 }
 
+
+/* Default Language Visibility */
+body.rtl-mode .lang-en {
+    display: none !important;
+}
+body:not(.rtl-mode) .lang-ar {
+    display: none !important;
+}
+
 /* RTL / Arabic Mode Overrides */
 body.rtl-mode {
     direction: rtl;
@@ -1244,15 +1253,15 @@ body.rtl-mode .window-title {
 
 <!-- NAV -->
 <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#achievements">Awards</a>
-    <a href="#certifications">Certs</a>
-    <a href="#contact">Contact</a>
+    <a href="#home"><span class="lang-en">Home</span><span class="lang-ar">الرئيسية</span></a>
+    <a href="#about"><span class="lang-en">About</span><span class="lang-ar">من أنا</span></a>
+    <a href="#education"><span class="lang-en">Education</span><span class="lang-ar">التعليم</span></a>
+    <a href="#projects"><span class="lang-en">Projects</span><span class="lang-ar">المشاريع</span></a>
+    <a href="#skills"><span class="lang-en">Skills</span><span class="lang-ar">المهارات</span></a>
+    <a href="#experience"><span class="lang-en">Experience</span><span class="lang-ar">الخبرة</span></a>
+    <a href="#achievements"><span class="lang-en">Awards</span><span class="lang-ar">الجوائز</span></a>
+    <a href="#certifications"><span class="lang-en">Certs</span><span class="lang-ar">الشهادات</span></a>
+    <a href="#contact"><span class="lang-en">Contact</span><span class="lang-ar">اتصل بي</span></a>
     <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">
         <svg id="themeIcon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="5"/>
@@ -1288,76 +1297,80 @@ body.rtl-mode .window-title {
             </div>
         </div>
 
-        <p class="hero-greeting">✦ AI Researcher & Engineer ✦</p>
-        <h1>Shahad AlAnazi</h1>
+        <p class="hero-greeting"><span class="lang-en">✦ AI Researcher & Engineer ✦</span><span class="lang-ar">✦ باحثة ومطورة ذكاء اصطناعي ✦</span></p>
+        <h1><span class="lang-en">Shahad AlAnazi</span><span class="lang-ar">شهد العنزي</span></h1>
         <p class="hero-typing">
-            <span class="hero-typing-static">Passionate about </span><span class="typing-cursor" id="typingEl"></span>
+            <span class="hero-typing-static"><span class="lang-en">Passionate about </span><span class="lang-ar">شغوفة بـ </span></span><span class="typing-cursor" id="typingEl"></span>
         </p>
         <div class="hero-roles">
-            <span class="hero-role">Machine Learning</span>
-            <span class="hero-role">NLP & DL</span>
-            <span class="hero-role">Computer Vision</span>
-            <span class="hero-role">Embedded System</span>
+            <span class="hero-role"><span class="lang-en">Machine Learning</span><span class="lang-ar">تعلم الآلة</span></span>
+            <span class="hero-role"><span class="lang-en">NLP & DL</span><span class="lang-ar">معالجة اللغات والتعلم العميق</span></span>
+            <span class="hero-role"><span class="lang-en">Computer Vision</span><span class="lang-ar">الرؤية الحاسوبية</span></span>
+            <span class="hero-role"><span class="lang-en">Embedded System</span><span class="lang-ar">الأنظمة المدمجة</span></span>
         </div>
         <div class="hero-badges">
-            <span class="hero-badge">🎓 Princess Nourah University</span>
-            <span class="hero-badge">📍 Riyadh, Saudi Arabia</span>
-            <span class="hero-badge">🔍 Open to Opportunities</span>
+            <span class="hero-badge">🎓 <span class="lang-en">Princess Nourah University</span><span class="lang-ar">جامعة الأميرة نورة</span></span>
+            <span class="hero-badge">📍 <span class="lang-en">Riyadh, Saudi Arabia</span><span class="lang-ar">الرياض، السعودية</span></span>
+            <span class="hero-badge">🔍 <span class="lang-en">Open to Opportunities</span><span class="lang-ar">متاحة للفرص المهنية</span></span>
         </div>
         <div class="hero-cta">
-            <a href="#projects" class="btn-primary">View Projects</a>
-            <a href="#contact" class="btn-outline">Get In Touch</a>
+            <a href="#projects" class="btn-primary"><span class="lang-en">View Projects</span><span class="lang-ar">عرض المشاريع</span></a>
+            <a href="#contact" class="btn-outline"><span class="lang-en">Get In Touch</span><span class="lang-ar">تواصل معي</span></a>
         </div>
     </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about" class="reveal">
-    <span class="section-label">Get to Know Me</span>
-    <h2 class="section-title">About <span>Me</span></h2>
-    <p class="about-text">
+    <span class="section-label"><span class="lang-en">Get to Know Me</span><span class="lang-ar">نبذة عني</span></span>
+    <h2 class="section-title"><span class="lang-en">About <span>Me</span></span><span class="lang-ar">من <span>أنا</span></span></h2>
+    <p class="about-text lang-en">
         I'm an <strong>Artificial Intelligence student at Princess Nourah Bint Abdulrahman University</strong> with a deep interest in Machine Learning, NLP, Computer Vision, and Embedded AI. I enjoy building AI-powered solutions that solve real-world problems — from <strong> technology and identity verification</strong> to healthcare, accessibility, and education. Alongside research, I have leadership experience in technical communities, mentoring students, and running Arduino training programs.
     </p>
+    <p class="about-text lang-ar">
+        أنا طالبة <strong>ذكاء اصطناعي في جامعة الأميرة نورة بنت عبد الرحمن</strong>، لدي اهتمام وشغف عميق بتعلم الآلة، معالجة اللغات الطبيعية (NLP)، الرؤية الحاسوبية، والذكاء الاصطناعي المدمج. أستمتع ببناء الحلول البرمجية المدعومة بالذكاء الاصطناعي لحل المشكلات الواقعية — من <strong>تقنيات التحقق من الهوية</strong> إلى الرعاية الصحية وتسهيل الوصول والتعليم. إلى جانب البحث العلمي، أمتلك خبرة قيادية في المجتمعات التقنية وإرشاد الطلاب وإدارة برامج تدريب أردوينو.
+    </p>
     <div class="info-badges">
-        <span class="info-badge">🎓 PNU — Princess Nourah University</span>
-        <span class="info-badge">📍 Riyadh, Saudi Arabia</span>
-        <span class="info-badge">🔍 Open to Opportunities</span>
+        <span class="info-badge">🎓 <span class="lang-en">PNU — Princess Nourah University</span><span class="lang-ar">جامعة الأميرة نورة</span></span>
+        <span class="info-badge">📍 <span class="lang-en">Riyadh, Saudi Arabia</span><span class="lang-ar">الرياض، السعودية</span></span>
+        <span class="info-badge">🔍 <span class="lang-en">Open to Opportunities</span><span class="lang-ar">متاحة للفرص المهنية</span></span>
     </div>
     <div class="stats-grid">
-        <div class="stat-card"><span class="stat-num">7+</span><span class="stat-lbl">Projects Built</span></div>
-        <div class="stat-card"><span class="stat-num">3</span><span class="stat-lbl">Awards Won</span></div>
-        <div class="stat-card"><span class="stat-num">11</span><span class="stat-lbl">Certifications</span></div>
+        <div class="stat-card"><span class="stat-num">7+</span><span class="stat-lbl"><span class="lang-en">Projects Built</span><span class="lang-ar">مشروع منجز</span></span></div>
+        <div class="stat-card"><span class="stat-num">3</span><span class="stat-lbl"><span class="lang-en">Awards Won</span><span class="lang-ar">جوائز محققة</span></span></div>
+        <div class="stat-card"><span class="stat-num">11</span><span class="stat-lbl"><span class="lang-en">Certifications</span><span class="lang-ar">شهادة مهنية</span></span></div>
     </div>
 </section>
 
 <!-- EDUCATION -->
 <section id="education" class="reveal">
-    <span class="section-label">Academic Background</span>
-    <h2 class="section-title">Education</h2>
+    <span class="section-label"><span class="lang-en">Academic Background</span><span class="lang-ar">المؤهل العلمي</span></span>
+    <h2 class="section-title"><span class="lang-en">Education</span><span class="lang-ar">التعليم</span></h2>
     <div class="edu-card">
         <div class="edu-icon">🎓</div>
         <div>
-            <p class="edu-title">B.S. in Artificial Intelligence</p>
-            <p class="edu-school">Princess Nourah Bint Abdulrahman University — Riyadh, Saudi Arabia</p>
-            <p class="edu-date">2023 – Present</p>
-            <p class="edu-desc">Focused on machine learning, deep learning, natural language processing, computer vision, and embedded AI systems. Engaged in research, hands-on projects, and leadership initiatives that bridge theory with real-world AI applications.</p>
+            <p class="edu-title"><span class="lang-en">B.S. in Artificial Intelligence</span><span class="lang-ar">بكالوريوس العلوم في الذكاء الاصطناعي</span></p>
+            <p class="edu-school"><span class="lang-en">Princess Nourah Bint Abdulrahman University — Riyadh, Saudi Arabia</span><span class="lang-ar">جامعة الأميرة نورة بنت عبد الرحمن — الرياض، السعودية</span></p>
+            <p class="edu-date"><span class="lang-en">2023 – Present</span><span class="lang-ar">2023 – حتى الآن</span></p>
+            <p class="edu-desc lang-en">Focused on machine learning, deep learning, natural language processing, computer vision, and embedded AI systems. Engaged in research, hands-on projects, and leadership initiatives that bridge theory with real-world AI applications.</p>
+            <p class="edu-desc lang-ar">التركيز على تعلم الآلة، التعلم العميق، معالجة اللغات الطبيعية، الرؤية الحاسوبية، وأنظمة الذكاء الاصطناعي المدمجة. المشاركة الفعالة في الأبحاث، المشاريع العملية، والمبادرات القيادية التي تسد الفجوة بين النظرية والتطبيق.</p>
         </div>
     </div>
 </section>
 
 <!-- PROJECTS -->
 <section id="projects" class="reveal">
-    <span class="section-label">What I've Built</span>
-    <h2 class="section-title">Featured <span>Projects</span></h2>
+    <span class="section-label"><span class="lang-en">What I've Built</span><span class="lang-ar">أبرز أعمالي</span></span>
+    <h2 class="section-title"><span class="lang-en">Featured <span>Projects</span></span><span class="lang-ar">معرض <span>المشاريع</span></span></h2>
 
     <div class="filter-bar" id="filterBar">
-        <button class="filter-btn active" data-filter="all" onclick="filterProjects('all')">All</button>
-        <button class="filter-btn" data-filter="ml" onclick="filterProjects('ml')">ML</button>
-        <button class="filter-btn" data-filter="dl" onclick="filterProjects('dl')">DL</button>
-        <button class="filter-btn" data-filter="nlp" onclick="filterProjects('nlp')">NLP</button>
-        <button class="filter-btn" data-filter="cv" onclick="filterProjects('cv')">Computer Vision</button>
-        <button class="filter-btn" data-filter="embedded" onclick="filterProjects('embedded')">Embedded Systems</button>
-        <button class="filter-btn" data-filter="robotics" onclick="filterProjects('robotics')">Robotics</button>
+        <button class="filter-btn active" data-filter="all" onclick="filterProjects('all')"><span class="lang-en">All</span><span class="lang-ar">الكل</span></button>
+        <button class="filter-btn" data-filter="ml" onclick="filterProjects('ml')"><span class="lang-en">ML</span><span class="lang-ar">تعلم الآلة</span></button>
+        <button class="filter-btn" data-filter="dl" onclick="filterProjects('dl')"><span class="lang-en">DL</span><span class="lang-ar">العميق</span></button>
+        <button class="filter-btn" data-filter="nlp" onclick="filterProjects('nlp')"><span class="lang-en">NLP</span><span class="lang-ar">اللغات</span></button>
+        <button class="filter-btn" data-filter="cv" onclick="filterProjects('cv')"><span class="lang-en">Computer Vision</span><span class="lang-ar">الرؤية</span></button>
+        <button class="filter-btn" data-filter="embedded" onclick="filterProjects('embedded')"><span class="lang-en">Embedded Systems</span><span class="lang-ar">المدمجة</span></button>
+        <button class="filter-btn" data-filter="robotics" onclick="filterProjects('robotics')"><span class="lang-en">Robotics</span><span class="lang-ar">الروبوتات</span></button>
     </div>
 
     <div class="projects-grid" id="projectsGrid">
@@ -1370,9 +1383,9 @@ body.rtl-mode .window-title {
                     <span class="proj-tag tag-llm">LLMs</span>
                     <span class="proj-tag tag-nlp">NLP</span>
                 </div>
-                <p class="proj-name">Taw'amah</p>
-                <p class="proj-period">Feb 2026 – Present</p>
-                <p class="proj-desc">AI-powered Arabic legal contract analysis platform with risk detection, obligation extraction, and Digital Twin simulation.</p>
+                <p class="proj-name"><span class="lang-en">Taw'amah</span><span class="lang-ar">منصة توأمة القانونية</span></p>
+                <p class="proj-period"><span class="lang-en">Feb 2026 – Present</span><span class="lang-ar">فبراير 2026 – الحالي</span></p>
+                <p class="proj-desc lang-en">AI-powered Arabic legal contract analysis platform with risk detection, obligation extraction, and Digital Twin simulation.</p><p class="proj-desc lang-ar">منصة مدعومة بالذكاء الاصطناعي لتحليل العقود القانونية العربية واكتشاف المخاطر، واستخراج الالتزامات، ومحاكاة التوأم الرقمي للعقد.</p>
                 <div class="proj-techs">
                     <span class="proj-tech">LLMs</span>
                     <span class="proj-tech">NLP</span>
@@ -1390,9 +1403,9 @@ body.rtl-mode .window-title {
                     <span class="proj-tag tag-ai">AI</span>
                     <span class="proj-tag tag-dl">Face Recognition</span>
                 </div>
-                <p class="proj-name">Smart Digital ID Pass</p>
-                <p class="proj-period">Jan 2026 – May 2026</p>
-                <p class="proj-desc">AI-based university identity verification system using OCR, face recognition, and liveness detection.</p>
+                <p class="proj-name"><span class="lang-en">Smart Digital ID Pass</span><span class="lang-ar">بطاقة الهوية الرقمية الجامعية الذكية</span></p>
+                <p class="proj-period"><span class="lang-en">Jan 2026 – May 2026</span><span class="lang-ar">يناير 2026 – مايو 2026</span></p>
+                <p class="proj-desc lang-en">AI-based university identity verification system using OCR, face recognition, and liveness detection.</p><p class="proj-desc lang-ar">نظام تحقق من الهوية الجامعية يعتمد على الذكاء الاصطناعي باستخدام التعرف الضوئي على الحروف (OCR) والتعرف على الوجه وفحص الحيوية لمنع التزوير.</p>
                 <div class="proj-techs">
                     <span class="proj-tech">Python</span>
                     <span class="proj-tech">OCR</span>
@@ -1401,7 +1414,7 @@ body.rtl-mode .window-title {
                 </div>
                 <a class="proj-gh" href="https://github.com/shahadmaalanazi/smart-ID-pass" onclick="event.stopPropagation()">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.04c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.75-1.33-1.75-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                    View on GitHub →
+                    <span class="lang-en">View on GitHub →</span><span class="lang-ar">عرض الكود على GitHub ←</span>
                 </a>
             </div>
         </div>
@@ -1414,9 +1427,9 @@ body.rtl-mode .window-title {
                     <span class="proj-tag tag-iot">IoT</span>
                     <span class="proj-tag tag-ai">Arduino</span>
                 </div>
-                <p class="proj-name">Smart Cane for the Visually Impaired</p>
-                <p class="proj-period">Apr 2024 – Jan 2026</p>
-                <p class="proj-desc">Award-winning smart cane with obstacle detection, GPS, and vibration feedback. Showcased at TEDxPNU and international delegations.</p>
+                <p class="proj-name"><span class="lang-en">Smart Cane for the Visually Impaired</span><span class="lang-ar">العصا الذكية لمساعدة كفيفي البصر</span></p>
+                <p class="proj-period"><span class="lang-en">Apr 2024 – Jan 2026</span><span class="lang-ar">أبريل 2024 – يناير 2026</span></p>
+                <p class="proj-desc lang-en">Award-winning smart cane with obstacle detection, GPS, and vibration feedback. Showcased at TEDxPNU and international delegations.</p><p class="proj-desc lang-ar">عصا ذكية حائزة على جوائز وطنية تساعد المكفوفين في الملاحة الآمنة عبر نظام استشعار العقبات وتحديد المواقع GPS والتنبيه بالاهتزاز والصوت.</p>
                 <div class="proj-techs">
                     <span class="proj-tech">Arduino Uno</span>
                     <span class="proj-tech">GPS</span>
@@ -1425,7 +1438,7 @@ body.rtl-mode .window-title {
                 </div>
                 <a class="proj-gh" href="#" onclick="event.stopPropagation()">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.04c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.75-1.33-1.75-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                    View on GitHub →
+                    <span class="lang-en">View on GitHub →</span><span class="lang-ar">عرض الكود على GitHub ←</span>
                 </a>
             </div>
         </div>
@@ -1438,9 +1451,9 @@ body.rtl-mode .window-title {
                     <span class="proj-tag tag-nlp">NLP</span>
                     <span class="proj-tag tag-dl">Transformers</span>
                 </div>
-                <p class="proj-name">Arabic Text Summarization</p>
-                <p class="proj-period">Mar 2026 – May 2026</p>
-                <p class="proj-desc">Transformer-based NLP system for automatic Arabic text summarization with ROUGE evaluation and Streamlit deployment.</p>
+                <p class="proj-name"><span class="lang-en">Arabic Text Summarization</span><span class="lang-ar">تلخيص النصوص العربية بالذكاء الاصطناعي</span></p>
+                <p class="proj-period"><span class="lang-en">Mar 2026 – May 2026</span><span class="lang-ar">مارس 2026 – مايو 2026</span></p>
+                <p class="proj-desc lang-en">Transformer-based NLP system for automatic Arabic text summarization with ROUGE evaluation and Streamlit deployment.</p><p class="proj-desc lang-ar">نظام متطور لمعالجة اللغات الطبيعية وتلخيص النصوص العربية الطويلة تلقائياً بالاعتماد على نماذج المحولات الهيكلية (Transformers).</p>
                 <div class="proj-techs">
                     <span class="proj-tech">Python</span>
                     <span class="proj-tech">Transformers</span>
@@ -1449,7 +1462,7 @@ body.rtl-mode .window-title {
                 </div>
                 <a class="proj-gh" href="https://github.com/shahadmaalanazi/summarization" onclick="event.stopPropagation()">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.04c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.75-1.33-1.75-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                    View on GitHub →
+                    <span class="lang-en">View on GitHub →</span><span class="lang-ar">عرض الكود على GitHub ←</span>
                 </a>
             </div>
         </div>
@@ -1461,9 +1474,9 @@ body.rtl-mode .window-title {
                 <div class="proj-tags">
                     <span class="proj-tag tag-dl">Deep Learning</span>
                 </div>
-                <p class="proj-name">Hair Type Detection</p>
-                <p class="proj-period">Deep Learning Project</p>
-                <p class="proj-desc">Image classification using EfficientNet-B0 with transfer learning to detect 5 hair types with high accuracy.</p>
+                <p class="proj-name"><span class="lang-en">Hair Type Detection</span><span class="lang-ar">نظام تصنيف وتحديد أنواع الشعر</span></p>
+                <p class="proj-period"><span class="lang-en">Deep Learning Project</span><span class="lang-ar">مشروع تعلم عميق</span></p>
+                <p class="proj-desc lang-en">Image classification using EfficientNet-B0 with transfer learning to detect 5 hair types with high accuracy.</p><p class="proj-desc lang-ar">نموذج تصنيف صور يعتمد على التعلم العميق ونقل المعرفة عبر شبكة EfficientNet-B0 لتحديد 5 أنواع مختلفة للشعر بدقة عالية.</p>
                 <div class="proj-techs">
                     <span class="proj-tech">Python</span>
                     <span class="proj-tech">EfficientNet-B0</span>
@@ -1472,7 +1485,7 @@ body.rtl-mode .window-title {
                 </div>
                 <a class="proj-gh" href="https://github.com/shahadmaalanazi/Hair_Type_Detection-" onclick="event.stopPropagation()">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.04c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.75-1.33-1.75-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                    View on GitHub →
+                    <span class="lang-en">View on GitHub →</span><span class="lang-ar">عرض الكود على GitHub ←</span>
                 </a>
             </div>
         </div>
@@ -1484,9 +1497,9 @@ body.rtl-mode .window-title {
                 <div class="proj-tags">
                     <span class="proj-tag tag-ml">Machine Learning</span>
                 </div>
-                <p class="proj-name">Social Support & Happiness</p>
-                <p class="proj-period">Oct 2025 – Dec 2025</p>
-                <p class="proj-desc">ML research on global happiness predictors across 156 countries. SVR model identified social support as the strongest factor.</p>
+                <p class="proj-name"><span class="lang-en">Social Support & Happiness</span><span class="lang-ar">مؤشرات الدعم الاجتماعي وتأثيرها على السعادة</span></p>
+                <p class="proj-period"><span class="lang-en">Oct 2025 – Dec 2025</span><span class="lang-ar">أكتوبر 2025 – ديسمبر 2025</span></p>
+                <p class="proj-desc lang-en">ML research on global happiness predictors across 156 countries. SVR model identified social support as the strongest factor.</p><p class="proj-desc lang-ar">بحث إحصائي وتنبؤي باستخدام تعلم الآلة لدراسة عوامل السعادة في 156 دولة. أثبت نموذج SVR أن الدعم الاجتماعي يمثل أقوى العوامل المسببة للسعادة.</p>
                 <div class="proj-techs">
                     <span class="proj-tech">Python</span>
                     <span class="proj-tech">SVR</span>
@@ -1495,7 +1508,7 @@ body.rtl-mode .window-title {
                 </div>
                 <a class="proj-gh" href="https://github.com/shahadmaalanazi/Impact-on-Happiness" onclick="event.stopPropagation()">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.04c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.75-1.33-1.75-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                    View on GitHub →
+                    <span class="lang-en">View on GitHub →</span><span class="lang-ar">عرض الكود على GitHub ←</span>
                 </a>
             </div>
         </div>
@@ -1508,9 +1521,9 @@ body.rtl-mode .window-title {
                     <span class="proj-tag tag-robotics">Robotics</span>
                     <span class="proj-tag tag-embedded">Embedded Systems</span>
                 </div>
-                <p class="proj-name">3-DOF Robotic Arm</p>
+                <p class="proj-name"><span class="lang-en">3-DOF Robotic Arm</span><span class="lang-ar">ذراع روبوتية ثلاثية المحاور</span></p>
                 <p class="proj-period">2025</p>
-                <p class="proj-desc">Robotic arm built from scratch using popsicle sticks, Arduino, servo motors, and joystick control.</p>
+                <p class="proj-desc lang-en">Robotic arm built from scratch using popsicle sticks, Arduino, servo motors, and joystick control.</p><p class="proj-desc lang-ar">تصميم وبناء ذراع روبوتية من الصفر باستخدام محركات السيرفو، والتحكم اليدوي بعصا التوجيه (Joystick) بالاعتماد على وحدة Arduino.</p>
                 <div class="proj-techs">
                     <span class="proj-tech">Arduino</span>
                     <span class="proj-tech">Servo Motors</span>
@@ -1527,9 +1540,9 @@ body.rtl-mode .window-title {
                     <span class="proj-tag tag-robotics">Robotics</span>
                     <span class="proj-tag tag-embedded">Embedded Systems</span>
                 </div>
-                <p class="proj-name">4-DOF Robotic Arm</p>
+                <p class="proj-name"><span class="lang-en">4-DOF Robotic Arm</span><span class="lang-ar">ذراع روبوتية رباعية المحاور ثلاثية الأبعاد</span></p>
                 <p class="proj-period">2025</p>
-                <p class="proj-desc">3D-printed robotic arm assembled and programmed with Arduino, servo motors, and joystick control.</p>
+                <p class="proj-desc lang-en">3D-printed robotic arm assembled and programmed with Arduino, servo motors, and joystick control.</p><p class="proj-desc lang-ar">ذراع روبوتية مطبوعة بتقنية ثلاثية الأبعاد بالكامل، تم تجميعها ومعايرة حركتها وبرمجتها لتنفيذ مهام الالتقاط والتنسيق الحركي الدقيق.</p>
                 <div class="proj-techs">
                     <span class="proj-tech">Arduino</span>
                     <span class="proj-tech">3D Printing</span>
@@ -1546,9 +1559,9 @@ body.rtl-mode .window-title {
                     <span class="proj-tag tag-nlp">NLP</span>
                     <span class="proj-tag tag-ml">Machine Learning</span>
                 </div>
-                <p class="proj-name">Information Retrieval & Text Analysis System</p>
+                <p class="proj-name"><span class="lang-en">Information Retrieval & Text Analysis System</span><span class="lang-ar">نظام استرجاع المعلومات الذكي وتحليل النصوص</span></p>
                 <p class="proj-period">2025</p>
-                <p class="proj-desc">NLP system retrieving similar documents with TF-IDF/cosine similarity, classifying spam/ham emails, and clustering reviews with K-Means.</p>
+                <p class="proj-desc lang-en">NLP system retrieving similar documents with TF-IDF/cosine similarity, classifying spam/ham emails, and clustering reviews with K-Means.</p><p class="proj-desc lang-ar">نظام معالجة لغات لاسترجاع المستندات المتشابهة بحسب جيب التمام TF-IDF، وتصنيف البريد العشوائي، وتجميع المراجعات والتقييمات باستخدام خوارزمية K-Means.</p>
                 <div class="proj-techs">
                     <span class="proj-tech">Python</span>
                     <span class="proj-tech">TF-IDF</span>
@@ -1556,7 +1569,7 @@ body.rtl-mode .window-title {
                 </div>
                 <a class="proj-gh" href="https://github.com/shahadmaalanazi/Smart-Text-Mining-for-Review-Retrieval-Classification-and-Clustering" onclick="event.stopPropagation()">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.1.82-.26.82-.58v-2.04c-3.34.72-4.04-1.6-4.04-1.6-.54-1.38-1.33-1.75-1.33-1.75-1.08-.74.08-.72.08-.72 1.2.08 1.83 1.23 1.83 1.23 1.06 1.82 2.8 1.3 3.48.99.1-.77.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.13 3 .4 2.28-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.69.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                    View on GitHub →
+                    <span class="lang-en">View on GitHub →</span><span class="lang-ar">عرض الكود على GitHub ←</span>
                 </a>
             </div>
         </div>
@@ -1566,30 +1579,30 @@ body.rtl-mode .window-title {
 
 <!-- SKILLS -->
 <section id="skills" class="reveal">
-    <span class="section-label">Capabilities</span>
-    <h2 class="section-title">Skills & <span>Technologies</span></h2>
+    <span class="section-label"><span class="lang-en">Capabilities</span><span class="lang-ar">القدرات والمهارات</span></span>
+    <h2 class="section-title"><span class="lang-en">Skills & <span>Technologies</span></span><span class="lang-ar">المهارات <span>والتقنيات</span></span></h2>
     <div class="skills-grid">
 
         <div class="skill-cat">
             <div class="skill-cat-header">
                 <div class="skill-cat-icon">🧠</div>
-                <p class="skill-cat-title">Artificial Intelligence</p>
+                <p class="skill-cat-title"><span class="lang-en">Artificial Intelligence</span><span class="lang-ar">الذكاء الاصطناعي</span></p>
             </div>
             <div class="skill-items">
-                <div class="skill-item"><span class="skill-dot"></span>Machine Learning</div>
-                <div class="skill-item"><span class="skill-dot"></span>Deep Learning</div>
-                <div class="skill-item"><span class="skill-dot"></span>Natural Language Processing</div>
-                <div class="skill-item"><span class="skill-dot"></span>Computer Vision</div>
-                <div class="skill-item"><span class="skill-dot"></span>Large Language Models</div>
-                <div class="skill-item"><span class="skill-dot"></span>Explainable AI</div>
-                <div class="skill-item"><span class="skill-dot"></span>Predictive AI</div>
+                <div class="skill-item"><span class="skill-dot"></span><span class="lang-en">Machine Learning</span><span class="lang-ar">تعلم الآلة</span></div>
+                <div class="skill-item"><span class="skill-dot"></span><span class="lang-en">Deep Learning</span><span class="lang-ar">التعلم العميق</span></div>
+                <div class="skill-item"><span class="skill-dot"></span><span class="lang-en">Natural Language Processing</span><span class="lang-ar">معالجة اللغات الطبيعية (NLP)</span></div>
+                <div class="skill-item"><span class="skill-dot"></span><span class="lang-en">Computer Vision</span><span class="lang-ar">الرؤية الحاسوبية</span></div>
+                <div class="skill-item"><span class="skill-dot"></span><span class="lang-en">Large Language Models</span><span class="lang-ar">النماذج اللغوية الكبيرة (LLMs)</span></div>
+                <div class="skill-item"><span class="skill-dot"></span><span class="lang-en">Explainable AI</span><span class="lang-ar">الذكاء الاصطناعي القابل للتفسير (XAI)</span></div>
+                <div class="skill-item"><span class="skill-dot"></span><span class="lang-en">Predictive AI</span><span class="lang-ar">الذكاء الاصطناعي التنبؤي</span></div>
             </div>
         </div>
 
         <div class="skill-cat">
             <div class="skill-cat-header">
                 <div class="skill-cat-icon">💻</div>
-                <p class="skill-cat-title">Programming</p>
+                <p class="skill-cat-title"><span class="lang-en">Programming</span><span class="lang-ar">اللغات البرمجية</span></p>
             </div>
             <div class="skill-items lang-grid">
                 <div class="lang-badge">
@@ -1626,7 +1639,7 @@ body.rtl-mode .window-title {
         <div class="skill-cat">
             <div class="skill-cat-header">
                 <div class="skill-cat-icon">📦</div>
-                <p class="skill-cat-title">Frameworks & Libraries</p>
+                <p class="skill-cat-title"><span class="lang-en">Frameworks & Libraries</span><span class="lang-ar">المكتبات وإطارات العمل</span></p>
             </div>
             <div class="skill-items">
                 <div class="skill-item"><span class="skill-dot"></span>TensorFlow</div>
@@ -1642,12 +1655,12 @@ body.rtl-mode .window-title {
         <div class="skill-cat">
             <div class="skill-cat-header">
                 <div class="skill-cat-icon">🔧</div>
-                <p class="skill-cat-title">Tools & Workflow</p>
+                <p class="skill-cat-title"><span class="lang-en">Tools & Workflow</span><span class="lang-ar">الأدوات وبيئة العمل</span></p>
             </div>
             <div class="skill-items">
                 <div class="skill-item"><span class="skill-dot"></span>GitHub</div>
                 <div class="skill-item"><span class="skill-dot"></span>VS Code</div>
-                <div class="skill-item"><span class="skill-dot"></span>Google Colab</div>
+                <div class="skill-item"><span class="skill-dot"></span>شركة جوجل العالمية (Google) Colab</div>
                 <div class="skill-item"><span class="skill-dot"></span>Jupyter Notebook</div>
                 <div class="skill-item"><span class="skill-dot"></span>Figma</div>
                 <div class="skill-item"><span class="skill-dot"></span>Canva</div>
@@ -1658,28 +1671,28 @@ body.rtl-mode .window-title {
         <div class="skill-cat">
             <div class="skill-cat-header">
                 <div class="skill-cat-icon">🤖</div>
-                <p class="skill-cat-title">Hardware & Embedded</p>
+                <p class="skill-cat-title"><span class="lang-en">Hardware & Embedded</span><span class="lang-ar">القطع والأنظمة المدمجة</span></p>
             </div>
             <div class="skill-items">
-                <div class="skill-item"><span class="skill-dot"></span>Arduino Prototyping</div>
-                <div class="skill-item"><span class="skill-dot"></span>Embedded Systems</div>
-                <div class="skill-item"><span class="skill-dot"></span>Sensors Integration</div>
-                <div class="skill-item"><span class="skill-dot"></span>3DOF Robotic Arm</div>
-                <div class="skill-item"><span class="skill-dot"></span>ESP32</div>
+                <div class="skill-item"><span class="skill-dot"></span><span class="lang-en">Arduino Prototyping</span><span class="lang-ar">نماذج أردوينو الأولية</span></div>
+                <div class="skill-item"><span class="skill-dot"></span><span class="lang-en">Embedded Systems</span><span class="lang-ar">الأنظمة المدمجة</span></div>
+                <div class="skill-item"><span class="skill-dot"></span><span class="lang-en">Sensors Integration</span><span class="lang-ar">تكامل أجهزة الاستشعار</span></div>
+                <div class="skill-item"><span class="skill-dot"></span><span class="lang-en">3DOF Robotic Arm</span><span class="lang-ar">ذراع روبوتية ثلاثية المحاور</span></div>
+                <div class="skill-item"><span class="skill-dot"></span><span class="lang-en">ESP32</span><span class="lang-ar">شريحة ESP32 اللاسلكية</span></div>
             </div>
         </div>
 
         <div class="skill-cat">
             <div class="skill-cat-header">
                 <div class="skill-cat-icon">🔬</div>
-                <p class="skill-cat-title">Research Interests</p>
+                <p class="skill-cat-title"><span class="lang-en">Research Interests</span><span class="lang-ar">الاهتمامات البحثية</span></p>
             </div>
             <div class="skill-items">
-                <div class="skill-item"><span class="skill-dot"></span>Generative AI</div>
-                <div class="skill-item"><span class="skill-dot"></span>Artificial Intelligence (AI)</div>
-                <div class="skill-item"><span class="skill-dot"></span>Smart Systems</div>
-                <div class="skill-item"><span class="skill-dot"></span>NLP & LLMs</div>
-                <div class="skill-item"><span class="skill-dot"></span>Computer Vision</div>
+                <div class="skill-item"><span class="skill-dot"></span><span class="lang-en">Generative AI</span><span class="lang-ar">الذكاء الاصطناعي التوليدي</span></div>
+                <div class="skill-item"><span class="skill-dot"></span><span class="lang-en">Artificial Intelligence (AI)</span><span class="lang-ar">الذكاء الاصطناعي العام</span></div>
+                <div class="skill-item"><span class="skill-dot"></span><span class="lang-en">Smart Systems</span><span class="lang-ar">الأنظمة الذكية الشاملة</span></div>
+                <div class="skill-item"><span class="skill-dot"></span><span class="lang-en">NLP & LLMs</span><span class="lang-ar">معالجة اللغات والنماذج الضخمة</span></div>
+                <div class="skill-item"><span class="skill-dot"></span><span class="lang-en">Computer Vision</span><span class="lang-ar">الرؤية الحاسوبية</span></div>
             </div>
         </div>
 
@@ -1688,22 +1701,22 @@ body.rtl-mode .window-title {
 
 <!-- EXPERIENCE & LEADERSHIP -->
 <section id="experience" class="reveal">
-    <span class="section-label">Experience & Leadership</span>
-    <h2 class="section-title">Leading and <span>creating.</span></h2>
+    <span class="section-label"><span class="lang-en">Experience & Leadership</span><span class="lang-ar">الخبرات العملية والقيادية</span></span>
+    <h2 class="section-title"><span class="lang-en">Leading and <span>creating.</span></span><span class="lang-ar">القيادة <span>والابتكار.</span></span></h2>
     <div class="timeline">
 
         <div class="tl-item">
             <div class="tl-dot">
                 <svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zm-9 8H7v-2h4v2zm6 0h-4v-2h4v2zM7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/></svg>
             </div>
-            <p class="tl-status">Ongoing</p>
-            <p class="tl-title">Generative AI & NLP Researcher</p>
-            <p class="tl-org">AI Center — Princess Nourah University</p>
-            <p class="tl-date">Nov 2025 – Present</p>
+            <p class="tl-status"><span class="lang-en">Ongoing</span><span class="lang-ar">مستمر</span></p>
+            <p class="tl-title"><span class="lang-en">Generative AI & NLP Researcher</span><span class="lang-ar">باحثة في الذكاء الاصطناعي التوليدي ومعالجة اللغات</span></p>
+            <p class="tl-org"><span class="lang-en">AI Center — Princess Nourah University</span><span class="lang-ar">مركز أبحاث الذكاء الاصطناعي — جامعة الأميرة نورة</span></p>
+            <p class="tl-date"><span class="lang-en">Nov 2025 – Present</span><span class="lang-ar">نوفمبر 2025 – حتى الآن</span></p>
             <ul class="tl-desc">
-                <li>Conducting AI and NLP research projects</li>
-                <li>Developing AI prototypes and proof-of-concepts</li>
-                <li>Participating in university innovation initiatives</li>
+                <li><span class="lang-en">Conducting AI and NLP research projects</span><span class="lang-ar">إجراء وإدارة أبحاث الذكاء الاصطناعي ولغات البرمجة</span></li>
+                <li><span class="lang-en">Developing AI prototypes and proof-of-concepts</span><span class="lang-ar">تطوير النماذج الأولية وإثباتات المفاهيم للأنظمة الذكية</span></li>
+                <li><span class="lang-en">Participating in university innovation initiatives</span><span class="lang-ar">المشاركة الفعالة في مبادرات الابتكار وبراءات الاختراع بالجامعة</span></li>
             </ul>
         </div>
 
@@ -1712,13 +1725,13 @@ body.rtl-mode .window-title {
                 <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
             <p class="tl-status">Ongoing</p>
-            <p class="tl-title">Deputy Leader — Arduino Training Program</p>
-            <p class="tl-org">PNU Student Community</p>
-            <p class="tl-date">Jul 2025 – Present</p>
+            <p class="tl-title"><span class="lang-en">Deputy Leader — Arduino Training Program</span><span class="lang-ar">نائبة قائد برنامج تدريب أردوينو والأنظمة المدمجة</span></p>
+            <p class="tl-org"><span class="lang-en">PNU Student Community</span><span class="lang-ar">المجتمع الطلابي التقني بجامعة الأميرة نورة</span></p>
+            <p class="tl-date"><span class="lang-en">Jul 2025 – Present</span><span class="lang-ar">يوليو 2025 – حتى الآن</span></p>
             <ul class="tl-desc">
-                <li>Led Arduino workshops for 30+ students</li>
-                <li>Supervised hands-on embedded systems projects</li>
-                <li>Mentored beginners in electronics and microcontrollers</li>
+                <li><span class="lang-en">Led Arduino workshops for 30+ students</span><span class="lang-ar">إدارة وتقديم ورش عمل أردوينو لأكثر من 30 طالبة</span></li>
+                <li><span class="lang-en">Supervised hands-on embedded systems projects</span><span class="lang-ar">الإشراف المباشر على مشاريع الطالبات العملية وتطبيقها</span></li>
+                <li><span class="lang-en">Mentored beginners in electronics and microcontrollers</span><span class="lang-ar">إرشاد المبتدئات في أساسيات الدوائر الإلكترونية والمتحكمات الدقيقة</span></li>
             </ul>
         </div>
 
@@ -1726,13 +1739,13 @@ body.rtl-mode .window-title {
             <div class="tl-dot">
                 <svg viewBox="0 0 24 24" fill="white"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
             </div>
-            <p class="tl-status">Apr 2025 – Jan 2026</p>
-            <p class="tl-title">Co-Founder</p>
-            <p class="tl-org">Umda Startup</p>
+            <p class="tl-status"><span class="lang-en">Apr 2025 – Jan 2026</span><span class="lang-ar">أبريل 2025 – يناير 2026</span></p>
+            <p class="tl-title"><span class="lang-en">Co-Founder</span><span class="lang-ar">مؤسس شريك</span></p>
+            <p class="tl-org"><span class="lang-en">Umda Startup</span><span class="lang-ar">شركة عمدة الناشئة للذكاء الاصطناعي</span></p>
             <ul class="tl-desc">
-                <li>Co-founded an AI-focused startup</li>
-                <li>Led product planning and business strategy</li>
-                <li>Managed digital marketing and branding</li>
+                <li><span class="lang-en">Co-founded an AI-focused startup</span><span class="lang-ar">تأسيس شريك للشركة ووضع حجر الأساس لأفكارها التقنية</span></li>
+                <li><span class="lang-en">Led product planning and business strategy</span><span class="lang-ar">قيادة تخطيط المنتجات وصياغة الاستراتيجيات التجارية للشركة</span></li>
+                <li><span class="lang-en">Managed digital marketing and branding</span><span class="lang-ar">إدارة الهوية الرقمية للعلامة التجارية وحملات التسويق</span></li>
             </ul>
         </div>
 
@@ -1740,58 +1753,61 @@ body.rtl-mode .window-title {
             <div class="tl-dot">
                 <svg viewBox="0 0 24 24" fill="white"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
             </div>
-            <p class="tl-title">Design Leader</p>
-            <p class="tl-org">Elixir Hub</p>
+            <p class="tl-title"><span class="lang-en">Design Leader</span><span class="lang-ar">قائدة فريق التصميم والهوية البصرية</span></p>
+            <p class="tl-org"><span class="lang-en">Elixir Hub</span><span class="lang-ar">نادي إكسير التقني للابتكار</span></p>
             <ul class="tl-desc">
-                <li>Led the design team for club initiatives and events</li>
-                <li>Created visual identities and promotional materials</li>
-                <li>Coordinated design workflow across team members</li>
+                <li><span class="lang-en">Led the design team for club initiatives and events</span><span class="lang-ar">قيادة فريق التصميم لابتكار هويات الفعاليات والمبادرات</span></li>
+                <li><span class="lang-en">Created visual identities and promotional materials</span><span class="lang-ar">تصميم وإنتاج المواد الإعلانية والتسويقية للفعاليات والمخيمات</span></li>
+                <li><span class="lang-en">Coordinated design workflow across team members</span><span class="lang-ar">تنسيق وتوزيع المهام التصميمية ومراجعة جودة المخرجات الفنية</span></li>
             </ul>
         </div>
 
     </div>
 
-    <h3 style="margin-top:40px; margin-bottom:16px; font-size:.95rem; color:var(--dim); font-weight:600; letter-spacing:.05em; text-transform:uppercase;">Volunteering & Community</h3>
+    <h3 style="margin-top:40px; margin-bottom:16px; font-size:.95rem; color:var(--dim); font-weight:600; letter-spacing:.05em; text-transform:uppercase;">المجتمع والعمل التطوعي</h3>
     <div class="vol-wrap">
-        <span class="vol-pill">📚 Oracle Student Ambassador</span>
-        <span class="vol-pill">🤖 AI Advisor — Maeen PNU</span>
-        <span class="vol-pill">🎨 Design Member — Google Developer Groups</span>
-        <span class="vol-pill">🔐 Cybersecurity Club Member</span>
-        <span class="vol-pill">💡 Design Committee — TechMinds Club</span>
-        <span class="vol-pill">🏆 Tuwaiq Club Member</span>
+        <span class="vol-pill">📚 <span class="lang-en">Oracle Student Ambassador</span><span class="lang-ar">سفيرة طلابية لدى أوراكل (Oracle)</span></span>
+        <span class="vol-pill">🤖 <span class="lang-en">AI Advisor — Maeen PNU</span><span class="lang-ar">مستشارة ذكاء اصطناعي — مبادرة معين بجامعة نورة</span></span>
+        <span class="vol-pill">🎨 <span class="lang-en">Design Member — شركة جوجل العالمية (Google) Developer Groups</span><span class="lang-ar">عضو تصميم — مجتمعات مطوري جوجل التقنية</span></span>
+        <span class="vol-pill">🔐 <span class="lang-en">Cybersecurity Club Member</span><span class="lang-ar">عضو في نادي الأمن السيبراني الجامعي</span></span>
+        <span class="vol-pill">💡 <span class="lang-en">Design Committee — TechMinds Club</span><span class="lang-ar">لجنة التصميم — نادي عقول التقنية (TechMinds)</span></span>
+        <span class="vol-pill">🏆 <span class="lang-en">Tuwaiq Club Member</span><span class="lang-ar">عضو في معسكرات ونادي طويق التقني</span></span>
     </div>
 </section>
 
 <!-- ACHIEVEMENTS -->
 <section id="achievements" class="reveal">
-    <span class="section-label">Recognition</span>
-    <h2 class="section-title">Recognized for <span>building what matters.</span></h2>
+    <span class="section-label"><span class="lang-en">Recognition</span><span class="lang-ar">الجوائز والتكريمات</span></span>
+    <h2 class="section-title"><span class="lang-en">Recognized for <span>building what matters.</span></span><span class="lang-ar">تكريمات <span>تكلل الجهد والابتكار.</span></span></h2>
     <div class="ach-list">
         <div class="ach-card">
             <div class="ach-icon">🏆</div>
             <div>
-                <p class="ach-event">ThakaThon 2026</p>
-                <p class="ach-title">Most Promising Idea Award</p>
-                <p class="ach-desc">Awarded for developing Taw'amah — an AI-powered legal technology platform that helps users understand Arabic contracts before signing, using LLMs, Explainable AI, and Digital Twin simulation.</p>
-                <a href="https://www.linkedin.com/posts/shahad-alanazi-ma_thakathon-innovation-ai-activity-7455586761184907267-G-bW?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEo-LqwBxxsmD-e2qmDQBS5bTqaQ97jRZ_I" target="_blank" class="cert-link" style="margin-top:12px;display:inline-flex;">View on LinkedIn ↗</a>
+                <p class="ach-event"><span class="lang-en">ThakaThon 2026</span><span class="lang-ar">هاكاثون ذكاء الثقافي 2026</span></p>
+                <p class="ach-title"><span class="lang-en">Most Promising Idea Award</span><span class="lang-ar">جائزة الفكرة الواعدة والأكثر تميزاً</span></p>
+                <p class="ach-desc lang-en">Awarded for developing Taw'amah — an AI-powered legal technology platform that helps users understand Arabic contracts before signing, using LLMs, Explainable AI, and Digital Twin simulation.</p>
+                <p class="ach-desc lang-ar">مُنحت الجائزة لتطوير منصة توأمة - منصة قانونية ذكية تعتمد على النماذج اللغوية الضخمة (LLM) والذكاء الاصطناعي القابل للتفسير لمساعدة المستخدمين في فهم مخاطر العقود العربية وتحليل بنودها.</p>
+                <a href="https://www.linkedin.com/posts/shahad-alanazi-ma_thakathon-innovation-ai-activity-7455586761184907267-G-bW?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEo-LqwBxxsmD-e2qmDQBS5bTqaQ97jRZ_I" target="_blank" class="cert-link" style="margin-top:12px;display:inline-flex;"><span class="lang-en">View on LinkedIn ↗</span><span class="lang-ar">شاهد التكريم على LinkedIn ↗</span></a>
             </div>
         </div>
         <div class="ach-card">
             <div class="ach-icon">🥉</div>
             <div>
-                <p class="ach-event">Arduino Bootcamp</p>
-                <p class="ach-title">3rd Place Award</p>
-                <p class="ach-desc">Awarded for the Smart Cane for the Visually Impaired — an IoT prototype using Arduino Uno with obstacle detection sensors, GPS, and vibration feedback. Presented at TEDxPNU and multiple international delegations.</p>
-                <a href="https://www.linkedin.com/posts/shahad-alanazi-ma_i-would-like-to-express-my-sincere-gratitude-activity-7196885618138775552-pSth?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEo-LqwBxxsmD-e2qmDQBS5bTqaQ97jRZ_I" target="_blank" class="cert-link" style="margin-top:12px;display:inline-flex;">View on LinkedIn ↗</a>
+                <p class="ach-event"><span class="lang-en">Arduino Bootcamp</span><span class="lang-ar">معسكر أردوينو والأنظمة المدمجة</span></p>
+                <p class="ach-title"><span class="lang-en">3rd Place Award</span><span class="lang-ar">المركز الثالث على مستوى المعسكر</span></p>
+                <p class="ach-desc lang-en">Awarded for the Smart Cane for the Visually Impaired — an IoT prototype using Arduino Uno with obstacle detection sensors, GPS, and vibration feedback. Presented at TEDxPNU and multiple international delegations.</p>
+                <p class="ach-desc lang-ar">تم التكريم لتطوير نموذج العصا الذكية للمكفوفين، وهو نموذج أولي إنترنت الأشياء يعتمد على أردوينو، ومستشعرات الموجات فوق الصوتية، ونظام تحديد المواقع. تم عرضه في TEDxPNU وأمام وفود دولية عديدة.</p>
+                <a href="https://www.linkedin.com/posts/shahad-alanazi-ma_i-would-like-to-express-my-sincere-gratitude-activity-7196885618138775552-pSth?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEo-LqwBxxsmD-e2qmDQBS5bTqaQ97jRZ_I" target="_blank" class="cert-link" style="margin-top:12px;display:inline-flex;"><span class="lang-en">View on LinkedIn ↗</span><span class="lang-ar">شاهد التكريم على LinkedIn ↗</span></a>
             </div>
         </div>
         <div class="ach-card">
             <div class="ach-icon">🎖️</div>
             <div>
-                <p class="ach-event">College of Computer and Information Sciences — PNU</p>
-                <p class="ach-title">Dean's Honor — Active Participation Award</p>
-                <p class="ach-desc">Honored by the Dean of the College of Computer and Information Sciences for outstanding active participation in extracurricular activities and community initiatives.</p>
-                <a href="https://www.linkedin.com/posts/shahad-alanazi-ma_%D8%A7%D9%84%D8%AD%D9%85%D8%AF%D9%84%D9%84%D9%87-%D8%AA%D8%B4%D8%B1%D9%81%D8%AA-%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%A8%D8%A7%D9%84%D8%AA%D9%83%D8%B1%D9%8A%D9%85-%D9%85%D9%86-%D8%B9%D9%85%D9%8A%D8%AF%D8%A9-%D9%83%D9%84%D9%8A%D8%A9-activity-7472671652820967424-FoLS?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEo-LqwBxxsmD-e2qmDQBS5bTqaQ97jRZ_I" target="_blank" class="cert-link" style="margin-top:12px;display:inline-flex;">View on LinkedIn ↗</a>
+                <p class="ach-event"><span class="lang-en">College of Computer and Information Sciences — PNU</span><span class="lang-ar">كلية علوم الحاسب والمعلومات — جامعة الأميرة نورة</span></p>
+                <p class="ach-title"><span class="lang-en">Dean's Honor — Active Participation Award</span><span class="lang-ar">تكريم العميد — جائزة المشاركة النشطة والتميز اللامنهجي</span></p>
+                <p class="ach-desc lang-en">Honored by the Dean of the College of Computer and Information Sciences for outstanding active participation in extracurricular activities and community initiatives.</p>
+                <p class="ach-desc lang-ar">تكريم رسمي من عميدة كلية علوم الحاسب والمعلومات تقديراً للمساهمة المتميزة والنشطة في الأنشطة الطلابية اللامنهجية وإثراء المبادرات التقنية والمجتمعية بالجامعة.</p>
+                <a href="https://www.linkedin.com/posts/shahad-alanazi-ma_%D8%A7%D9%84%D8%AD%D9%85%D8%AF%D9%84%D9%84%D9%87-%D8%AA%D8%B4%D8%B1%D9%81%D8%AA-%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%A8%D8%A7%D9%84%D8%AA%D9%83%D8%B1%D9%8A%D9%85-%D9%85%D9%86-%D8%B9%D9%85%D9%8A%D8%AF%D8%A9-%D9%83%D9%84%D9%8A%D8%A9-activity-7472671652820967424-FoLS?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEo-LqwBxxsmD-e2qmDQBS5bTqaQ97jRZ_I" target="_blank" class="cert-link" style="margin-top:12px;display:inline-flex;"><span class="lang-en">View on LinkedIn ↗</span><span class="lang-ar">شاهد التكريم على LinkedIn ↗</span></a>
             </div>
         </div>
     </div>
@@ -1799,8 +1815,8 @@ body.rtl-mode .window-title {
 
 <!-- CERTIFICATIONS -->
 <section id="certifications" class="reveal">
-    <span class="section-label">Credentials</span>
-    <h2 class="section-title">Certifications</h2>
+    <span class="section-label"><span class="lang-en">Credentials</span><span class="lang-ar">الاعتمادات المهنية</span></span>
+    <h2 class="section-title"><span class="lang-en">Certifications</span><span class="lang-ar">الشهادات المهنية</span></h2>
     <div class="certs-list">
 
         <!-- 1 -->
@@ -1812,9 +1828,9 @@ body.rtl-mode .window-title {
                 </div>
                 <div class="cert-body">
                     <p class="cert-year">May 2026 — Expires May 2029</p>
-                    <p class="cert-name">Certified Associate in Project Management (CAPM)®</p>
-                    <p class="cert-org">Project Management Institute (PMI)</p>
-                    <a href="https://www.credly.com/badges/5740b617-5e19-4246-8756-f7cffc860dd0/linked_in_profile" class="cert-link">View Credential ↗</a>
+                    <p class="cert-name"><span class="lang-en">شهادة مدير مشاريع معتمد (CAPM)®</span><span class="lang-ar">شهادة مدير مشاريع معتمد (CAPM)®</span></p>
+                    <p class="cert-org"><span class="lang-en">معهد إدارة المشاريع العالمي (PMI)</span><span class="lang-ar">معهد إدارة المشاريع العالمي (PMI)</span></p>
+                    <a href="https://www.credly.com/badges/5740b617-5e19-4246-8756-f7cffc860dd0/linked_in_profile" class="cert-link"><span class="lang-en">View Credential ↗</span><span class="lang-ar">عرض الشهادة المعتمدة ↗</span></a>
                 </div>
             </div>
         </div>
@@ -1828,9 +1844,9 @@ body.rtl-mode .window-title {
                 </div>
                 <div class="cert-body">
                     <p class="cert-year">May 2026</p>
-                    <p class="cert-name">A Complete Guide to Game Design</p>
-                    <p class="cert-org">edX Verified Certificate</p>
-                    <a href="https://courses.edx.org/certificates/249e80a7c85e4d94aee60a71eb032f31" class="cert-link">View Credential ↗</a>
+                    <p class="cert-name"><span class="lang-en">الدليل الشامل لتصميم الألعاب التعليمية والترفيهية</span><span class="lang-ar">الدليل الشامل لتصميم الألعاب التعليمية والترفيهية</span></p>
+                    <p class="cert-org"><span class="lang-en">شهادة معتمدة وموثقة من منصة edX العالمية</span><span class="lang-ar">شهادة معتمدة وموثقة من منصة edX العالمية</span></p>
+                    <a href="https://courses.edx.org/certificates/249e80a7c85e4d94aee60a71eb032f31" class="cert-link"><span class="lang-en">View Credential ↗</span><span class="lang-ar">عرض الشهادة المعتمدة ↗</span></a>
                 </div>
             </div>
         </div>
@@ -1843,9 +1859,9 @@ body.rtl-mode .window-title {
                 </div>
                 <div class="cert-body">
                     <p class="cert-year">Apr 2026</p>
-                    <p class="cert-name">AWS Academy Graduate – ML for Natural Language Processing</p>
-                    <p class="cert-org">Amazon Web Services (AWS)</p>
-                    <a href="https://www.credly.com/badges/58675305-aab1-4cbf-9b4b-b79af0f463ee/linked_in_profile" class="cert-link">View Credential ↗</a>
+                    <p class="cert-name"><span class="lang-en">خريجة أكاديمية AWS – تعلم الآلة لمعالجة اللغات الطبيعية (NLP)</span><span class="lang-ar">خريجة أكاديمية AWS – تعلم الآلة لمعالجة اللغات الطبيعية (NLP)</span></p>
+                    <p class="cert-org"><span class="lang-en">أمازون ويب سيرفيسز العالمية (AWS)</span><span class="lang-ar">أمازون ويب سيرفيسز العالمية (AWS)</span></p>
+                    <a href="https://www.credly.com/badges/58675305-aab1-4cbf-9b4b-b79af0f463ee/linked_in_profile" class="cert-link"><span class="lang-en">View Credential ↗</span><span class="lang-ar">عرض الشهادة المعتمدة ↗</span></a>
                 </div>
             </div>
         </div>
@@ -1858,9 +1874,9 @@ body.rtl-mode .window-title {
                 </div>
                 <div class="cert-body">
                     <p class="cert-year">Apr 2026</p>
-                    <p class="cert-name">Google UX Design</p>
-                    <p class="cert-org">Google</p>
-                    <a href="https://www.coursera.org/account/accomplishments/professional-cert/FUA8RHZE7DTK" class="cert-link">View Credential ↗</a>
+                    <p class="cert-name"><span class="lang-en">الشهادة الاحترافية لتصميم تجربة المستخدم (شركة جوجل العالمية (Google) UX)</span><span class="lang-ar">الشهادة الاحترافية لتصميم تجربة المستخدم (شركة جوجل العالمية (Google) UX)</span></p>
+                    <p class="cert-org"><span class="lang-en">شركة جوجل العالمية (Google)</span><span class="lang-ar">شركة جوجل العالمية (شركة جوجل العالمية (Google))</span></p>
+                    <a href="https://www.coursera.org/account/accomplishments/professional-cert/FUA8RHZE7DTK" class="cert-link"><span class="lang-en">View Credential ↗</span><span class="lang-ar">عرض الشهادة المعتمدة ↗</span></a>
                 </div>
             </div>
         </div>
@@ -1873,9 +1889,9 @@ body.rtl-mode .window-title {
                 </div>
                 <div class="cert-body">
                     <p class="cert-year">Mar 2026</p>
-                    <p class="cert-name">IBM AI Developer</p>
-                    <p class="cert-org">IBM</p>
-                    <a href="https://www.coursera.org/account/accomplishments/professional-cert/S6WN5HAEXSO6" class="cert-link">View Credential ↗</a>
+                    <p class="cert-name"><span class="lang-en">شهادة مطور ذكاء اصطناعي محترف من شركة آي بي إم العالمية (IBM)</span><span class="lang-ar">شهادة مطور ذكاء اصطناعي محترف من شركة آي بي إم العالمية (IBM)</span></p>
+                    <p class="cert-org"><span class="lang-en">شركة آي بي إم العالمية (IBM)</span><span class="lang-ar">شركة آي بي إم العالمية (شركة آي بي إم العالمية (IBM))</span></p>
+                    <a href="https://www.coursera.org/account/accomplishments/professional-cert/S6WN5HAEXSO6" class="cert-link"><span class="lang-en">View Credential ↗</span><span class="lang-ar">عرض الشهادة المعتمدة ↗</span></a>
                 </div>
             </div>
         </div>
@@ -1888,9 +1904,9 @@ body.rtl-mode .window-title {
                 </div>
                 <div class="cert-body">
                     <p class="cert-year">Jul 2025</p>
-                    <p class="cert-name">AWS Educate Machine Learning Foundations</p>
-                    <p class="cert-org">Amazon Web Services (AWS)</p>
-                    <a href="https://www.credly.com/badges/f43dffe3-4e1e-4e82-8172-f4999d5069c5/public_url" class="cert-link">View Credential ↗</a>
+                    <p class="cert-name"><span class="lang-en">شهادة أسس ومبادئ تعلم الآلة من AWS Educate</span><span class="lang-ar">شهادة أسس ومبادئ تعلم الآلة من AWS Educate</span></p>
+                    <p class="cert-org"><span class="lang-en">أمازون ويب سيرفيسز العالمية (AWS)</span><span class="lang-ar">أمازون ويب سيرفيسز العالمية (AWS)</span></p>
+                    <a href="https://www.credly.com/badges/f43dffe3-4e1e-4e82-8172-f4999d5069c5/public_url" class="cert-link"><span class="lang-en">View Credential ↗</span><span class="lang-ar">عرض الشهادة المعتمدة ↗</span></a>
                 </div>
             </div>
         </div>
@@ -1903,9 +1919,9 @@ body.rtl-mode .window-title {
                 </div>
                 <div class="cert-body">
                     <p class="cert-year">Feb 2025</p>
-                    <p class="cert-name">Developing AI Applications with Python and Flask</p>
-                    <p class="cert-org">IBM</p>
-                    <a href="https://www.coursera.org/account/accomplishments/verify/KWUAR962YY1T" class="cert-link">View Credential ↗</a>
+                    <p class="cert-name"><span class="lang-en">تطوير تطبيقات الذكاء الاصطناعي باستخدام بايثون وإطار Flask</span><span class="lang-ar">تطوير تطبيقات الذكاء الاصطناعي باستخدام بايثون وإطار Flask</span></p>
+                    <p class="cert-org"><span class="lang-en">شركة آي بي إم العالمية (IBM)</span><span class="lang-ar">شركة آي بي إم العالمية (شركة آي بي إم العالمية (IBM))</span></p>
+                    <a href="https://www.coursera.org/account/accomplishments/verify/KWUAR962YY1T" class="cert-link"><span class="lang-en">View Credential ↗</span><span class="lang-ar">عرض الشهادة المعتمدة ↗</span></a>
                 </div>
             </div>
         </div>
@@ -1918,8 +1934,8 @@ body.rtl-mode .window-title {
                 </div>
                 <div class="cert-body">
                     <p class="cert-year">May 2024</p>
-                    <p class="cert-name">Machine Learning Bootcamp</p>
-                    <p class="cert-org">SDAIA — Saudi Data & AI Authority</p>
+                    <p class="cert-name"><span class="lang-en">معسكر تدريبي مكثف في تعلم الآلة</span><span class="lang-ar">معسكر تدريبي مكثف في تعلم الآلة</span></p>
+                    <p class="cert-org"><span class="lang-en">الهيئة السعودية للبيانات والذكاء الاصطناعي (سدايا)</span><span class="lang-ar">الهيئة السعودية للبيانات والذكاء الاصطناعي (سدايا)</span></p>
                 </div>
             </div>
         </div>
@@ -1929,15 +1945,15 @@ body.rtl-mode .window-title {
 
 <!-- CONTACT -->
 <section id="contact" class="reveal">
-    <span class="section-label">Let's Connect</span>
-    <h2 class="section-title">Get In <span>Touch</span></h2>
+    <span class="section-label"><span class="lang-en">Let's Connect</span><span class="lang-ar">لنكن على تواصل</span></span>
+    <h2 class="section-title"><span class="lang-en">Get In <span>Touch</span></span><span class="lang-ar">تواصل <span>معي</span></span></h2>
 
     <div class="contact-layout">
 
         <!-- Left: info -->
         <div class="contact-left">
-            <h3>Let's build something together.</h3>
-            <p>I'm currently open to internships, research collaborations, and AI opportunities. Whether you have a project idea or just want to say hi I'd love to hear from you!</p>
+            <h3><span class="lang-en">Let's build something together.</span><span class="lang-ar">لنقم ببناء شيء رائع معاً.</span></h3>
+            <p class="lang-en">I'm currently open to internships, research collaborations, and AI opportunities. Whether you have a project idea or just want to say hi I'd love to hear from you!</p><p class="lang-ar">أنا متاحة حالياً للتدريب العملي، التعاون البحثي، وفرص الذكاء الاصطناعي. سواء كانت لديك فكرة مشروع ترغب في تنفيذها أو تريد فقط إلقاء التحية، يسعدني جداً تواصلك معي!</p>
 
             <div class="contact-info">
                 <div class="contact-info-item">
@@ -1946,11 +1962,11 @@ body.rtl-mode .window-title {
                 </div>
                 <div class="contact-info-item">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    <span>Riyadh, Saudi Arabia</span>
+                    <span><span class="lang-en">Riyadh, Saudi Arabia</span><span class="lang-ar">الرياض، السعودية</span></span>
                 </div>
                 <div class="contact-info-item">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    <span>Open to Opportunities</span>
+                    <span><span class="lang-en">Open to Opportunities</span><span class="lang-ar">متاحة للفرص المهنية</span></span>
                 </div>
             </div>
 
@@ -1972,28 +1988,28 @@ body.rtl-mode .window-title {
 
         <!-- Right: form -->
         <div class="contact-form-box">
-            <h4>Send me a message</h4>
+            <h4><span class="lang-en">Send me a message</span><span class="lang-ar">أرسل لي رسالة مباشرة</span></h4>
             <div class="form-row">
                 <div class="form-group">
-                    <label>YOUR NAME</label>
+                    <label><span class="lang-en">YOUR NAME</span><span class="lang-ar">الاسم الكريم</span></label>
                     <input type="text" id="cName" placeholder="Noura Ahmed">
                 </div>
                 <div class="form-group">
-                    <label>YOUR EMAIL</label>
+                    <label><span class="lang-en">YOUR EMAIL</span><span class="lang-ar">البريد الإلكتروني</span></label>
                     <input type="email" id="cEmail" placeholder="noura@example.com">
                 </div>
             </div>
             <div class="form-group">
-                <label>SUBJECT</label>
+                <label><span class="lang-en">SUBJECT</span><span class="lang-ar">عنوان الرسالة</span></label>
                 <input type="text" id="cSubject" placeholder="How can I help you?">
             </div>
             <div class="form-group">
-                <label>MESSAGE</label>
+                <label><span class="lang-en">MESSAGE</span><span class="lang-ar">نص الرسالة</span></label>
                 <textarea id="cMessage" placeholder="Write your message here..."></textarea>
             </div>
             <button class="form-submit" id="sendBtn" onclick="sendContact()">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                Send Message
+                <span class="lang-en">Send Message</span><span class="lang-ar">إرسال الرسالة</span>
             </button>
             <p id="contactStatus"></p>
         </div>
@@ -2002,7 +2018,7 @@ body.rtl-mode .window-title {
 </section>
 
 <footer>
-    <p style="margin-bottom:14px;">Designed & built by <strong>Shahad AlAnazi</strong> · © 2026</p>
+    <p style="margin-bottom:14px;"><span class="lang-en">Designed & built by <strong>Shahad AlAnazi</strong> · © 2026</span><span class="lang-ar">تم التصميم والتطوير بواسطة <strong>شهد العنزي</strong> · © 2026</span></p>
     <div style="display:flex;justify-content:center;gap:14px;">
         <a href="https://x.com/shahadal3anazi" target="_blank" style="color:var(--dim);transition:.2s;" onmouseover="this.style.color='var(--purple)'" onmouseout="this.style.color='var(--dim)'">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -2077,7 +2093,10 @@ window.toggleTheme = function() {
 };
 
 // TYPING EFFECT
-const phrases = ['• Machine Learning','• NLP','• Computer Vision','• LLMs','• Embedded AI','• Explainable AI'];
+const phrasesEn = ['• Machine Learning','• NLP','• Computer Vision','• LLMs','• Embedded AI','• Explainable AI'];
+const phrasesAr = ['• تعلم الآلة','• معالجة اللغات الطبيعية','• الرؤية الحاسوبية','• النماذج اللغوية الكبيرة','• الذكاء الاصطناعي المدمج','• الذكاء الاصطناعي القابل للتفسير'];
+let phrases = phrasesEn;
+
 let pi=0, ci=0, deleting=false;
 const typingEl = document.getElementById('typingEl');
 function typeLoop() {
@@ -2623,7 +2642,103 @@ window.toggleMaximizeProjectDetails = function() {
 const originalOpenModal = window.openModal;
 
 window.openModal = function(title, media, desc, period, tags, techs) {
+    let finalTitle = title;
+    let finalDesc = desc;
+    let finalPeriod = period;
+    
+    if (currentLang === 'ar' && projectTranslations[title]) {
+        finalTitle = projectTranslations[title].title;
+        finalDesc = projectTranslations[title].desc;
+        finalPeriod = projectTranslations[title].period;
+    }
+    
+    // Support translation for Classic Mode Modal
+    if (!document.body.classList.contains('os-mode')) {
+        document.getElementById('modalTitle').textContent = finalTitle;
+        document.getElementById('modalPeriod').textContent = finalPeriod;
+        // Populate description
+        const bodyMain = document.getElementById('modalMediaMain');
+        // Let original openModal render media list but update texts afterwards
+        setTimeout(() => {
+            document.getElementById('modalTitle').textContent = finalTitle;
+            document.getElementById('modalPeriod').textContent = finalPeriod;
+            // Seek and replace description text
+            const descEl = document.querySelector('.modal-inner p:not(.modal-period)');
+            if (descEl) descEl.textContent = finalDesc;
+        }, 10);
+    }
+
     if (document.body.classList.contains('os-mode')) {
+        playSound('open');
+        const win = document.getElementById('win-project-details');
+        const titleEl = document.getElementById('winProjTitle');
+        const bodyEl = document.getElementById('winProjBody');
+        
+        titleEl.textContent = finalTitle;
+        
+        // Decide mockup frame based on project keywords
+        const isMobile = title.toLowerCase().includes('id') || title.toLowerCase().includes('hair') || desc.toLowerCase().includes('app') || desc.toLowerCase().includes('mobile');
+        
+        const m = media && media.length ? media[0] : null;
+        let mediaHtml = '';
+        if (m) {
+            const src = typeof m === 'string' ? m : m.src;
+            mediaHtml = `<img src="${src}" alt="Screenshot">`;
+        }
+        
+        const deviceHtml = isMobile ? `
+            <div class="device-iphone">
+                <div class="iphone-aspect">
+                    <div class="iphone-island"></div>
+                    <div class="iphone-screen">
+                        ${mediaHtml}
+                    </div>
+                </div>
+            </div>
+        ` : `
+            <div class="device-macbook">
+                <div class="macbook-aspect">
+                    <div class="macbook-screen">
+                        ${mediaHtml}
+                    </div>
+                </div>
+                <div class="macbook-body"></div>
+            </div>
+        `;
+        
+        bodyEl.innerHTML = `
+            <div class="project-details-grid">
+                <div>
+                    ${deviceHtml}
+                </div>
+                <div>
+                    <h3 style="color:var(--text);font-size:1.15rem;margin-bottom:6px;">${finalTitle}</h3>
+                    <p style="color:var(--purple);font-size:0.75rem;font-weight:700;margin-bottom:12px;">${finalPeriod || ''}</p>
+                    
+                    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;">
+                        ${(tags||[]).map(t => `<span class="proj-tag ${t.cls}">${t.label}</span>`).join('')}
+                    </div>
+                    
+                    <p style="color:var(--dim);font-size:0.83rem;line-height:1.7;white-space:pre-line;margin-bottom:18px;">${finalDesc}</p>
+                    
+                    <div>
+                        <h4 style="color:var(--text);font-size:0.8rem;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.04em;">${currentLang === 'ar' ? 'التقنيات:' : 'Technologies:'}</h4>
+                        <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                            ${(techs||[]).map(t => `<span class="modal-tech" style="font-size:0.68rem;padding:3px 8px;border-radius:6px;background:rgba(168,85,247,0.1);border:1px solid rgba(168,85,247,0.2);color:#d8b4fe;">${t}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        win.classList.add('open');
+        bringToFront(win);
+        gainXP(25);
+        return;
+    }
+    
+    if (false) {
+
         playSound('open');
         const win = document.getElementById('win-project-details');
         const titleEl = document.getElementById('winProjTitle');
@@ -2823,6 +2938,56 @@ function startBootSequence(onComplete) {
     setTimeout(addLine, 300);
 }
 
+
+// PROJECT TRANSLATIONS MAP
+const projectTranslations = {
+    'Taw\'amah': {
+        title: "منصة توأمة القانونية",
+        desc: "منصة مدعومة بالذكاء الاصطناعي لتحليل العقود القانونية العربية واكتشاف المخاطر، واستخراج الالتزامات، ومحاكاة التوأم الرقمي للعقد.",
+        period: "فبراير 2026 – الحالي"
+    },
+    'Smart Digital ID Pass': {
+        title: "بطاقة الهوية الرقمية الجامعية الذكية",
+        desc: "نظام ذكي للتحقق من هوية الطالبات والمنسوبين يعتمد على الذكاء الاصطناعي باستخدام تقنيات التعرف الضوئي على الحروف (OCR) والتعرف على الوجه وفحص الحيوية لمنع التزوير.",
+        period: "يناير 2026 – مايو 2026"
+    },
+    'Smart Cane for the Visually Impaired': {
+        title: "العصا الذكية لمساعدة كفيفي البصر",
+        desc: "عصا ذكية تفاعلية حائزة على جوائز وطنية تساعد المكفوفين في الملاحة الآمنة عبر نظام استشعار العقبات وتحديد المواقع GPS والتنبيه بالاهتزاز والصوت. تم عرض المشروع في TEDxPNU ومحافل محلية ودولية.",
+        period: "أبريل 2024 – يناير 2026"
+    },
+    'Arabic Text Summarization': {
+        title: "تلخيص النصوص العربية بالذكاء الاصطناعي",
+        desc: "نظام متطور لمعالجة اللغات الطبيعية وتلخيص النصوص العربية الطويلة تلقائياً بالاعتماد على نماذج المحولات الهيكلية (Transformers) مع لوحة تحكم تفاعلية عبر Streamlit.",
+        period: "مارس 2026 – مايو 2026"
+    },
+    'Hair Type Detection': {
+        title: "نظام تحديد وتصنيف أنواع الشعر",
+        desc: "نموذج تصنيف صور يعتمد على التعلم العميق ونقل المعرفة عبر شبكة EfficientNet-B0 لتحديد 5 أنواع مختلفة للشعر بدقة متناهية وسرعة عالية.",
+        period: "مشروع تعلم عميق"
+    },
+    'Social Support & Happiness': {
+        title: "مؤشرات الدعم الاجتماعي وتأثيرها على السعادة",
+        desc: "بحث إحصائي وتنبؤي باستخدام تعلم الآلة لدراسة عوامل السعادة في 156 دولة. تم بناء نموذج SVR الذي أثبت أن الدعم الاجتماعي يمثل أقوى العوامل المسببة للسعادة.",
+        period: "أكتوبر 2025 – ديسمبر 2025"
+    },
+    '3-DOF Robotic Arm': {
+        title: "ذراع روبوتية ثلاثية المحاور",
+        desc: "تصميم وبناء ذراع روبوتية من الصفر باستخدام محركات السيرفو، والتحكم اليدوي بعصا التوجيه (Joystick) بالاعتماد على وحدة Arduino.",
+        period: "2025"
+    },
+    '4-DOF Robotic Arm': {
+        title: "ذراع روبوتية رباعية المحاور ثلاثية الأبعاد",
+        desc: "ذراع روبوتية مطبوعة بتقنية ثلاثية الأبعاد بالكامل، تم تجميعها ومعايرة حركتها وبرمجتها لتنفيذ مهام الالتقاط والتنسيق الحركي الدقيق.",
+        period: "2025"
+    },
+    'Information Retrieval & Text Analysis System': {
+        title: "نظام استرجاع المعلومات الذكي وتحليل النصوص",
+        desc: "نظام معالجة لغات لاسترجاع المستندات المتشابهة بحسب جيب التمام TF-IDF، وتصنيف البريد العشوائي، وتجميع المراجعات والتقييمات باستخدام خوارزمية K-Means.",
+        period: "2025"
+    }
+};
+
 // TRANSLATION ENGINE
 const translations = {
     en: {
@@ -2865,6 +3030,28 @@ window.toggleLanguage = function() {
 };
 
 function applyLanguage(lang) {
+    if (typeof phrasesEn !== 'undefined') {
+        phrases = lang === 'en' ? phrasesEn : phrasesAr;
+    }
+
+    // Update contact form placeholders
+    const cName = document.getElementById('cName');
+    const cEmail = document.getElementById('cEmail');
+    const cSubject = document.getElementById('cSubject');
+    const cMessage = document.getElementById('cMessage');
+    
+    if (lang === 'ar') {
+        if (cName) cName.placeholder = 'نورة أحمد';
+        if (cEmail) cEmail.placeholder = 'noura@example.com';
+        if (cSubject) cSubject.placeholder = 'كيف يمكنني مساعدتك؟';
+        if (cMessage) cMessage.placeholder = 'اكتب رسالتك هنا...';
+    } else {
+        if (cName) cName.placeholder = 'Noura Ahmed';
+        if (cEmail) cEmail.placeholder = 'noura@example.com';
+        if (cSubject) cSubject.placeholder = 'How can I help you?';
+        if (cMessage) cMessage.placeholder = 'Write your message here...';
+    }
+
     const btn = document.querySelector('.hud-lang-btn');
     if (btn) btn.textContent = lang === 'en' ? '🌐 EN' : '🌐 AR';
     
