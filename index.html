@@ -1225,6 +1225,7 @@ body.rtl-mode .window-title {
 }
     
 
+
 /* ============================================================
    MINECRAFT THEME SCOPED OVERRIDES (OS MODE ONLY)
    ============================================================ */
@@ -1245,10 +1246,15 @@ body.os-mode p, body.os-mode li, body.os-mode span, body.os-mode input, body.os-
     image-rendering: pixelated;
 }
 
-body.os-mode .window-title, body.os-mode .theme-btn, body.os-mode .btn-primary, body.os-mode .btn-outline, body.os-mode .filter-btn, body.os-mode .form-submit, body.os-mode .hud-level, body.os-mode .hud-sound-btn, body.os-mode .view-mode-btn, body.os-mode .hud-lang-btn, body.os-mode .desktop-icon span {
+body.os-mode h1, body.os-mode h2, body.os-mode h3, body.os-mode h4, body.os-mode h5, body.os-mode h6, body.os-mode .window-title, body.os-mode .theme-btn, body.os-mode .btn-primary, body.os-mode .btn-outline, body.os-mode .filter-btn, body.os-mode .form-submit, body.os-mode .hud-level, body.os-mode .hud-sound-btn, body.os-mode .view-mode-btn, body.os-mode .hud-lang-btn, body.os-mode .desktop-icon span {
     font-family: 'Press Start 2P', monospace !important;
     letter-spacing: 0px !important;
     text-shadow: 2px 2px 0px #000000;
+}
+
+body.os-mode h1 {
+    font-size: clamp(1.8rem, 4vw, 3.5rem) !important;
+    color: #ffff55 !important;
 }
 
 /* Background pixel texture overlay only in OS Mode */
@@ -1287,7 +1293,7 @@ body.os-mode .proj-tag, body.os-mode .modal-tech, body.os-mode .vol-pill {
     background: #8b8b8b !important;
     border: 3px solid #373737 !important;
     box-shadow: inset -3px -3px 0 #555555, inset 3px 3px 0 #ffffff !important;
-    color: #ffff55 !important; /* gold names */
+    color: #ffff55 !important;
     font-size: 1.25rem !important;
     font-weight: normal !important;
     border-radius: 0 !important;
@@ -1385,6 +1391,17 @@ body.os-mode .xp-fill {
 /* Blocky sky background override only in OS mode */
 body.os-mode .gradient-bg {
     background: linear-gradient(to bottom, #10061e 0%, #1e1335 40%, #3a1b5d 75%, #05010a 100%) !important;
+}
+
+/* Custom scrollbar in OS mode only */
+body.os-mode ::-webkit-scrollbar {
+    width: 18px !important;
+    background: #2c2c2c !important;
+}
+body.os-mode ::-webkit-scrollbar-thumb {
+    background: #8b8b8b !important;
+    border: 4px solid #2c2c2c !important;
+    box-shadow: inset -2px -2px 0 #555555, inset 2px 2px 0 #ffffff !important;
 }
 
 </style>
