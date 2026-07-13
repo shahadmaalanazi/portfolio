@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
     <style>
-/* ============================================================
+
    VARIABLES
 ============================================================ */
 :root {
@@ -22,7 +22,7 @@
     --accent:   #c084fc;
 }
 
-/* ============================================================
+
    LIGHT MODE
 ============================================================ */
 body.light {
@@ -58,7 +58,7 @@ body.light footer      { color:#6d28d9; background:rgba(237,233,254,.7); }
 body.light .suggest-form textarea { background:white; border:1px solid rgba(168,85,247,.3); color:var(--text); }
 body.light .contact-btn { background:white; color:var(--text); }
 
-/* ============================================================
+
    RESET & BASE
 ============================================================ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -71,7 +71,7 @@ body {
     transition: background .35s, color .35s;
 }
 
-/* ============================================================
+
    CUSTOM SCROLLBAR
 ============================================================ */
 ::-webkit-scrollbar {
@@ -95,7 +95,7 @@ html {
     scrollbar-color: var(--purple) var(--bg);
 }
 
-/* ============================================================
+
    BACKGROUNDS
 ============================================================ */
 .gradient-bg {
@@ -144,7 +144,7 @@ html {
 }
 @keyframes starsMove { from{transform:translateY(0)} to{transform:translateY(-50%)} }
 
-/* ============================================================
+
    NAVBAR
 ============================================================ */
 nav {
@@ -178,13 +178,13 @@ nav a:hover { color: var(--purple); background: rgba(168,85,247,.08); }
     .theme-btn { flex-shrink: 0; font-size: 12px; padding: 6px 10px; }
 }
 
-/* ============================================================
+
    SCROLL FADE-IN
 ============================================================ */
 .reveal { opacity: 0; transform: translateY(44px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
-/* ============================================================
+
    SECTION BASE
 ============================================================ */
 section { padding: 90px 8%; max-width: 1200px; margin: auto; }
@@ -271,7 +271,7 @@ body.light .lang-badge { background: white; }
 }
 .hero-typing-static { color: var(--dim); }
 
-/* ============================================================
+
    HERO
 ============================================================ */
 .hero {
@@ -345,7 +345,7 @@ body.light .lang-badge { background: white; }
 @keyframes blink { 50%{opacity:0} }
 body.light .hero h1 { background: linear-gradient(135deg,#4c1d95 30%,#a855f7 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
 
-/* ============================================================
+
    ABOUT
 ============================================================ */
 .about-text { font-size:1.05rem; line-height:1.85; color:var(--dim); max-width:700px; margin-bottom:28px; }
@@ -368,7 +368,7 @@ body.light .hero h1 { background: linear-gradient(135deg,#4c1d95 30%,#a855f7 100
 .stat-num { font-size:1.9rem; font-weight:800; color:var(--purple); display:block; line-height:1; margin-bottom:8px; }
 .stat-lbl { font-size:.68rem; letter-spacing:.08em; text-transform:uppercase; color:var(--dim); }
 
-/* ============================================================
+
    EDUCATION
 ============================================================ */
 .edu-card {
@@ -382,7 +382,7 @@ body.light .hero h1 { background: linear-gradient(135deg,#4c1d95 30%,#a855f7 100
 .edu-date { color:var(--dim); font-size:.82rem; margin-bottom:10px; }
 .edu-desc { color:var(--dim); font-size:.88rem; line-height:1.65; }
 
-/* ============================================================
+
    COURSES
 ============================================================ */
 .courses-grid {
@@ -398,7 +398,7 @@ body.light .hero h1 { background: linear-gradient(135deg,#4c1d95 30%,#a855f7 100
 .course-item:hover { border-color:var(--purple); background:rgba(168,85,247,.07); transform:translateX(4px); }
 .course-item span { color:var(--dim); font-size:.78rem; margin-left:8px; white-space:nowrap; }
 
-/* ============================================================
+
    PROJECTS
 ============================================================ */
 .projects-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
@@ -458,7 +458,7 @@ body.light .hero h1 { background: linear-gradient(135deg,#4c1d95 30%,#a855f7 100
 .proj-gh svg { width:15px; height:15px; }
 .proj-gh:hover { text-shadow:0 0 8px var(--purple); gap:10px; }
 
-/* ============================================================
+
    SKILLS - GRID
 ============================================================ */
 .skills-grid {
@@ -495,7 +495,7 @@ body.light .hero h1 { background: linear-gradient(135deg,#4c1d95 30%,#a855f7 100
 .skill-item:hover { background: rgba(168,85,247,.08); border-color: rgba(168,85,247,.2); color: var(--accent); }
 .skill-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--purple); flex-shrink: 0; }
 
-/* ============================================================
+
    EXPERIENCE (timeline style)
 ============================================================ */
 .timeline { position:relative; padding-left:40px; }
@@ -533,7 +533,7 @@ body.light .hero h1 { background: linear-gradient(135deg,#4c1d95 30%,#a855f7 100
 }
 .vol-pill:hover { border-color:var(--purple); color:var(--accent); }
 
-/* ============================================================
+
    ACHIEVEMENTS
 ============================================================ */
 .ach-list { display:flex; flex-direction:column; gap:18px; }
@@ -556,7 +556,7 @@ body.light .hero h1 { background: linear-gradient(135deg,#4c1d95 30%,#a855f7 100
 .ach-title { font-size:1.05rem; font-weight:700; margin-bottom:8px; }
 .ach-desc { color:var(--dim); font-size:.85rem; line-height:1.6; }
 
-/* ============================================================
+
    PAPERS
 ============================================================ */
 .papers-list { display:flex; flex-direction:column; gap:18px; }
@@ -602,7 +602,7 @@ body.light .hero h1 { background: linear-gradient(135deg,#4c1d95 30%,#a855f7 100
 }
 .vol-pill.tl-visible { opacity: 1; transform: translateY(0); }
 
-/* ============================================================
+
    CERTIFICATIONS
 ============================================================ */
 .certs-list { display: flex; flex-direction: column; gap: 20px; }
@@ -637,7 +637,7 @@ body.light .hero h1 { background: linear-gradient(135deg,#4c1d95 30%,#a855f7 100
     .cert-img-wrap { width: 100%; min-height: 170px; border-right: none; border-bottom: 1px solid var(--border); }
 }
 
-/* ============================================================
+
    CONTACT
 ============================================================ */
 #contact { display: block; }
@@ -689,7 +689,7 @@ body.light .form-group textarea { background: white; color: var(--text); border-
 .form-submit:disabled { opacity: .55; cursor: not-allowed; transform: none; }
 #contactStatus { margin-top: 10px; font-size: .85rem; color: var(--purple); }
 
-/* ============================================================
+
    MODAL
 ============================================================ */
 .modal {
@@ -753,7 +753,7 @@ body.light .form-group textarea { background: white; color: var(--text); border-
 .modal-thumb:hover { opacity:1; }
 .modal-thumb svg { width:22px; height:22px; color:var(--purple); }
 
-/* ============================================================
+
    FOOTER
 ============================================================ */
 footer {
@@ -762,7 +762,7 @@ footer {
     transition: color .35s;
 }
 
-/* ============================================================
+
    HEADINGS underline
 ============================================================ */
 h2.section-title::after {
@@ -770,7 +770,7 @@ h2.section-title::after {
     background:var(--purple); margin-top:10px; border-radius:10px;
 }
 
-/* ============================================================
+
    SHAHAD_OS DUAL VIEW & HUD
 ============================================================ */
 
@@ -1078,7 +1078,7 @@ body.os-mode .window-body h2.section-title { font-size: 1.3rem; margin-bottom: 1
     color: rgba(168, 85, 247, 0.15);
 }
 
-/* ============================================================
+
    LIGHT MODE OS ENVIRONMENT OVERRIDES
 ============================================================ */
 body.light.os-mode {
@@ -1224,32 +1224,35 @@ body.rtl-mode .window-title {
     }
 }
     
+
 /* ============================================================
-   MINECRAFT THEME STYLESHEET OVERRIDES
+   MINECRAFT THEME SCOPED OVERRIDES (OS MODE ONLY)
    ============================================================ */
-* {
+body.os-mode .classic-mode-only {
+    display: none !important;
+}
+body:not(.os-mode) .os-mode-only {
+    display: none !important;
+}
+
+body.os-mode, body.os-mode * {
     cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M7 0h2v7h7v2H9v7H7V9H0V7h7V0z' fill='%23ffffff'/%3E%3C/svg%3E") 8 8, auto !important;
 }
 
-body, p, li, span, input, textarea, select, .about-text, .proj-desc, .tl-desc, .ach-desc, .cert-org, .cert-year, .hero-greeting, .hero-typing-static, .typing-cursor, .vol-pill {
+body.os-mode p, body.os-mode li, body.os-mode span, body.os-mode input, body.os-mode textarea, body.os-mode select, body.os-mode .hud-bar *, body.os-mode .os-window *, body.os-mode .os-dock * {
     font-family: 'VT323', monospace !important;
     font-size: 1.35rem !important;
     image-rendering: pixelated;
 }
 
-h1, h2, h3, h4, h5, h6, .window-title, .theme-btn, .btn-primary, .btn-outline, .filter-btn, .form-submit, .proj-name, .tl-title, .ach-title, .cert-name, .hud-level, .hero-role, .hero-badge {
+body.os-mode .window-title, body.os-mode .theme-btn, body.os-mode .btn-primary, body.os-mode .btn-outline, body.os-mode .filter-btn, body.os-mode .form-submit, body.os-mode .hud-level, body.os-mode .hud-sound-btn, body.os-mode .view-mode-btn, body.os-mode .hud-lang-btn, body.os-mode .desktop-icon span {
     font-family: 'Press Start 2P', monospace !important;
     letter-spacing: 0px !important;
     text-shadow: 2px 2px 0px #000000;
 }
 
-h1 {
-    font-size: clamp(1.8rem, 4vw, 3.5rem) !important;
-    color: #ffff55 !important; /* Minecraft gold title */
-}
-
-/* Background pixel texture overlay */
-body::after {
+/* Background pixel texture overlay only in OS Mode */
+body.os-mode::after {
     content: '';
     position: fixed;
     top: 0; left: 0; width: 100vw; height: 100vh;
@@ -1263,8 +1266,8 @@ body::after {
     z-index: 9999;
 }
 
-/* Minecraft GUI panels */
-.os-window, .proj-card, .skill-cat, .edu-card, .ach-card, .cert-card, .contact-form-box, .modal-inner {
+/* Minecraft GUI panels in OS mode */
+body.os-mode .os-window, body.os-mode .modal-inner {
     background: #c6c6c6 !important;
     border: 4px solid #373737 !important;
     box-shadow: 
@@ -1274,39 +1277,13 @@ body::after {
     border-radius: 0 !important;
 }
 
-.os-window *, .proj-card *, .skill-cat *, .edu-card *, .ach-card *, .cert-card *, .contact-form-box *, .modal-inner * {
+body.os-mode .os-window *, body.os-mode .modal-inner * {
     color: #000000 !important;
     text-shadow: none !important;
 }
 
-/* Project cards tweaks */
-.proj-card {
-    border-radius: 0 !important;
-}
-.proj-card:hover {
-    transform: translateY(-4px) !important;
-    border-color: #ffffff !important; /* highlight border on hover */
-}
-.proj-card p, .proj-card span {
-    color: #111111 !important;
-}
-
-/* Experience timeline blocky items */
-.tl-item {
-    background: #c6c6c6 !important;
-    border: 3px solid #555555 !important;
-    border-radius: 0 !important;
-    padding: 16px !important;
-    box-shadow: inset -3px -3px 0 #3a3a3a, inset 3px 3px 0 #ffffff !important;
-}
-.tl-dot {
-    background: #55ff55 !important;
-    border: 3px solid #000000 !important;
-    border-radius: 0 !important;
-}
-
-/* Minecraft slots style tags and pills */
-.proj-tag, .modal-tech, .vol-pill {
+/* Slot style tags and details inside OS windows */
+body.os-mode .proj-tag, body.os-mode .modal-tech, body.os-mode .vol-pill {
     background: #8b8b8b !important;
     border: 3px solid #373737 !important;
     box-shadow: inset -3px -3px 0 #555555, inset 3px 3px 0 #ffffff !important;
@@ -1317,8 +1294,8 @@ body::after {
     padding: 4px 8px !important;
 }
 
-/* Minecraft custom buttons */
-.theme-btn, .btn-primary, .btn-outline, .filter-btn, .form-submit, .hud-sound-btn, .view-mode-btn, .hud-lang-btn, .social-icon, .modal-close {
+/* Minecraft custom buttons in OS mode */
+body.os-mode .theme-btn, body.os-mode .btn-primary, body.os-mode .btn-outline, body.os-mode .filter-btn, body.os-mode .form-submit, body.os-mode .hud-sound-btn, body.os-mode .view-mode-btn, body.os-mode .hud-lang-btn, body.os-mode .social-icon, body.os-mode .modal-close {
     background: #8b8b8b !important;
     border: 4px solid #000000 !important;
     box-shadow: 
@@ -1333,50 +1310,41 @@ body::after {
     image-rendering: pixelated;
 }
 
-.theme-btn:hover, .btn-primary:hover, .btn-outline:hover, .filter-btn:hover, .form-submit:hover, .hud-sound-btn:hover, .view-mode-btn:hover, .hud-lang-btn:hover, .social-icon:hover, .modal-close:hover {
-    background: #47a147 !important; /* green hover style */
+body.os-mode .theme-btn:hover, body.os-mode .btn-primary:hover, body.os-mode .btn-outline:hover, body.os-mode .filter-btn:hover, body.os-mode .form-submit:hover, body.os-mode .hud-sound-btn:hover, body.os-mode .view-mode-btn:hover, body.os-mode .hud-lang-btn:hover, body.os-mode .social-icon:hover, body.os-mode .modal-close:hover {
+    background: #47a147 !important;
     border-color: #000000 !important;
     box-shadow: 
         inset -4px -4px 0 #2e692e,
         inset 4px 4px 0 #7ae27a !important;
-    color: #ffff55 !important; /* gold text on hover */
+    color: #ffff55 !important;
     text-shadow: 2px 2px 0 #1b3d1b !important;
 }
 
-/* Active filter buttons */
-.filter-btn.active {
-    background: #47a147 !important;
-    box-shadow: 
-        inset -4px -4px 0 #2e692e,
-        inset 4px 4px 0 #7ae27a !important;
-    color: #ffff55 !important;
-}
-
-/* OS Window Titlebar */
-.window-header {
+/* Window Titlebar in OS mode */
+body.os-mode .window-header {
     background: #555555 !important;
     border-bottom: 4px solid #000000 !important;
     border-radius: 0 !important;
     padding: 6px 12px !important;
 }
-.window-title {
+body.os-mode .window-title {
     color: #ffffff !important;
     font-size: 0.72rem !important;
 }
-.window-actions span {
+body.os-mode .window-actions span {
     border-radius: 0 !important;
     width: 14px !important;
     height: 14px !important;
 }
 
-/* Hotbar & Dock styling */
-.os-dock {
+/* Hotbar & Dock styling in OS mode */
+body.os-mode .os-dock {
     background: rgba(0,0,0,0.85) !important;
     border: 4px solid #3c3c3c !important;
     border-radius: 0 !important;
     padding: 8px !important;
 }
-.dock-item {
+body.os-mode .dock-item {
     background: #8b8b8b !important;
     border: 4px solid #373737 !important;
     box-shadow: inset -4px -4px 0 #555555, inset 4px 4px 0 #ffffff !important;
@@ -1384,112 +1352,39 @@ body::after {
     width: 50px !important;
     height: 50px !important;
 }
-.dock-item:hover {
+body.os-mode .dock-item:hover {
     border-color: #ffffff !important;
     background: #9e9e9e !important;
 }
 
-/* HUD elements */
-.hud-bar {
+/* HUD elements in OS mode */
+body.os-mode .hud-bar {
     background: #2c2c2c !important;
     border-bottom: 4px solid #000000 !important;
 }
-.hud-level {
+body.os-mode .hud-level {
     color: #55ff55 !important;
     text-shadow: 2px 2px 0 #000000 !important;
     font-family: 'Press Start 2P', monospace !important;
     font-size: 0.85rem !important;
 }
 
-/* XP level bar */
-.xp-container {
+/* XP level bar in OS mode */
+body.os-mode .xp-container {
     background: #000000 !important;
     border: 3px solid #555555 !important;
     border-radius: 0 !important;
     height: 14px !important;
 }
-.xp-fill {
+body.os-mode .xp-fill {
     background: #55ff55 !important;
     box-shadow: inset 0 2px 0 #7afe7a !important;
     border-radius: 0 !important;
 }
 
-/* Scrollbars */
-::-webkit-scrollbar {
-    width: 18px;
-    background: #2c2c2c;
-}
-::-webkit-scrollbar-thumb {
-    background: #8b8b8b;
-    border: 4px solid #2c2c2c;
-    box-shadow: inset -2px -2px 0 #555555, inset 2px 2px 0 #ffffff;
-}
-
-/* Inputs & Form styling */
-input, textarea {
-    background: #dbdbdb !important;
-    border: 3px solid #555555 !important;
-    box-shadow: inset 2px 2px 0 #8b8b8b !important;
-    border-radius: 0 !important;
-    color: #000000 !important;
-    padding: 10px !important;
-}
-input:focus, textarea:focus {
-    border-color: #55ff55 !important; /* Minecraft green highlight */
-}
-
-/* Profile image */
-.hero-photo-wrap {
-    border-radius: 0 !important;
-    border: 6px solid #8b8b8b !important;
-    box-shadow: 
-        inset -4px -4px 0 #555555,
-        inset 4px 4px 0 #ffffff,
-        0 10px 25px rgba(0,0,0,0.6) !important;
-}
-.hero-photo-img {
-    border-radius: 0 !important;
-}
-.hero-photo-halo {
-    display: none !important; /* Hide circular neon halos */
-}
-
-/* Blocky sky background override */
-.gradient-bg {
+/* Blocky sky background override only in OS mode */
+body.os-mode .gradient-bg {
     background: linear-gradient(to bottom, #10061e 0%, #1e1335 40%, #3a1b5d 75%, #05010a 100%) !important;
-}
-
-/* Classic view navbar */
-nav {
-    background: #2c2c2c !important;
-    border-bottom: 4px solid #111111 !important;
-    border-radius: 0 !important;
-}
-nav a {
-    font-family: 'Press Start 2P', monospace !important;
-    font-size: 0.65rem !important;
-    color: #e0e0e0 !important;
-    text-shadow: 2px 2px 0 #222 !important;
-}
-nav a:hover {
-    color: #ffff55 !important; /* Minecraft highlight hover */
-}
-#classicToggleBtn {
-    background: #8b8b8b !important;
-    border: 4px solid #000000 !important;
-    box-shadow: inset -4px -4px 0 #555555, inset 4px 4px 0 #dbdbdb !important;
-    color: #ffffff !important;
-    font-size: 0.65rem !important;
-}
-#classicToggleBtn:hover {
-    background: #47a147 !important;
-    color: #ffff55 !important;
-}
-
-/* Hide circular cyber shapes in favor of pixel graphics */
-svg.cyber-float path, svg.cyber-float rect, svg.cyber-float line {
-    stroke-linecap: square !important;
-    stroke-linejoin: miter !important;
 }
 
 </style>
@@ -1503,85 +1398,101 @@ svg.cyber-float path, svg.cyber-float rect, svg.cyber-float line {
 <div class="orb orb3"></div>
 <div class="stars-wrap"><div class="stars"></div></div>
 
-<!-- Background Minecraft Elements -->
-<svg class="cyber-float" style="top:15%; left:8%; width:80px; height:80px; animation-duration:15s;" viewBox="0 0 8 8" fill="none">
-    <rect width="8" height="8" fill="rgba(92,142,50,0.18)"/>
-    <rect x="1" y="2" width="2" height="2" fill="rgba(0,0,0,0.3)"/>
-    <rect x="5" y="2" width="2" height="2" fill="rgba(0,0,0,0.3)"/>
-    <rect x="3" y="4" width="2" height="3" fill="rgba(0,0,0,0.3)"/>
-    <rect x="2" y="5" width="4" height="2" fill="rgba(0,0,0,0.3)"/>
-    <rect x="2" y="7" width="1" height="1" fill="rgba(92,142,50,0.18)"/>
-    <rect x="5" y="7" width="1" height="1" fill="rgba(92,142,50,0.18)"/>
-</svg>
+<!-- Background Cyber Elements (Classic Mode Only) -->
+<div class="classic-mode-only">
+    <svg class="cyber-float" style="top:60%; right:5%; width:100px; height:100px; animation-delay:2s; animation-duration:10s;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 2a10 10 0 0 0-10 10v2a4 4 0 0 0 4 4h12a4 4 0 0 0 4-4v-2a10 10 0 0 0-10-10z"/>
+        <path d="M9 11h.01M15 11h.01"/>
+        <path d="M8 15a4 4 0 0 0 8 0"/>
+        <path d="M12 2v2M2 12h2M20 12h2"/>
+    </svg>
+    <svg class="cyber-float" style="top:15%; left:12%; width:90px; height:90px; animation-duration:12s;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+        <line x1="2" y1="20" x2="22" y2="20"/>
+        <line x1="12" y1="17" x2="12" y2="20"/>
+    </svg>
+    <div class="cyber-float" style="top: 45%; left: 6%; font-size: 3.5rem; font-weight: 900; font-family: monospace; color: rgba(192, 132, 252, 0.12); text-shadow: 0 0 10px rgba(192, 132, 252, 0.3); animation-duration: 9s;">AI</div>
+    <div class="cyber-float" style="bottom: 12%; left: 22%; font-size: 2.2rem; font-weight: 800; font-family: monospace; color: rgba(124, 58, 237, 0.1); text-shadow: 0 0 10px rgba(124, 58, 237, 0.25); animation-duration: 14s;">[ARTIFICIAL_INTELLIGENCE]</div>
+    <div class="cyber-float" style="top: 25%; right: 18%; font-size: 1.8rem; font-weight: 800; font-family: monospace; color: rgba(168, 85, 247, 0.12); text-shadow: 0 0 8px rgba(168, 85, 247, 0.25); animation-duration: 11s;">&lt;Neural_Net /&gt;</div>
+</div>
 
-<svg class="cyber-float" style="top:55%; left:6%; width:80px; height:80px; animation-duration:12s;" viewBox="0 0 16 16" fill="none">
-    <rect x="1" y="14" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
-    <rect x="2" y="13" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
-    <rect x="3" y="12" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
-    <rect x="4" y="11" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
-    <rect x="5" y="10" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
-    <rect x="6" y="9" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
-    <rect x="7" y="8" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
-    <rect x="8" y="7" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
-    <rect x="9" y="6" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
-    <rect x="10" y="5" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
-    <rect x="11" y="4" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
-    <rect x="12" y="3" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
-    <rect x="13" y="2" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
-    <rect x="14" y="1" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
-    <rect x="15" y="0" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
-    <rect x="11" y="2" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
-    <rect x="10" y="1" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
-    <rect x="9" y="0" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
-    <rect x="13" y="3" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
-    <rect x="12" y="4" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
-    <rect x="11" y="5" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
-</svg>
-
-<svg class="cyber-float" style="bottom:12%; left:22%; width:90px; height:90px; animation-duration:16s;" viewBox="0 0 16 16" fill="none">
-    <rect x="1" y="14" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
-    <rect x="2" y="13" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
-    <rect x="3" y="12" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
-    <rect x="2" y="11" width="2" height="2" fill="rgba(85,85,85,0.3)"/>
-    <rect x="4" y="13" width="2" height="2" fill="rgba(85,85,85,0.3)"/>
-    <rect x="4" y="11" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
-    <rect x="5" y="10" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
-    <rect x="6" y="9" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
-    <rect x="7" y="8" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
-    <rect x="8" y="7" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
-    <rect x="9" y="6" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
-    <rect x="10" y="5" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
-    <rect x="11" y="4" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
-    <rect x="12" y="3" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
-    <rect x="13" y="2" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
-    <rect x="14" y="1" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
-    <rect x="15" y="0" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
-</svg>
-
-<svg class="cyber-float" style="top:25%; right:18%; width:80px; height:80px; animation-duration:11s;" viewBox="0 0 9 9" fill="none">
-    <rect x="1" y="0" width="2" height="1" fill="rgba(255,85,85,0.25)"/>
-    <rect x="6" y="0" width="2" height="1" fill="rgba(255,85,85,0.25)"/>
-    <rect x="0" y="1" width="4" height="1" fill="rgba(255,85,85,0.25)"/>
-    <rect x="5" y="1" width="4" height="1" fill="rgba(255,85,85,0.25)"/>
-    <rect x="0" y="2" width="9" height="1" fill="rgba(255,85,85,0.25)"/>
-    <rect x="0" y="3" width="9" height="1" fill="rgba(255,85,85,0.25)"/>
-    <rect x="1" y="4" width="7" height="1" fill="rgba(255,85,85,0.25)"/>
-    <rect x="2" y="5" width="5" height="1" fill="rgba(255,85,85,0.25)"/>
-    <rect x="3" y="6" width="3" height="1" fill="rgba(255,85,85,0.25)"/>
-    <rect x="4" y="7" width="1" height="1" fill="rgba(255,85,85,0.25)"/>
-</svg>
-
-<svg class="cyber-float" style="top:60%; right:5%; width:80px; height:80px; animation-duration:14s;" viewBox="0 0 9 9" fill="none">
-    <rect x="4" y="0" width="1" height="1" fill="rgba(85,255,255,0.3)"/>
-    <rect x="3" y="1" width="3" height="1" fill="rgba(85,255,255,0.3)"/>
-    <rect x="2" y="2" width="5" height="1" fill="rgba(85,255,255,0.3)"/>
-    <rect x="1" y="3" width="7" height="1" fill="rgba(85,255,255,0.3)"/>
-    <rect x="0" y="4" width="9" height="1" fill="rgba(85,255,255,0.3)"/>
-    <rect x="1" y="5" width="7" height="1" fill="rgba(85,255,255,0.3)"/>
-    <rect x="2" y="6" width="5" height="1" fill="rgba(85,255,255,0.3)"/>
-    <rect x="3" y="7" width="3" height="1" fill="rgba(85,255,255,0.3)"/>
-    <rect x="4" y="8" width="1" height="1" fill="rgba(85,255,255,0.3)"/>
-</svg>
+<!-- Background Minecraft Elements (OS Mode Only) -->
+<div class="os-mode-only">
+    <svg class="cyber-float" style="top:15%; left:8%; width:80px; height:80px; animation-duration:15s;" viewBox="0 0 8 8" fill="none">
+        <rect width="8" height="8" fill="rgba(92,142,50,0.18)"/>
+        <rect x="1" y="2" width="2" height="2" fill="rgba(0,0,0,0.3)"/>
+        <rect x="5" y="2" width="2" height="2" fill="rgba(0,0,0,0.3)"/>
+        <rect x="3" y="4" width="2" height="3" fill="rgba(0,0,0,0.3)"/>
+        <rect x="2" y="5" width="4" height="2" fill="rgba(0,0,0,0.3)"/>
+        <rect x="2" y="7" width="1" height="1" fill="rgba(92,142,50,0.18)"/>
+        <rect x="5" y="7" width="1" height="1" fill="rgba(92,142,50,0.18)"/>
+    </svg>
+    <svg class="cyber-float" style="top:55%; left:6%; width:80px; height:80px; animation-duration:12s;" viewBox="0 0 16 16" fill="none">
+        <rect x="1" y="14" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+        <rect x="2" y="13" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+        <rect x="3" y="12" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+        <rect x="4" y="11" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+        <rect x="5" y="10" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+        <rect x="6" y="9" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+        <rect x="7" y="8" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+        <rect x="8" y="7" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+        <rect x="9" y="6" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+        <rect x="10" y="5" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+        <rect x="11" y="4" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+        <rect x="12" y="3" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+        <rect x="13" y="2" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+        <rect x="14" y="1" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+        <rect x="15" y="0" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+        <rect x="11" y="2" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+        <rect x="10" y="1" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+        <rect x="9" y="0" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+        <rect x="13" y="3" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+        <rect x="12" y="4" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+        <rect x="11" y="5" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+    </svg>
+    <svg class="cyber-float" style="bottom:12%; left:22%; width:90px; height:90px; animation-duration:16s;" viewBox="0 0 16 16" fill="none">
+        <rect x="1" y="14" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+        <rect x="2" y="13" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+        <rect x="3" y="12" width="1" height="1" fill="rgba(139,90,43,0.2)"/>
+        <rect x="2" y="11" width="2" height="2" fill="rgba(85,85,85,0.3)"/>
+        <rect x="4" y="13" width="2" height="2" fill="rgba(85,85,85,0.3)"/>
+        <rect x="4" y="11" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+        <rect x="5" y="10" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+        <rect x="6" y="9" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+        <rect x="7" y="8" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+        <rect x="8" y="7" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+        <rect x="9" y="6" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+        <rect x="10" y="5" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+        <rect x="11" y="4" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+        <rect x="12" y="3" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+        <rect x="13" y="2" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+        <rect x="14" y="1" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+        <rect x="15" y="0" width="1" height="1" fill="rgba(85,255,255,0.35)"/>
+    </svg>
+    <svg class="cyber-float" style="top:25%; right:18%; width:80px; height:80px; animation-duration:11s;" viewBox="0 0 9 9" fill="none">
+        <rect x="1" y="0" width="2" height="1" fill="rgba(255,85,85,0.25)"/>
+        <rect x="6" y="0" width="2" height="1" fill="rgba(255,85,85,0.25)"/>
+        <rect x="0" y="1" width="4" height="1" fill="rgba(255,85,85,0.25)"/>
+        <rect x="5" y="1" width="4" height="1" fill="rgba(255,85,85,0.25)"/>
+        <rect x="0" y="2" width="9" height="1" fill="rgba(255,85,85,0.25)"/>
+        <rect x="0" y="3" width="9" height="1" fill="rgba(255,85,85,0.25)"/>
+        <rect x="1" y="4" width="7" height="1" fill="rgba(255,85,85,0.25)"/>
+        <rect x="2" y="5" width="5" height="1" fill="rgba(255,85,85,0.25)"/>
+        <rect x="3" y="6" width="3" height="1" fill="rgba(255,85,85,0.25)"/>
+        <rect x="4" y="7" width="1" height="1" fill="rgba(255,85,85,0.25)"/>
+    </svg>
+    <svg class="cyber-float" style="top:60%; right:5%; width:80px; height:80px; animation-duration:14s;" viewBox="0 0 9 9" fill="none">
+        <rect x="4" y="0" width="1" height="1" fill="rgba(85,255,255,0.3)"/>
+        <rect x="3" y="1" width="3" height="1" fill="rgba(85,255,255,0.3)"/>
+        <rect x="2" y="2" width="5" height="1" fill="rgba(85,255,255,0.3)"/>
+        <rect x="1" y="3" width="7" height="1" fill="rgba(85,255,255,0.3)"/>
+        <rect x="0" y="4" width="9" height="1" fill="rgba(85,255,255,0.3)"/>
+        <rect x="1" y="5" width="7" height="1" fill="rgba(85,255,255,0.3)"/>
+        <rect x="2" y="6" width="5" height="1" fill="rgba(85,255,255,0.3)"/>
+        <rect x="3" y="7" width="3" height="1" fill="rgba(85,255,255,0.3)"/>
+        <rect x="4" y="8" width="1" height="1" fill="rgba(85,255,255,0.3)"/>
+    </svg>
+</div>
 
 <!-- NAV -->
 <nav>
